@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8"><title>Каталог — Ceramica Decor</title>
+<meta name="robots" content="noindex">
+<script>
+  // Старый адрес каталога: catalog.html?cat=kaminy|bbq. На него ведёт реклама,
+  // поэтому адрес живёт, а страница — новая. Метки в адресе сохраняем.
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var to = q.get('cat') === 'bbq' ? 'bbq.html' : 'kaminy.html';
+    q.delete('cat');
+    var qs = q.toString();
+    location.replace(to + (qs ? '?' + qs : '') + location.hash);
+  })();
+</script>
+<noscript><meta http-equiv="refresh" content="0;url=kaminy.html"></noscript>
+</head><body><p><a href="kaminy.html">Камины</a> · <a href="bbq.html">Барбекю комплексы</a></p></body></html>

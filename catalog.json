@@ -1,0 +1,2772 @@
+{
+ "kaminy": {
+  "sheet": "Камины",
+  "items": [
+   {
+    "title": "Альбион",
+    "collection": "Альбион",
+    "desc": "Классический белый камин Альбион с топкой LISEO CASTIRON.",
+    "price_ceramic": 767994,
+    "price_turnkey": 1350000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_klassicheskij-belyj-kamin-albion-s-topkoj-liseo-castiron/",
+    "photo": "xl/media/image110.jpg",
+    "row": 2,
+    "img": "img/01.webp"
+   },
+   {
+    "title": "Облицовка биокамина изразцами Альбион в майоликовой глазури",
+    "collection": "Альбион",
+    "desc": "",
+    "price_ceramic": 722464,
+    "price_turnkey": 1355786,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_oblitsovka-biokamina-izraztsami-albion-v-majolikovoj-glazuri/",
+    "photo": "xl/media/image3.jpg",
+    "row": 3,
+    "img": "img/02.webp"
+   },
+   {
+    "title": "Тюльпан",
+    "collection": "Тюльпан",
+    "desc": "Камин в облицовке Тюльпан с Г-образной топкой Экокамин Альфа 1000 RB",
+    "price_ceramic": 1095310,
+    "price_turnkey": 1850000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_kamin-v-oblitsovke-tyulpan-s-g-obraznoj-topkoj-ekokamin-alfa-1000-rb/",
+    "photo": "xl/media/image8.jpg",
+    "row": 4,
+    "img": "img/03.webp"
+   },
+   {
+    "title": "Комплект каминной облицовки Тюльпан. Цвет: Арктика",
+    "collection": "Тюльпан",
+    "desc": "",
+    "price_ceramic": 793469,
+    "price_turnkey": 1150000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_komplekt-kaminnoj-oblitsovki-tyulpan-tsvet-arktika/",
+    "photo": "xl/media/image9.jpg",
+    "row": 5,
+    "img": "img/04.webp"
+   },
+   {
+    "title": "Версаль",
+    "collection": "Версаль",
+    "desc": "Изразцовый камин Версаль в синем цвете",
+    "price_ceramic": 1001758,
+    "price_turnkey": 2084728,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_izraztsovyj-kamin-versal-v-sinem-tsvete/",
+    "photo": "xl/media/image17.jpg",
+    "row": 6,
+    "img": "img/05.webp"
+   },
+   {
+    "title": "Бристоль",
+    "collection": "Бристоль",
+    "desc": "Камин с П-образной топкой в облицовке \"Бристоль\" в цвете Черная ночь",
+    "price_ceramic": 969760,
+    "price_turnkey": 1950000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_kamin-s-p-obraznoj-topkoj-v-oblitsovke-bristol-v-tsvete-chernaya-noch/",
+    "photo": "xl/media/image105.jpg",
+    "row": 7,
+    "img": "img/06.webp"
+   },
+   {
+    "title": "Дорф",
+    "collection": "Дорф",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_dekorativnyj-kamin-s-ochagom-airtone-andalle-1000-oblitsovan-izraztsami-kollektsii-dorf-spetsialno-dlya-restorana-5013/",
+    "price_ceramic": 1800849,
+    "price_turnkey": 2650000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_dekorativnyj-kamin-s-ochagom-airtone-andalle-1000-oblitsovan-izraztsami-kollektsii-dorf-spetsialno-dlya-restorana-5013/",
+    "photo": "xl/media/image14.jpg",
+    "row": 8,
+    "img": "img/07.webp"
+   },
+   {
+    "title": "Комплект каминной облицовки Дорф. Цвет: Муравленый",
+    "collection": "Дорф",
+    "desc": "",
+    "price_ceramic": 1303647,
+    "price_turnkey": 2100000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_komplekt-kaminnoj-oblitsovki-dorf-tsvet-muravlenyj/",
+    "photo": "xl/media/image92.jpg",
+    "row": 9,
+    "img": "img/08.webp"
+   },
+   {
+    "title": "Арт Нуво",
+    "collection": "Арт Нуво",
+    "desc": "Комплект каминной облицовки Арт Нуво. Декоративная палитра: Фисташковая",
+    "price_ceramic": 612738,
+    "price_turnkey": 1433372,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_kamin-art-nuvo-1/",
+    "photo": "xl/media/image10.jpg",
+    "row": 10,
+    "img": "img/09.webp"
+   },
+   {
+    "title": "Птицы",
+    "collection": "Птицы",
+    "desc": "Изразцовый камин АСТОВ П2С в облицовке \"Птицы\"",
+    "price_ceramic": 1464041,
+    "price_turnkey": 2552550,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_izraztsovyj-kamin-astov-p2s-v-oblitsovke-ptitsy/",
+    "photo": "xl/media/image13.jpg",
+    "row": 11,
+    "img": "img/10.webp"
+   },
+   {
+    "title": "Византия",
+    "collection": "Византия",
+    "desc": "Изразцовый камин Византия в росписи Олива",
+    "price_ceramic": 1426640,
+    "price_turnkey": 2241366,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_izraztsovyj-kamin-vizantiya-v-rospisi-oliva/",
+    "photo": "xl/media/image7.jpg",
+    "row": 12,
+    "img": "img/11.webp"
+   },
+   {
+    "title": "Луна",
+    "collection": "Луна",
+    "desc": "Камин в классическом стиле из коллекции Луна и топкой Spartherm Linear 4S Arte.",
+    "price_ceramic": 920251,
+    "price_turnkey": 1850000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_kamin-v-klassicheskom-stile-iz-kollektsii-luna-i-topkoj-spartherm-linear-4s-arte-1672/",
+    "photo": "xl/media/image16.jpg",
+    "row": 14,
+    "img": "img/12.webp"
+   },
+   {
+    "title": "Универсал",
+    "collection": "Универсал",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_kaminnyj-portal-universal-tsvet-arktika/",
+    "price_ceramic": 381912,
+    "price_turnkey": 950000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_kaminnyj-portal-universal-tsvet-arktika/",
+    "photo": "xl/media/image122.jpg",
+    "row": 15,
+    "img": "img/13.webp"
+   },
+   {
+    "title": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd",
+    "collection": "Универсал",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_oblitsovka-uglovogo-kamina-izraztsami-universal/",
+    "price_ceramic": 356866,
+    "price_turnkey": 950000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_oblitsovka-uglovogo-kamina-izraztsami-universal/",
+    "photo": "xl/media/image103.jpg",
+    "row": 16,
+    "img": "img/14.webp"
+   },
+   {
+    "title": "Прованс",
+    "collection": "Прованс",
+    "desc": "Изразцовый камин коллекции \"Голландия\" с дровником и ручной росписью",
+    "price_ceramic": 734935,
+    "price_turnkey": 1220000,
+    "url": "https://ceramicadecor.ru/izrazcy/gollandiya/cd_izraztsovyj-kamin-kollektsii-gollandiya-s-drovnikom-i-ruchnoj-rospisyu/",
+    "photo": "xl/media/image25.jpg",
+    "row": 17,
+    "img": "img/15.webp"
+   },
+   {
+    "title": "Браво",
+    "collection": "Браво",
+    "desc": "Камин в облицовке изразцами коллекции Браво с росписью",
+    "price_ceramic": 835350,
+    "price_turnkey": 1580000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_kamin-v-oblitsovke-izraztsami-kollektsii-bravo-s-rospisyu/",
+    "photo": "xl/media/image106.jpg",
+    "row": 18,
+    "img": "img/16.webp"
+   },
+   {
+    "title": "Сохо",
+    "collection": "Сохо",
+    "desc": "Облицовка камина до полки с дровниками по бокам в коллекции Сохо.",
+    "price_ceramic": 1712668,
+    "price_turnkey": 2830000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_oblitsovka-kamina-do-polki-s-drovnikami-po-bokam-v-kollektsii-soho-6749/",
+    "photo": "xl/media/image102.jpg",
+    "row": 19,
+    "img": "img/17.webp"
+   },
+   {
+    "title": "Усадьба",
+    "collection": "Усадьба",
+    "desc": "Изразцовый камин \"Усадьба\" с подиумами и призматичной угловой топкой",
+    "price_ceramic": 875523,
+    "price_turnkey": 1470000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_izraztsovyj-kamin-usadba-s-podiumami-i-prizmatichnoj-uglovoj-topkoj/",
+    "photo": "xl/media/image119.jpg",
+    "row": 20,
+    "img": "img/18.webp"
+   },
+   {
+    "title": "Птички",
+    "collection": "Птички",
+    "desc": "Каминная облицовка Птички. Декоративная палитра: Лесная",
+    "price_ceramic": 808246,
+    "price_turnkey": 1450000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_kaminnaya-oblitsovka-ptichki-dekorativnaya-palitra-lesnaya/",
+    "photo": "xl/media/image115.jpg",
+    "row": 21,
+    "img": "img/19.webp"
+   },
+   {
+    "title": "Элеганс",
+    "collection": "Элеганс",
+    "desc": "Комплект каминной облицовки Элеганс. Цвет: Лесной Туман",
+    "price_ceramic": 949823,
+    "price_turnkey": 1945720,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_izraztsovyj-kamin-elegans-v-glazuri-lesnoj-tuman/",
+    "photo": "xl/media/image101.jpg",
+    "row": 22,
+    "img": "img/20.webp"
+   },
+   {
+    "title": "Минималист",
+    "collection": "Минималист",
+    "desc": "-",
+    "price_ceramic": 907913,
+    "price_turnkey": 1367144,
+    "url": "",
+    "photo": "xl/media/image28.jpg",
+    "row": 23,
+    "img": "img/21.webp"
+   },
+   {
+    "title": "Венская",
+    "collection": "Венская",
+    "desc": "Электрокамин белого цвета в изразцах коллекции Венская. 99999",
+    "price_ceramic": 810963,
+    "price_turnkey": 1380000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-elektrokamina-v-interere/cd_elektrokamin-belogo-tsveta-v-izraztsah-kollektsii-venskaya-99999/",
+    "photo": "xl/media/image99.jpg",
+    "row": 24,
+    "img": "img/22.webp"
+   },
+   {
+    "title": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd",
+    "collection": "Венская",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_klassicheskij-kamin-v-oblitsovke-iz-kollektsii-dorf-s-topkoj-brunner-stil-kamin-classic-6282/",
+    "price_ceramic": 2100676,
+    "price_turnkey": 3130000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_klassicheskij-kamin-v-oblitsovke-iz-kollektsii-dorf-s-topkoj-brunner-stil-kamin-classic-6282/",
+    "photo": "xl/media/image107.jpg",
+    "row": 25,
+    "img": "img/23.webp"
+   }
+  ]
+ },
+ "barbekyu-kompleksy": {
+  "sheet": "ББК",
+  "items": [
+   {
+    "title": "Альбион",
+    "collection": "Альбион",
+    "desc": "Зона барбекю с мангалом и казаном в загородном доме коллекции \"Альбион\" арт.6127",
+    "price_ceramic": 1368000,
+    "price_turnkey": 3020000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_zona-barbekyu-s-mangalom-i-kazanom-v-zagorodnom-dome-kollektsii-albion-6127/",
+    "photo": "xl/media/image34.jpg",
+    "row": 2,
+    "img": "img/01.webp"
+   },
+   {
+    "title": "Облицовка маленького печного комплекса с мангалом. 6261",
+    "collection": "Альбион",
+    "desc": "",
+    "price_ceramic": 1194000,
+    "price_turnkey": 2890000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_oblitsovka-malenkogo-pechnogo-kompleksa-s-mangalom-6261/",
+    "photo": "xl/media/image108.jpg",
+    "row": 3,
+    "img": "img/02.webp"
+   },
+   {
+    "title": "Версаль",
+    "collection": "Версаль",
+    "desc": "Барбекю комплекс в изразцовой облицовке Версаль",
+    "price_ceramic": 3434000,
+    "price_turnkey": 6355000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_letnyaya-kuhnya-barbekyu-v-oblitsovke-versal/",
+    "photo": "xl/media/image31.jpg",
+    "row": 4,
+    "img": "img/03.webp"
+   },
+   {
+    "title": "Летняя кухня \"Версаль\", цвет: Болотный 1311",
+    "collection": "Версаль",
+    "desc": "",
+    "price_ceramic": 1628000,
+    "price_turnkey": 2190000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_letnyaya-kuhnya-versal-tsvet-bolotnyj-1311/",
+    "photo": "xl/media/image123.jpg",
+    "row": 5,
+    "img": "img/04.webp"
+   },
+   {
+    "title": "Летняя кухня в облицовке изразцами коллекции Версаль, цвет: Синий",
+    "collection": "Версаль",
+    "desc": "",
+    "price_ceramic": 4243000,
+    "price_turnkey": 7893000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_letnyaya-kuhnya-v-oblitsovke-izraztsami-kollektsii-versal-tsvet-sinij/",
+    "photo": "xl/media/image63.jpg",
+    "row": 6,
+    "img": "img/05.webp"
+   },
+   {
+    "title": "Тюльпан",
+    "collection": "Тюльпан",
+    "desc": "Белый мангал в облицовке изразцами коллекции Тюльпан. | CeramicaDecor",
+    "price_ceramic": 1172000,
+    "price_turnkey": 2610000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_belyj-mangal-v-oblitsovke-izraztsami-kollektsii-tyulpan-7757/",
+    "photo": "xl/media/image120.jpg",
+    "row": 7,
+    "img": "img/06.webp"
+   },
+   {
+    "title": "Дорф",
+    "collection": "Дорф",
+    "desc": "Эксклюзивная кухня с мангалом в изразцовой облицовке",
+    "price_ceramic": 4629000,
+    "price_turnkey": 8184000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_eksklyuzivnaya-kuhnya-s-mangalom-v-izraztsovoj-oblitsovke-5268/",
+    "photo": "xl/media/image44.jpg",
+    "row": 8,
+    "img": "img/07.webp"
+   },
+   {
+    "title": "Барбекю комплекс в коллекции Дорф с мангалом и дровником. 5397",
+    "collection": "Дорф",
+    "desc": "",
+    "price_ceramic": 1658000,
+    "price_turnkey": 2820000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_barbekyu-kompleks-v-kollektsii-dorf-s-mangalom-i-drovnikom-5397/",
+    "photo": "xl/media/image38.jpg",
+    "row": 9,
+    "img": "img/08.webp"
+   },
+   {
+    "title": "Птички",
+    "collection": "Птички",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_barbekyu-kompleks-v-yarkoj-oblitsovke-ptichki-3548/",
+    "price_ceramic": 1159000,
+    "price_turnkey": 2140000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_barbekyu-kompleks-v-yarkoj-oblitsovke-ptichki-3548/",
+    "photo": "xl/media/image59.jpg",
+    "row": 10,
+    "img": "img/09.webp"
+   },
+   {
+    "title": "Печной комплекс с мангалом и печью под казан в облицовке изразцами кол",
+    "collection": "Птички",
+    "desc": "Печной комплекс с мангалом и печью под казан в облицовке изразцами коллекции Элеганс и Птички. | CeramicaDecor",
+    "price_ceramic": 1778000,
+    "price_turnkey": 2940000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_pechnoj-kompleks-s-mangalom-i-pechyu-pod-kazan-v-oblitsovke-izraztsami-kollektsii--8075/",
+    "photo": "xl/media/image116.jpg",
+    "row": 11,
+    "img": "img/10.webp"
+   },
+   {
+    "title": "Птицы",
+    "collection": "Птицы",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_pechnoj-kompleks-iz-kirpicha-v-kollektsii-ptichki-7676/",
+    "price_ceramic": 3748000,
+    "price_turnkey": 5750000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_pechnoj-kompleks-iz-kirpicha-v-kollektsii-ptichki-7676/",
+    "photo": "xl/media/image111.jpg",
+    "row": 12,
+    "img": "img/11.webp"
+   },
+   {
+    "title": "Византия",
+    "collection": "Византия",
+    "desc": "Летняя кухня в изразцовой облицовке Византия от CeramicaDecor",
+    "price_ceramic": 830000,
+    "price_turnkey": 2497000,
+    "url": "https://ceramicadecor.ru/izraztsovye-pechi/cd_letnyaya-kuhnya-v-izraztsovoj-oblitsovke-vizantiya/",
+    "photo": "xl/media/image23.jpg",
+    "row": 13,
+    "img": "img/12.webp"
+   },
+   {
+    "title": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kom",
+    "collection": "Византия",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_oblitsovka-pechnogo-kompleksa-s-vysokim-otkrytym-kaminom-izraztsami-vizantiya-7268/",
+    "price_ceramic": 7302000,
+    "price_turnkey": 9430000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_oblitsovka-pechnogo-kompleksa-s-vysokim-otkrytym-kaminom-izraztsami-vizantiya-7268/",
+    "photo": "xl/media/image112.jpg",
+    "row": 14,
+    "img": "img/13.webp"
+   },
+   {
+    "title": "Изразцовая облицовка Византия для печного комплекса",
+    "collection": "Византия",
+    "desc": "",
+    "price_ceramic": 5066000,
+    "price_turnkey": 9814000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_izraztsovaya-oblitsovka-vizantiya-dlya-pechnogo-kompleksa/",
+    "photo": "xl/media/image36.jpg",
+    "row": 15,
+    "img": "img/14.webp"
+   },
+   {
+    "title": "Азулежу",
+    "collection": "Азулежу",
+    "desc": "Мангал на кухне в изразцах из коллекции Азулежу. | CeramicaDecor",
+    "price_ceramic": 649000,
+    "price_turnkey": 1320000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_mangal-na-kuhne-v-izraztsah-iz-kollektsii-azulezhu-7094/",
+    "photo": "xl/media/image30.jpg",
+    "row": 16,
+    "img": "img/15.webp"
+   },
+   {
+    "title": "Элеганс",
+    "collection": "Элеганс",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_oblitsovka-gotovogo-pechnogo-kompleksa-s-mangalom-pechyu-i-plitoj-6514/",
+    "price_ceramic": 3014000,
+    "price_turnkey": 7560000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_oblitsovka-gotovogo-pechnogo-kompleksa-s-mangalom-pechyu-i-plitoj-6514/",
+    "photo": "xl/media/image113.jpg",
+    "row": 17,
+    "img": "img/16.webp"
+   },
+   {
+    "title": "Летняя кухня в изразцовой облицовке «Элеганс» со столешницей из гранит",
+    "collection": "Элеганс",
+    "desc": "Летняя кухня в изразцовой облицовке «Элеганс» со столешницей из гранита. 4100",
+    "price_ceramic": 863000,
+    "price_turnkey": 1880000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_letnyaya-kuhnya-v-izraztsovoj-oblitsovke-elegans-so-stoleshnitsej-iz-granita-4100/",
+    "photo": "xl/media/image117.jpg",
+    "row": 18,
+    "img": "img/17.webp"
+   },
+   {
+    "title": "Сценки",
+    "collection": "Сценки",
+    "desc": "Барбекю комплекс в изразцовой облицовке с художественной росписью \"Птицы\"",
+    "price_ceramic": 1759000,
+    "price_turnkey": 2560000,
+    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_barbekyu-kompleks-v-izraztsovoj-oblitsovke-s-hudozhestvennoj-rospisyu-ptitsy/",
+    "photo": "xl/media/image121.jpg",
+    "row": 19,
+    "img": "img/18.webp"
+   }
+  ]
+ },
+ "izraztsy": {
+  "sheet": "Изразцы",
+  "items": [
+   {
+    "title": "Изразец с медальоном под сюжетную роспись (кабан)",
+    "collection": "Камея",
+    "desc": "Арт. 77133/52089/11647",
+    "price_ceramic": 8545,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/raspisnye-izraztsy/cd_izrazets-s-dekorativnoj-rospisyu-kaban-kollektsii-kameya-art-77133-52089-11647/",
+    "img": "img/001.webp",
+    "photos": [
+     "img/001.webp",
+     "img/001-2.webp",
+     "img/001-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "painted",
+    "row": 1
+   },
+   {
+    "title": "Изразец с лепным рельефом 200х200 Русская Этника",
+    "collection": "Камея",
+    "desc": "Арт. 77880/50555/11841",
+    "price_ceramic": 10112,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-s-lepnym-relefom-ptitsa-s-krasnym-fonom-20h20-kollektsii-russkaya-etnika-art-77880-50555-11841/",
+    "img": "img/002.webp",
+    "photos": [
+     "img/002.webp",
+     "img/002-2.webp",
+     "img/002-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 2
+   },
+   {
+    "title": "Изразец в окантовке Тюльпан с росписью Прованс",
+    "collection": "Камея",
+    "desc": "Арт. 77079/51259/11828",
+    "price_ceramic": 7777,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/provans/cd_izrazets-s-rospisyu-provans-v-kvadratnoj-okantovke-s-risunkom-tsvetka-kollektsii-tyulpan-art-77079-51259-11828/",
+    "img": "img/003.webp",
+    "photos": [
+     "img/003.webp",
+     "img/003-2.webp",
+     "img/003-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "painted",
+    "row": 3
+   },
+   {
+    "title": "Изразец с декоративным рельефом Архив",
+    "collection": "Камея",
+    "desc": "Арт. 71060/53537",
+    "price_ceramic": 1476,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/zelenye-izraztsy/cd_izrazets-s-dekorativnym-relfom-ptitsy-v-zelenom-tsvete-art71060-53537/",
+    "img": "img/004.webp",
+    "photos": [
+     "img/004.webp",
+     "img/004-2.webp",
+     "img/004-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "",
+    "row": 4
+   },
+   {
+    "title": "Изразец с синей сюжетной росписью (в лес по дрова)",
+    "collection": "Камея",
+    "desc": "Арт. 77133/52136/11737-28",
+    "price_ceramic": 10745,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/izraztsy-russkie/cd_russkij-izrazets-s-syuzhetnoj-rospisyu-les-kollektsii-kameya-art-77133-52136-11737-28/",
+    "img": "img/005.webp",
+    "photos": [
+     "img/005.webp",
+     "img/005-2.webp",
+     "img/005-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 5
+   },
+   {
+    "title": "Изразец с рельефными тюльпанами Тюльпан",
+    "collection": "Камея",
+    "desc": "Арт. 77073/50565",
+    "price_ceramic": 3313,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/zelenye-izraztsy/cd_izrazets-s-relefnym-uzorom-v-vide-tyulpanov-kollektsii-tyulpan-art-77073-50565/",
+    "img": "img/006.webp",
+    "photos": [
+     "img/006.webp",
+     "img/006-2.webp",
+     "img/006-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "plain",
+    "row": 6
+   },
+   {
+    "title": "Изразец с румпой и лепным рельефом 100х100х15 мм",
+    "collection": "Камея",
+    "desc": "Арт. 75097/53500/11968-1/r",
+    "price_ceramic": 1899,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/izraztsy-s-rumpoj/cd_izrazets-s-lepnym-relefom-i-rumpoj-v-zelenom-tsvete-i-krasnoj-rospisyu-s-okantovkoj-kollektsii-pechvork-4779-4788-art-75097r-53500-11968-1/",
+    "img": "img/007.webp",
+    "photos": [
+     "img/007.webp",
+     "img/007-2.webp",
+     "img/007-3.webp"
+    ],
+    "size": "100x100",
+    "surface": "relief",
+    "kind": "",
+    "row": 7
+   },
+   {
+    "title": "Изразец с рельефными птичками и ягодами Птички",
+    "collection": "Камея",
+    "desc": "Арт. 77012/50555/11831",
+    "price_ceramic": 6772,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-s-relefnymi-ptitsami-v-temno-sinej-rospisi-kollektsii-ptitsy-200h200-art-77012-50555-11831/",
+    "img": "img/008.webp",
+    "photos": [
+     "img/008.webp",
+     "img/008-2.webp",
+     "img/008-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 8
+   },
+   {
+    "title": "Изразец гладкий Универсальный",
+    "collection": "Камея",
+    "desc": "Арт. 70012/52089/11507-1",
+    "price_ceramic": 1485,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_belyj-gladkij-izrazets-v-lazurnoj-rospisi-uzor-kollektsii-universal-art-70012-52089-11507-1/",
+    "img": "img/009.webp",
+    "photos": [
+     "img/009.webp",
+     "img/009-2.webp",
+     "img/009-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "smooth",
+    "kind": "colored",
+    "row": 9
+   },
+   {
+    "title": "Изразец с лепным рельефом Сувенир",
+    "collection": "Камея",
+    "desc": "Арт. 78032/52200/12006",
+    "price_ceramic": 4949,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/yaroslavskie-izraztsy/cd_izrazets-s-lepnoj-ptitsej-zelenogo-tsveta-kollektsii-suvenir-art-78032-52200-12006/",
+    "img": "img/010.webp",
+    "photos": [
+     "img/010.webp",
+     "img/010-2.webp",
+     "img/010-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "",
+    "row": 10
+   },
+   {
+    "title": "Изразец в окантовке Универсал",
+    "collection": "Камея",
+    "desc": "Арт. 76117/50485",
+    "price_ceramic": 1334,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/odnotonnye-izraztsy/cd_izrazets-gladkij-v-korichnevom-tsvete-s-okantovkoj-kollektsii-universal-art-76117-50485/",
+    "img": "img/011.webp",
+    "photos": [
+     "img/011.webp",
+     "img/011-2.webp"
+    ],
+    "size": "150x150",
+    "surface": "smooth",
+    "kind": "plain",
+    "row": 11
+   },
+   {
+    "title": "Современный изразец коллекции Сохо",
+    "collection": "Камея",
+    "desc": "Арт. 77150/50567",
+    "price_ceramic": 2864,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/soho/izraztsy-soho-v-hvojnom-tsvete/cd_sovremennyj-odnotonnyj-relefnyj-izrazets-soho-v-zelenom-tsvete-kollektsii-soho-art-77150-50567/",
+    "img": "img/012.webp",
+    "photos": [
+     "img/012.webp",
+     "img/012-2.webp",
+     "img/012-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "plain",
+    "row": 12
+   },
+   {
+    "title": "Изразец рельефный",
+    "collection": "Камея",
+    "desc": "Арт. 71048/53537",
+    "price_ceramic": 1476,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/zelenye-izraztsy/cd_izrazets-s-dekorativnym-relefom-v-vide-rozetki-v-zelenom-tsvete-art71048-53537/",
+    "img": "img/013.webp",
+    "photos": [
+     "img/013.webp",
+     "img/013-2.webp",
+     "img/013-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "",
+    "row": 13
+   },
+   {
+    "title": "Изразец гладкий 20х30 с росписью 1/2 (деревья на обрыве)",
+    "collection": "Камея",
+    "desc": "Арт. 77404/52089/11823-30/p",
+    "price_ceramic": 7807,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/gollandiya/cd_gollandskij-izrazets-10x30-s-sinej-rospisyu-s-syuzhetom-derevya-kollektsii-pechnye-200h300-art-77404-52089-11823-30/",
+    "img": "img/014.webp",
+    "photos": [
+     "img/014.webp",
+     "img/014-2.webp",
+     "img/014-3.webp"
+    ],
+    "size": "",
+    "surface": "smooth",
+    "kind": "",
+    "row": 14
+   },
+   {
+    "title": "Изразец гладкий 20х20 с росписью (летний отдых)",
+    "collection": "Камея",
+    "desc": "Арт. 77002/52089/11823-6",
+    "price_ceramic": 8396,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/gollandiya/cd_gollandskij-izrazets-s-rospisyu-v-sinem-tsvete-letnij-otdyx-20x20-kollektsii-kameya-art-77002-52089-11823-6/",
+    "img": "img/015.webp",
+    "photos": [
+     "img/015.webp",
+     "img/015-2.webp",
+     "img/015-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 15
+   },
+   {
+    "title": "Изразец гладкий 20х30 с росписью 1/2 (дерево на краю)",
+    "collection": "Камея",
+    "desc": "Арт. 77404/52089/11823-29/p",
+    "price_ceramic": 7807,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/gollandiya/cd_izrazets-10h30-s-sinej-gollandskoj-rospisyu-s-syuzhetom-derevo-kollektsii-pechnye-200h300-art-77404-52089-11823-29/",
+    "img": "img/016.webp",
+    "photos": [
+     "img/016.webp",
+     "img/016-2.webp",
+     "img/016-3.webp"
+    ],
+    "size": "",
+    "surface": "smooth",
+    "kind": "",
+    "row": 16
+   },
+   {
+    "title": "Изразец с декоративным рельефом Архив",
+    "collection": "Камея",
+    "desc": "Арт. 71057/53537",
+    "price_ceramic": 1476,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/zelenye-izraztsy/cd_izrazets-s-dekorativnym-relefom-ptichki-v-zelenom-tsvete-art71057-53537/",
+    "img": "img/017.webp",
+    "photos": [
+     "img/017.webp",
+     "img/017-2.webp",
+     "img/017-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "",
+    "row": 17
+   },
+   {
+    "title": "Изразец с художественной росписью (Свиристель)",
+    "collection": "Камея",
+    "desc": "Арт. 77133/52150/11817-3",
+    "price_ceramic": 8545,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/raspisnye-izraztsy/cd_izrazets-s-syuzhetnoj-rospisyu-sviristel-kollektsii-kameya-art-77133-52150-11817-3/",
+    "img": "img/018.webp",
+    "photos": [
+     "img/018.webp",
+     "img/018-2.webp",
+     "img/018-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 18
+   },
+   {
+    "title": "Изразец цветной с лепным рельефом",
+    "collection": "Камея",
+    "desc": "Арт. 71034/50555/12264",
+    "price_ceramic": 3891,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-relefnyj-v-zhelto-sinej-rospisi-art71034-50555-11934/",
+    "img": "img/019.webp",
+    "photos": [
+     "img/019.webp",
+     "img/019-2.webp",
+     "img/019-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 19
+   },
+   {
+    "title": "Изразец гладкий 20х20 с росписью 1/2 (дорога)",
+    "collection": "Камея",
+    "desc": "Арт. 77002/52089/11823-18/p",
+    "price_ceramic": 4922,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/gollandiya/cd_gollandskij-izrazets-10x20-s-sinej-rospisyu-s-syuzhetom-doroga-kollektsii-pechnye-200h300-art-77404-52089-11823-18/",
+    "img": "img/020.webp",
+    "photos": [
+     "img/020.webp",
+     "img/020-2.webp",
+     "img/020-3.webp"
+    ],
+    "size": "",
+    "surface": "smooth",
+    "kind": "",
+    "row": 20
+   },
+   {
+    "title": "Изразец для фасада с лепным рельефом 300х300х20",
+    "collection": "Камея",
+    "desc": "Арт. 77871/50555/11924",
+    "price_ceramic": 31128,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-s-lepnym-relefom-serogo-tsveta-i-sinej-rospisyu-art77871-50555-11924/",
+    "img": "img/021.webp",
+    "photos": [
+     "img/021.webp",
+     "img/021-2.webp",
+     "img/021-3.webp"
+    ],
+    "size": "300x300",
+    "surface": "relief",
+    "kind": "",
+    "row": 21
+   },
+   {
+    "title": "Изразец с лепной лилией Арт Нуво в Лазурной росписи",
+    "collection": "Камея",
+    "desc": "Арт. 71023/52097/11507",
+    "price_ceramic": 4230,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-s-lepnoj-liliej-v-goluboj-rospisi-kollektsii-art-nuvo-art-71023-52097-11507/",
+    "img": "img/022.webp",
+    "photos": [
+     "img/022.webp",
+     "img/022-2.webp",
+     "img/022-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 22
+   },
+   {
+    "title": "Угол гладкий с 3-х сторонним кантом Тюльпан",
+    "collection": "Камея",
+    "desc": "Арт. 77064/52151/12020",
+    "price_ceramic": 12925,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/uglovye-izraztsy/cd_izrazets-uglovoj-gladkij-s-3-h-storonnim-kantom-kollektsii-tyulpan-art-77064-52151-12020/",
+    "img": "img/023.webp",
+    "photos": [
+     "img/023.webp",
+     "img/023-2.webp",
+     "img/023-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 23
+   },
+   {
+    "title": "Изразец Прованс с роспись (На базар)",
+    "collection": "Камея",
+    "desc": "Арт. 77133/52089/11736",
+    "price_ceramic": 10745,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/gollandiya/cd_gollandskij-izrazets-s-goluboj-rospisyu-s-syuzhetom-na-bazar-kollektsii-kameya-art-77133-52089-11736/",
+    "img": "img/024.webp",
+    "photos": [
+     "img/024.webp",
+     "img/024-2.webp",
+     "img/024-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "painted",
+    "row": 24
+   },
+   {
+    "title": "Изразец Пэчворк с лепным рельефом",
+    "collection": "Камея",
+    "desc": "Арт. 71037/50555/12145",
+    "price_ceramic": 4222,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_relefnyj-izrazets-s-hudozhestvennoj-rospisyu-s-sinim-fonom-kollektsii-pechvork-art-71037-50555-12145/",
+    "img": "img/025.webp",
+    "photos": [
+     "img/025.webp",
+     "img/025-2.webp",
+     "img/025-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 25
+   },
+   {
+    "title": "Изразец угловой с лепным рельефом Венская",
+    "collection": "Камея",
+    "desc": "Арт. 77920/51261",
+    "price_ceramic": 10558,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/uglovye-izraztsy/cd_izrazets-uglovoj-s-lepnym-relefom-kollektsii-venskaya-art-77920-51261/",
+    "img": "img/026.webp",
+    "photos": [
+     "img/026.webp",
+     "img/026-2.webp",
+     "img/026-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "plain",
+    "row": 26
+   },
+   {
+    "title": "Изразец цветной Пэчворк",
+    "collection": "Камея",
+    "desc": "Арт. 71017/50555/12264",
+    "price_ceramic": 4341,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-s-lepnym-dekorom-v-rospisi-zheltogo-tsvete-kollektsii-pechvork-art-71017-50555-11934/",
+    "img": "img/027.webp",
+    "photos": [
+     "img/027.webp",
+     "img/027-2.webp",
+     "img/027-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 27
+   },
+   {
+    "title": "Изразец рельефный",
+    "collection": "Камея",
+    "desc": "Арт. 71044/53537",
+    "price_ceramic": 1428,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/zelenye-izraztsy/cd_izrazets-s-dekorativnym-uzornym-relefom-v-zelenom-tsvete-art71044-53537/",
+    "img": "img/028.webp",
+    "photos": [
+     "img/028.webp",
+     "img/028-2.webp",
+     "img/028-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "",
+    "row": 28
+   },
+   {
+    "title": "Изразец с лепным рельефом Птички",
+    "collection": "Камея",
+    "desc": "Арт. 77392/52089/11743",
+    "price_ceramic": 4928,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-s-relefom-s-sinej-rospisyu-kollektsii-ptitsy-200h200-art-77392-52089-11743/",
+    "img": "img/029.webp",
+    "photos": [
+     "img/029.webp",
+     "img/029-2.webp",
+     "img/029-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 29
+   },
+   {
+    "title": "Изразец цветной Сувенир (грифон). Палитра: Зеленая",
+    "collection": "Камея",
+    "desc": "Арт. 71146/50555/11940-2",
+    "price_ceramic": 3891,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/drevnerusskie-izraztsy/cd_izrazets-v-drevnerusskom-stile-s-risunkom-v-zelenom-tsvete-15h15-kollektsii-suvenir-art-71146-50555-11940-2/",
+    "img": "img/030.webp",
+    "photos": [
+     "img/030.webp",
+     "img/030-2.webp",
+     "img/030-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "",
+    "row": 30
+   },
+   {
+    "title": "Изразец с сюжетной росписью Прованс (Полевые Гвоздики)",
+    "collection": "Камея",
+    "desc": "Арт. 77133/52150/11828-11",
+    "price_ceramic": 8545,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/provans/cd_izrazets-provans-s-risunkom-gvozdik-v-okantovke-kollektsii-kameya-art-77133-52150-11828-11/",
+    "img": "img/031.webp",
+    "photos": [
+     "img/031.webp",
+     "img/031-2.webp",
+     "img/031-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 31
+   },
+   {
+    "title": "Угол в окантовке Универсал",
+    "collection": "Камея",
+    "desc": "Арт. 76150/50485",
+    "price_ceramic": 3303,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/uglovye-izraztsy/cd_izrazets-uglovoj-v-relefnoj-okantovke-korichnevogo-tsveta-kollektsii-universal-art-76150-50485/",
+    "img": "img/032.webp",
+    "photos": [
+     "img/032.webp",
+     "img/032-2.webp"
+    ],
+    "size": "150x150",
+    "surface": "smooth",
+    "kind": "plain",
+    "row": 32
+   },
+   {
+    "title": "Изразец с рельефными птичками и ягодами Птички",
+    "collection": "Камея",
+    "desc": "Арт. 71012/52090/11734",
+    "price_ceramic": 4227,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-s-lepnym-dekorom-ptitsa-yarkogo-zheltogo-tsveta-kollektsii-ptichki-150h150-art-71012-52090-11734/",
+    "img": "img/033.webp",
+    "photos": [
+     "img/033.webp",
+     "img/033-2.webp",
+     "img/033-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 33
+   },
+   {
+    "title": "Изразец с сюжетной росписью Прованс (Букет Лаванды)",
+    "collection": "Камея",
+    "desc": "Арт. 77133/52150/11828-3",
+    "price_ceramic": 8545,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/provans/cd_izrazets-provans-s-okantovkoj-s-risunkom-buketa-lovandy-kollektsii-kameya-art-77133-52150-11828-3/",
+    "img": "img/034.webp",
+    "photos": [
+     "img/034.webp",
+     "img/034-2.webp",
+     "img/034-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 34
+   },
+   {
+    "title": "Изразец h300 мм с синей росписью (хорошая погода)",
+    "collection": "Камея",
+    "desc": "Арт. 77404/52136/12119-7",
+    "price_ceramic": 12609,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/gollandiya/cd_izrazets-gladkij-v-syuzhetnoj-gollandskoj-rospisi-sinego-tsveta-kollektsii-pechnye-200h300-art-77404-52136-12119-7/",
+    "img": "img/035.webp",
+    "photos": [
+     "img/035.webp",
+     "img/035-2.webp",
+     "img/035-3.webp"
+    ],
+    "size": "",
+    "surface": "smooth",
+    "kind": "",
+    "row": 35
+   },
+   {
+    "title": "Изразец гладкий 20х20 с росписью (водопой)",
+    "collection": "Камея",
+    "desc": "Арт. 77002/52089/11823-5",
+    "price_ceramic": 8396,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/gollandiya/cd_gollandskij-izrazets-s-rospisyu-v-sinem-tsvete-vodopoj-20x20-kollektsii-kameya-art-77002-52089-11823-5/",
+    "img": "img/036.webp",
+    "photos": [
+     "img/036.webp",
+     "img/036-2.webp",
+     "img/036-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 36
+   },
+   {
+    "title": "Изразец с лепным рельефом Пэчворк",
+    "collection": "Камея",
+    "desc": "Арт. 71036/52089/11443",
+    "price_ceramic": 4024,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-s-relefnym-uzorom-golubogo-tsveta-kollektsii-pechvork-art-71036-52089-11443/",
+    "img": "img/037.webp",
+    "photos": [
+     "img/037.webp",
+     "img/037-2.webp",
+     "img/037-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 37
+   },
+   {
+    "title": "Плитка изразцовая рельефная Азулежу 200х200х12 мм",
+    "collection": "Камея",
+    "desc": "Арт. 77641/52136/11976-1",
+    "price_ceramic": 4468,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/azulezhu/izraztsovaya-plitka-azulezhu-s-relefom/cd_plitka-izraztsovaya-relefnaya-azulezhu-200h200h12-mm-77641-52136-11976-1/",
+    "img": "img/038.webp",
+    "photos": [
+     "img/038.webp",
+     "img/038-2.webp",
+     "img/038-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "",
+    "row": 38
+   },
+   {
+    "title": "Изразец с декоративным рельефом Византия",
+    "collection": "Камея",
+    "desc": "Арт. 77457/52111",
+    "price_ceramic": 2800,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/belye-izraztsy/cd_izrazets-s-dekorativnym-relefom-vizantiya-belogo-tsveta-20x20-kollektsii-vizantiya-art-77457-52111/",
+    "img": "img/039.webp",
+    "photos": [
+     "img/039.webp",
+     "img/039-2.webp",
+     "img/039-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "plain",
+    "row": 39
+   },
+   {
+    "title": "Изразец угловой гладкий 20х30 с росписью (охотники с добычей)",
+    "collection": "Камея",
+    "desc": "Арт. 77405/52089/11823-9",
+    "price_ceramic": 21996,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/uglovye-izraztsy/cd_izrazets-uglovoj-gladkij-v-gollandskom-stile-s-sinej-rospisyu-ohotniki-s-sinej-dobychej-kollektsii-pechnye-200h300-art-77405-52089-11823-9/",
+    "img": "img/040.webp",
+    "photos": [
+     "img/040.webp",
+     "img/040-2.webp",
+     "img/040-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 40
+   },
+   {
+    "title": "Изразец с лепным рельефом Дорф",
+    "collection": "Камея",
+    "desc": "Арт. 77275/50893",
+    "price_ceramic": 5445,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/odnotonnye-izraztsy/cd_krasnyj-relefnyj-izrazets-kollektsii-dorf-art-77275-50893/",
+    "img": "img/041.webp",
+    "photos": [
+     "img/041.webp",
+     "img/041-2.webp",
+     "img/041-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "plain",
+    "row": 41
+   },
+   {
+    "title": "Изразец с румпой Арт Нуво",
+    "collection": "Камея",
+    "desc": "Арт. 71023/52092/11505/r",
+    "price_ceramic": 4230,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/izraztsy-s-rumpoj/cd_izrazets-s-s-rumpoj-v-zelenoj-rospisi-s-tsvetkom-kollektsii-art-nuvo-art-71023r-52092-11505/",
+    "img": "img/042.webp",
+    "photos": [
+     "img/042.webp",
+     "img/042-2.webp",
+     "img/042-3.webp"
+    ],
+    "size": "",
+    "surface": "",
+    "kind": "colored",
+    "row": 42
+   },
+   {
+    "title": "Изразец с лепным рельефом Птички",
+    "collection": "Камея",
+    "desc": "Арт. 71033/52089/11673",
+    "price_ceramic": 3190,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-relefnyj-v-krasno-sinej-rospisi-kollektsii-ptichki-150h150-art-71033-52089-11673/",
+    "img": "img/043.webp",
+    "photos": [
+     "img/043.webp",
+     "img/043-2.webp",
+     "img/043-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 43
+   },
+   {
+    "title": "Изразец цветной Сувенир. Палитра: Коричневая",
+    "collection": "Камея",
+    "desc": "Арт. 71144/50555/11940",
+    "price_ceramic": 3891,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/drevnerusskie-izraztsy/cd_izrazets-v-drevnerusskom-stile-relefnyj-s-obemnym-risunkom-korichnevogo-tsveta-kollektsii-suvenir-art-71144-50555-11940/",
+    "img": "img/044.webp",
+    "photos": [
+     "img/044.webp",
+     "img/044-2.webp",
+     "img/044-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "",
+    "row": 44
+   },
+   {
+    "title": "Изразец цветной Сувенир (двуглавый орел). Палитра: Коричневая",
+    "collection": "Камея",
+    "desc": "Арт. 71142/50555/11940",
+    "price_ceramic": 3891,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/drevnerusskie-izraztsy/cd_izrazets-v-drevnerusskom-stile-korichnevogo-tsveta-relefnyj-s-zheltoj-rospisyu-kollektsii-suvenir-art-71142-50555-11940/",
+    "img": "img/045.webp",
+    "photos": [
+     "img/045.webp",
+     "img/045-2.webp",
+     "img/045-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "",
+    "row": 45
+   },
+   {
+    "title": "Изразец с лепным рельефом Элеганс",
+    "collection": "Камея",
+    "desc": "Арт. 71013/50571",
+    "price_ceramic": 2208,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/odnotonnye-izraztsy/cd_izrazets-s-lepnym-relefom-v-tsvete-sapfir-kollektsii-elegans-150h150-art-71013-50571/",
+    "img": "img/046.webp",
+    "photos": [
+     "img/046.webp",
+     "img/046-2.webp",
+     "img/046-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "plain",
+    "row": 46
+   },
+   {
+    "title": "Изразец с медальоном и росписью в коричневой окантовке (воробьи)",
+    "collection": "Камея",
+    "desc": "Арт. 77133/52136/11953-2",
+    "price_ceramic": 10745,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/provans/cd_izrazets-provans-s-risunkom-ptits-v-okantovke-kollektsii-kameya-art-77133-52136-11953-2/",
+    "img": "img/047.webp",
+    "photos": [
+     "img/047.webp",
+     "img/047-2.webp",
+     "img/047-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 47
+   },
+   {
+    "title": "Изразец гладкий 20х30 с росписью 1/2 (деревенский пёс)",
+    "collection": "Камея",
+    "desc": "Арт. 77404/52089/11823-26/p",
+    "price_ceramic": 7807,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/gollandiya/cd_izrazets-10x30-s-sinej-gollandskoj-rospisyu-s-syuzhetom-sobaka-kollektsii-pechnye-200h300-art-77404-52089-11823-26/",
+    "img": "img/048.webp",
+    "photos": [
+     "img/048.webp",
+     "img/048-2.webp",
+     "img/048-3.webp"
+    ],
+    "size": "",
+    "surface": "smooth",
+    "kind": "",
+    "row": 48
+   },
+   {
+    "title": "Белый изразец с лепным рельефом Русская Этника",
+    "collection": "Камея",
+    "desc": "Арт. 77881/51200",
+    "price_ceramic": 3196,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/belye-izraztsy/cd_drevnerusskij-izrazets-s-hudozhestvennym-dekorom-v-belom-tsvete-kollektsii-russkaya-etnika-art-77881-51200/",
+    "img": "img/049.webp",
+    "photos": [
+     "img/049.webp",
+     "img/049-2.webp",
+     "img/049-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "",
+    "row": 49
+   },
+   {
+    "title": "Изразец рельефный",
+    "collection": "Камея",
+    "desc": "Арт. 71054/53537",
+    "price_ceramic": 1476,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/zelenye-izraztsy/cd_izrazets-s-dekorativnym-relefom-tsvetok-v-zelenom-tsvete-art71054-53537/",
+    "img": "img/050.webp",
+    "photos": [
+     "img/050.webp",
+     "img/050-2.webp",
+     "img/050-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "",
+    "row": 50
+   },
+   {
+    "title": "Изразец с румпой и лепным рельефом 100х100х15 мм",
+    "collection": "Камея",
+    "desc": "Арт. 75097/53500/11968/r",
+    "price_ceramic": 1899,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/izraztsy-s-rumpoj/cd_izrazets-s-lepnym-relefom-i-rumpoj-v-zheltom-tsvete-i-korichnevoj-rospisyu-s-okantovkoj-kollektsii-pechvork-4779-4788-art-75097r-53500-11968/",
+    "img": "img/051.webp",
+    "photos": [
+     "img/051.webp",
+     "img/051-2.webp",
+     "img/051-3.webp"
+    ],
+    "size": "100x100",
+    "surface": "relief",
+    "kind": "",
+    "row": 51
+   },
+   {
+    "title": "Угол изразцовый с лепным рельефом \"Ярославская майолика\"",
+    "collection": "Камея",
+    "desc": "Арт. 76014/52089/11816",
+    "price_ceramic": 5843,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/uglovye-izraztsy/cd_izrazets-uglovoj-s-dekorotivnym-relefom-v-tsvetnoj-rospisi-kollektsii-albion-art-76014-52089-11816/",
+    "img": "img/052.webp",
+    "photos": [
+     "img/052.webp",
+     "img/052-2.webp",
+     "img/052-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 52
+   },
+   {
+    "title": "Изразцовый угол с лепным рельефом Альбион",
+    "collection": "Камея",
+    "desc": "Арт. 76014/53050",
+    "price_ceramic": 3802,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/uglovye-izraztsy/cd_izrazets-uglovoj-s-lepnym-relefom-zelenogo-tsveta-kollektsii-albion-art-76014-53050/",
+    "img": "img/053.webp",
+    "photos": [
+     "img/053.webp",
+     "img/053-2.webp",
+     "img/053-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "plain",
+    "row": 53
+   },
+   {
+    "title": "Изразец с сюжетной росписью Прованс (Птички Чечетки с гнездом)",
+    "collection": "Камея",
+    "desc": "Арт. 77133/52150/11828-9",
+    "price_ceramic": 8545,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/provans/cd_izrazets-v-stile-provans-s-risunkom-ptich-v-tsvetnoj-okantovke-kollektsii-kameya-art-77133-52150-11828-9/",
+    "img": "img/054.webp",
+    "photos": [
+     "img/054.webp",
+     "img/054-2.webp",
+     "img/054-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 54
+   },
+   {
+    "title": "Изразец с лепным рельефом \"Ярославская майолика\"",
+    "collection": "Камея",
+    "desc": "Арт. 78024/52089/11816",
+    "price_ceramic": 4949,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/yaroslavskie-izraztsy/cd_izrazets-relefnyj-s-lepninoj-ptitsej-v-zheltoj-rospisi-kollektsii-suvenir-art-78024-52089-11816/",
+    "img": "img/055.webp",
+    "photos": [
+     "img/055.webp",
+     "img/055-2.webp",
+     "img/055-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 55
+   },
+   {
+    "title": "Изразец рельефный с росписью",
+    "collection": "Камея",
+    "desc": "Арт. 71029/50555/12264",
+    "price_ceramic": 3891,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-relefnyj-v-korichnevo-sinej-rospisi-art71029-50555-11934/",
+    "img": "img/056.webp",
+    "photos": [
+     "img/056.webp",
+     "img/056-2.webp",
+     "img/056-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 56
+   },
+   {
+    "title": "Изразец с лепным рельефом Элеганс",
+    "collection": "Камея",
+    "desc": "Арт. 71010/50555/11727",
+    "price_ceramic": 4351,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-s-lepnym-dekorom-tsvetok-zheltogo-tsveta-v-korichnevoj-ramke-kollektsii-elegans-150h150-art-71010-50555-11727/",
+    "img": "img/057.webp",
+    "photos": [
+     "img/057.webp",
+     "img/057-2.webp",
+     "img/057-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 57
+   },
+   {
+    "title": "Изразец с росписью Прованс (колибри)",
+    "collection": "Камея",
+    "desc": "Арт. 77133/52089/11829-3",
+    "price_ceramic": 8545,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/provans/cd_izrazets-s-rospisyu-provans-v-zelenoj-okantovke-s-risunkom-ptichki-kollektsii-kameya-art-77133-52089-11829-3/",
+    "img": "img/058.webp",
+    "photos": [
+     "img/058.webp",
+     "img/058-2.webp",
+     "img/058-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 58
+   },
+   {
+    "title": "Изразец с синей сюжетной росписью (посевной день)",
+    "collection": "Камея",
+    "desc": "Арт. 77133/52136/11737-27",
+    "price_ceramic": 10745,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/izraztsy-russkie/cd_russkij-izrazets-s-syuzhetnoj-rospisyu-den-kollektsii-kameya-art-77133-52136-11737-27/",
+    "img": "img/059.webp",
+    "photos": [
+     "img/059.webp",
+     "img/059-2.webp",
+     "img/059-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 59
+   },
+   {
+    "title": "Изразец цветной Сувенир (жарптица). Палитра: Зеленая",
+    "collection": "Камея",
+    "desc": "Арт. 71139/50555/11940",
+    "price_ceramic": 3891,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/drevnerusskie-izraztsy/cd_izrazets-v-drevnerusskom-stile-zelenogo-tsveta-s-zheltoj-rospisyu-relefnyj-kollektsii-suvenir-art-71139-50555-11940/",
+    "img": "img/060.webp",
+    "photos": [
+     "img/060.webp",
+     "img/060-2.webp",
+     "img/060-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "",
+    "row": 60
+   },
+   {
+    "title": "Изразец с декоративным рельефом Архив",
+    "collection": "Камея",
+    "desc": "Арт. 71051/53537",
+    "price_ceramic": 1476,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/zelenye-izraztsy/cd_izrazets-s-dekorativnym-relefom-uzor-v-zelenom-tsvete-art71051-53537/",
+    "img": "img/061.webp",
+    "photos": [
+     "img/061.webp",
+     "img/061-2.webp",
+     "img/061-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "",
+    "row": 61
+   },
+   {
+    "title": "Изразец с декоративным рельефом Византия",
+    "collection": "Камея",
+    "desc": "Арт. 77459/52111/11725",
+    "price_ceramic": 3615,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-v-krasnoj-okantovke-s-rospisyu-tsvetok-kollektsii-vizantiya-art-77459-52111-11725/",
+    "img": "img/062.webp",
+    "photos": [
+     "img/062.webp",
+     "img/062-2.webp",
+     "img/062-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 62
+   },
+   {
+    "title": "Плитка изразцовая рельефная Азулежу 200х200х12 мм",
+    "collection": "Камея",
+    "desc": "Арт. 77643/52136/11976-1",
+    "price_ceramic": 4468,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/azulezhu/izraztsovaya-plitka-azulezhu-s-relefom/cd_plitka-izraztsovaya-relefnaya-azulezhu-200h200h12-mm-77643-52136-11976-1/",
+    "img": "img/063.webp",
+    "photos": [
+     "img/063.webp",
+     "img/063-2.webp",
+     "img/063-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "",
+    "row": 63
+   },
+   {
+    "title": "Изразец с синей сюжетной росписью (разговор с конём)",
+    "collection": "Камея",
+    "desc": "Арт. 77133/52136/11737-34",
+    "price_ceramic": 10745,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/izraztsy-russkie/cd_russkij-izrazets-s-syuzhetnoj-rospisyu-razgovor-kollektsii-kameya-art-77133-52136-11737-34/",
+    "img": "img/064.webp",
+    "photos": [
+     "img/064.webp",
+     "img/064-2.webp",
+     "img/064-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 64
+   },
+   {
+    "title": "Плитка рельефная Азулежу 200х200х12 мм",
+    "collection": "Камея",
+    "desc": "Арт. 77643/52136/11976",
+    "price_ceramic": 4468,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/azulezhu/izraztsovaya-plitka-azulezhu-s-relefom/cd_plitka-relefnaya-azulezhu-200h200h12-mm-77643-52136-11976/",
+    "img": "img/065.webp",
+    "photos": [
+     "img/065.webp",
+     "img/065-2.webp",
+     "img/065-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "",
+    "row": 65
+   },
+   {
+    "title": "Изразец с декоративным рельефом Архив",
+    "collection": "Камея",
+    "desc": "Арт. 71152/53537",
+    "price_ceramic": 1399,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/zelenye-izraztsy/cd_izrazets-s-dekorativnym-relefom-v-zelenom-tsvete-art71152-53537/",
+    "img": "img/066.webp",
+    "photos": [
+     "img/066.webp",
+     "img/066-2.webp",
+     "img/066-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "",
+    "row": 66
+   },
+   {
+    "title": "Изразец с лепным рельефом Птички",
+    "collection": "Камея",
+    "desc": "Арт. 77392/52046/12139",
+    "price_ceramic": 4928,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-s-relefom-s-oranzhevoj-rospisyu-na-zelenom-fone-kollektsii-ptitsy-200h200-art-77392-52046-12139/",
+    "img": "img/067.webp",
+    "photos": [
+     "img/067.webp",
+     "img/067-2.webp",
+     "img/067-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "",
+    "row": 67
+   },
+   {
+    "title": "Изразец с медальоном под сюжетную роспись Прованс(ветряная мельница)",
+    "collection": "Камея",
+    "desc": "Арт. 77133/52089/11735-7",
+    "price_ceramic": 8545,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/gollandiya/cd_gollandskij-izrazets-v-sine-goluboj-rospisi-s-syuzhetom-vetryanaya-melnitsa-kollektsii-kameya-art-77133-52089-11735-7/",
+    "img": "img/068.webp",
+    "photos": [
+     "img/068.webp",
+     "img/068-2.webp",
+     "img/068-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 68
+   },
+   {
+    "title": "Угол левый к плитке в форме треугольника Маджестик",
+    "collection": "Камея",
+    "desc": "Арт. 77231/51241",
+    "price_ceramic": 1799,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/uglovye-izraztsy/cd_izrazets-treugolnyj-v-rospisi-zolotom-kollektsii-madzhestik-art-77231-51241/",
+    "img": "img/069.webp",
+    "photos": [
+     "img/069.webp",
+     "img/069-2.webp",
+     "img/069-3.webp"
+    ],
+    "size": "",
+    "surface": "",
+    "kind": "plain",
+    "row": 69
+   },
+   {
+    "title": "Изразец цветной Пэчворк",
+    "collection": "Камея",
+    "desc": "Арт. 71019/50555/12264",
+    "price_ceramic": 4341,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-s-lepnym-dekorom-zelenogo-tsveta-kollektsii-pechvork-art-71019-50555-11934/",
+    "img": "img/070.webp",
+    "photos": [
+     "img/070.webp",
+     "img/070-2.webp",
+     "img/070-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 70
+   },
+   {
+    "title": "Изразец с лепным рельефом Дорф",
+    "collection": "Камея",
+    "desc": "Арт. 77275/56113",
+    "price_ceramic": 5445,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/odnotonnye-izraztsy/cd_korichnevyj-izrazets-s-relefom-kollektsii-dorf-art-77275-50557/",
+    "img": "img/071.webp",
+    "photos": [
+     "img/071.webp",
+     "img/071-2.webp",
+     "img/071-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "plain",
+    "row": 71
+   },
+   {
+    "title": "Изразец гладкий с художественной синей росписью (водная тишь)",
+    "collection": "Камея",
+    "desc": "Арт. 77002/52136/12119-4",
+    "price_ceramic": 8396,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/gollandiya/cd_izrazets-gladkij-v-ramke-i-sinej-rospisyu-s-syuzhetom-vodnaya-tish-kollektsii-kameya-art-77002-52136-12119-4/",
+    "img": "img/072.webp",
+    "photos": [
+     "img/072.webp",
+     "img/072-2.webp",
+     "img/072-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 72
+   },
+   {
+    "title": "Изразец рельефный 200х250 Неаполь",
+    "collection": "Камея",
+    "desc": "Арт. 77853/52089/11824",
+    "price_ceramic": 7095,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-s-lepnym-relefom-v-zheltoj-ramke-kollektsii-neapol-art-77853-52089-11824/",
+    "img": "img/073.webp",
+    "photos": [
+     "img/073.webp",
+     "img/073-2.webp",
+     "img/073-3.webp"
+    ],
+    "size": "",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 73
+   },
+   {
+    "title": "Изразец с синей сюжетной росписью (русские гулянья)",
+    "collection": "Камея",
+    "desc": "Арт. 77133/52136/11737-35",
+    "price_ceramic": 10745,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/izraztsy-russkie/cd_russkij-izrazets-s-syuzhetnoj-rospisyu-gulyaniya-kollektsii-kameya-art-77133-52136-11737-35/",
+    "img": "img/074.webp",
+    "photos": [
+     "img/074.webp",
+     "img/074-2.webp",
+     "img/074-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 74
+   },
+   {
+    "title": "Муравленный изразец 20х20 Русская Этника",
+    "collection": "Камея",
+    "desc": "Арт. 77878/53050",
+    "price_ceramic": 3814,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/drevnerusskie-izraztsy/cd_izrazets-v-drevnerusskom-stile-relefnyj-lepnoj-syuzhetnyj-20h20-kollektsii-russkaya-etnika-art-77878-53050/",
+    "img": "img/075.webp",
+    "photos": [
+     "img/075.webp",
+     "img/075-2.webp",
+     "img/075-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "plain",
+    "row": 75
+   },
+   {
+    "title": "Изразец с росписью Прованс (Лаванда душистая)",
+    "collection": "Камея",
+    "desc": "Арт. 77133/52150/12005-7",
+    "price_ceramic": 8545,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/provans/cd_izrazets-v-stile-provans-s-risunkom-v-okantovke-lavandy-kollektsii-kameya-art-77133-52150-12005-7/",
+    "img": "img/076.webp",
+    "photos": [
+     "img/076.webp",
+     "img/076-2.webp",
+     "img/076-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 76
+   },
+   {
+    "title": "Изразец цветной с лепным рельефом 200х200 Русская Этника",
+    "collection": "Камея",
+    "desc": "Арт. 77875/50555/11841",
+    "price_ceramic": 10208,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_raznotsvetnyj-izrazets-s-lepnym-relefom-ptitsa-i-krasnym-fonom-kollektsii-russkaya-etnika-art-77875-50555-11841/",
+    "img": "img/077.webp",
+    "photos": [
+     "img/077.webp",
+     "img/077-2.webp",
+     "img/077-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 77
+   },
+   {
+    "title": "Изразец белый с рельефной розеткой Бристоль",
+    "collection": "Камея",
+    "desc": "Арт. 77181/51200",
+    "price_ceramic": 3152,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/belye-izraztsy/cd_izrazets-belyj-s-relefnoj-rozetkoj-kollektsii-bristol-art-77181-51200/",
+    "img": "img/078.webp",
+    "photos": [
+     "img/078.webp",
+     "img/078-2.webp",
+     "img/078-3.webp"
+    ],
+    "size": "180x180",
+    "surface": "relief",
+    "kind": "plain",
+    "row": 78
+   },
+   {
+    "title": "Изразец гладкий 20х30 с росписью 1/2 (водяная мельница)",
+    "collection": "Камея",
+    "desc": "Арт. 77404/52089/11823-28/p",
+    "price_ceramic": 7807,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/gollandiya/cd_gollandskij-izrazets-10x30-s-sinej-rospisyu-s-syuzhetom-vodyanaya-melnitsa-kollektsii-pechnye-200h300-art-77404-52089-11823-28/",
+    "img": "img/079.webp",
+    "photos": [
+     "img/079.webp",
+     "img/079-2.webp",
+     "img/079-3.webp"
+    ],
+    "size": "",
+    "surface": "smooth",
+    "kind": "",
+    "row": 79
+   },
+   {
+    "title": "Угол с рельефной косичкой Птички",
+    "collection": "Камея",
+    "desc": "Арт. 76012/50555/12141",
+    "price_ceramic": 4793,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/uglovye-izraztsy/cd_izrazets-uglovoj-s-relefom-kosichka-zelenogo-tsveta-s-krasnoj-rospisyu-kollektsii-ptichki-150h150-art-76012-50555-12141/",
+    "img": "img/080.webp",
+    "photos": [
+     "img/080.webp",
+     "img/080-2.webp",
+     "img/080-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 80
+   },
+   {
+    "title": "Изразец с лепным рельефом Арт Нуво в росписи Фисташковая",
+    "collection": "Камея",
+    "desc": "Арт. 71014/52091/11505",
+    "price_ceramic": 4012,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-s-lepnym-dekorom-v-zelenoj-rospisi-kollektsii-art-nuvo-art-71014-52091-11505/",
+    "img": "img/081.webp",
+    "photos": [
+     "img/081.webp",
+     "img/081-2.webp",
+     "img/081-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 81
+   },
+   {
+    "title": "Изразец с лепным рельефом \"Ярославская майолика\"",
+    "collection": "Камея",
+    "desc": "Арт. 78037/52089/11816-1",
+    "price_ceramic": 4949,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/yaroslavskie-izraztsy/cd_izrazets-s-lepnoj-ptitsej-sinego-tsveta-kollektsii-suvenir-art-78037-52089-11816-1/",
+    "img": "img/082.webp",
+    "photos": [
+     "img/082.webp",
+     "img/082-2.webp",
+     "img/082-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "",
+    "row": 82
+   },
+   {
+    "title": "Изразец для фасада 230х230х30 мм с рельефом",
+    "collection": "Камея",
+    "desc": "Арт. 78278/52144/12010",
+    "price_ceramic": 11466,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-s-lepnym-tsvetkom-v-zelenom-tsvete-230h230h30-mm-art78278-52144-12010/",
+    "img": "img/083.webp",
+    "photos": [
+     "img/083.webp",
+     "img/083-2.webp",
+     "img/083-3.webp"
+    ],
+    "size": "",
+    "surface": "relief",
+    "kind": "",
+    "row": 83
+   },
+   {
+    "title": "Изразец с современным рельефом",
+    "collection": "Камея",
+    "desc": "Арт. 74077/50509",
+    "price_ceramic": 2024,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/zelenye-izraztsy/cd_izrazets-s-lepnoj-geometriej-v-zelenom-tsvete-art74077-50509/",
+    "img": "img/084.webp",
+    "photos": [
+     "img/084.webp",
+     "img/084-2.webp",
+     "img/084-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "plain",
+    "row": 84
+   },
+   {
+    "title": "Изразец с декоративным рельефом 10х10 Нарцысс желтый",
+    "collection": "Камея",
+    "desc": "Арт. 75088/52105/11795",
+    "price_ceramic": 2968,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-10x10-s-rospisyu-i-lepnym-relefom-nartsiss-art75088-52105-11795/",
+    "img": "img/085.webp",
+    "photos": [
+     "img/085.webp",
+     "img/085-2.webp",
+     "img/085-3.webp"
+    ],
+    "size": "100x100",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 85
+   },
+   {
+    "title": "Изразец с декоративным рельефом 10х10 Лавр",
+    "collection": "Камея",
+    "desc": "Арт. 75074/52105/11781",
+    "price_ceramic": 2756,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-10x10-s-rospisyu-i-lepnym-relefom-lavr-art75074-52105-11781/",
+    "img": "img/086.webp",
+    "photos": [
+     "img/086.webp",
+     "img/086-2.webp",
+     "img/086-3.webp"
+    ],
+    "size": "100x100",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 86
+   },
+   {
+    "title": "Изразец с художественной росписью (Птицы с птенчиками)",
+    "collection": "Камея",
+    "desc": "Арт. 77133/52150/11817-5",
+    "price_ceramic": 8545,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/raspisnye-izraztsy/cd_izrazets-s-syuzhetnoj-rospisyu-ptitsy-v-korichnevom-tsvete-kollektsii-kameya-art-77133-52150-11817-5/",
+    "img": "img/087.webp",
+    "photos": [
+     "img/087.webp",
+     "img/087-2.webp",
+     "img/087-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 87
+   },
+   {
+    "title": "Изразец с декоративным рельефом Архив",
+    "collection": "Камея",
+    "desc": "Арт. 71026/53537",
+    "price_ceramic": 1476,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/zelenye-izraztsy/cd_izrazets-s-dekorativnym-uzorom-zelenogo-tsveta-art71026-53537/",
+    "img": "img/088.webp",
+    "photos": [
+     "img/088.webp",
+     "img/088-2.webp",
+     "img/088-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "",
+    "row": 88
+   },
+   {
+    "title": "Изразец с декоративным рельефом Византия",
+    "collection": "Камея",
+    "desc": "Арт. 77457/52111/11725",
+    "price_ceramic": 3625,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-v-sinej-ramke-s-uzorom-rozovogo-tsveta-kollektsii-vizantiya-art-77457-52111-11725/",
+    "img": "img/089.webp",
+    "photos": [
+     "img/089.webp",
+     "img/089-2.webp",
+     "img/089-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 89
+   },
+   {
+    "title": "Изразец с декоративным рельефом Византия",
+    "collection": "Камея",
+    "desc": "Арт. 77456/56000/12021",
+    "price_ceramic": 3506,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-s-lepnym-relefom-v-temno-sinej-okantovke-na-rozovom-fone-kollektsii-vizantiya-art-77456-56000-12021/",
+    "img": "img/090.webp",
+    "photos": [
+     "img/090.webp",
+     "img/090-2.webp",
+     "img/090-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "",
+    "row": 90
+   },
+   {
+    "title": "Русский изразец с рельефным Грифоном",
+    "collection": "Камея",
+    "desc": "Арт. 78031/53045/11284",
+    "price_ceramic": 10010,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/drevnerusskie-izraztsy/cd_drevnerusskij-izrazets-s-risunkom-grifon-kollektsii-suvenir-art-78008-53045-11284/",
+    "img": "img/091.webp",
+    "photos": [
+     "img/091.webp",
+     "img/091-2.webp",
+     "img/091-3.webp"
+    ],
+    "size": "",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 91
+   },
+   {
+    "title": "Изразец с лепным рельефом Птички",
+    "collection": "Камея",
+    "desc": "Арт. 77392/50496/12132",
+    "price_ceramic": 4928,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-s-relefom-s-tsvetnoj-rospisyu-kollektsii-ptitsy-200h200-art-77392-50496-12132/",
+    "img": "img/092.webp",
+    "photos": [
+     "img/092.webp",
+     "img/092-2.webp",
+     "img/092-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 92
+   },
+   {
+    "title": "Изразец с лепным рельефом Усадьба",
+    "collection": "Камея",
+    "desc": "Арт. 71008/52136/11954",
+    "price_ceramic": 3707,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-s-lepnym-dekorom-tsvetok-zheltogo-tsveta-na-zelenom-fone-kollektsii-usadba-art-71008-52136-11954/",
+    "img": "img/093.webp",
+    "photos": [
+     "img/093.webp",
+     "img/093-2.webp",
+     "img/093-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "",
+    "row": 93
+   },
+   {
+    "title": "Изразец с лепным рельефом Элеганс",
+    "collection": "Камея",
+    "desc": "Арт. 71010/50512",
+    "price_ceramic": 2248,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/zelenye-izraztsy/cd_izrazets-s-hudozhestvennym-relefnym-dekorom-zelenogo-tsveta-kollektsii-elegans-150h150-art-71010-50512/",
+    "img": "img/094.webp",
+    "photos": [
+     "img/094.webp",
+     "img/094-2.webp",
+     "img/094-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "plain",
+    "row": 94
+   },
+   {
+    "title": "Русский изразец с мифологической сценкой",
+    "collection": "Камея",
+    "desc": "Арт. 78020/53045/11284",
+    "price_ceramic": 5021,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/drevnerusskie-izraztsy/cd_izrazets-v-drevnerusskom-stile-s-hudozhestvennym-uzorom-kollektsii-suvenir-art-78020-53045-11284/",
+    "img": "img/095.webp",
+    "photos": [
+     "img/095.webp",
+     "img/095-2.webp",
+     "img/095-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 95
+   },
+   {
+    "title": "Изразец цветной Сувенир (двуглавый орел). Палитра: Зеленая",
+    "collection": "Камея",
+    "desc": "Арт. 71142/50555/11940-2",
+    "price_ceramic": 3891,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/drevnerusskie-izraztsy/cd_drevnerusskij-izrazets-zelenogo-tsveta-s-krasnoj-rospisyu-relefnyj-kollektsii-suvenir-art-71142-50555-11940-2/",
+    "img": "img/096.webp",
+    "photos": [
+     "img/096.webp",
+     "img/096-2.webp",
+     "img/096-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "",
+    "row": 96
+   },
+   {
+    "title": "Изразец с художественной росписью (Птицы на ветке)",
+    "collection": "Камея",
+    "desc": "Арт. 77133/52150/11817",
+    "price_ceramic": 8545,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/raspisnye-izraztsy/cd_izrazets-s-syuzhetnoj-rospisyu-ptitsy-na-vetke-kollektsii-kameya-art-77133-52150-11817/",
+    "img": "img/097.webp",
+    "photos": [
+     "img/097.webp",
+     "img/097-2.webp",
+     "img/097-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 97
+   },
+   {
+    "title": "Изразец гладкий 20х20 с росписью (заброшенный замок)",
+    "collection": "Камея",
+    "desc": "Арт. 77002/52089/11823-8",
+    "price_ceramic": 8396,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/gollandiya/cd_gollandskij-izrazets-s-rospisyu-v-sinem-tsvete-zabroshennyj-zamok-20x20-kollektsii-kameya-art-77002-52089-11823-8/",
+    "img": "img/098.webp",
+    "photos": [
+     "img/098.webp",
+     "img/098-2.webp",
+     "img/098-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 98
+   },
+   {
+    "title": "Изразец с лепным рельефом Птички",
+    "collection": "Камея",
+    "desc": "Арт. 71033/52090/11734",
+    "price_ceramic": 3190,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-relefnyj-v-krasno-zheltoj-rospisi-kollektsii-ptichki-150h150-art-71033-52090-11734/",
+    "img": "img/099.webp",
+    "photos": [
+     "img/099.webp",
+     "img/099-2.webp",
+     "img/099-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 99
+   },
+   {
+    "title": "Изразец с декоративным рельефом 10х10 Астры",
+    "collection": "Камея",
+    "desc": "Арт. 75075/52105/11782",
+    "price_ceramic": 2862,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-10x10-s-rospisyu-i-lepnym-relefom-astry-art75075-52105-11782/",
+    "img": "img/100.webp",
+    "photos": [
+     "img/100.webp",
+     "img/100-2.webp",
+     "img/100-3.webp"
+    ],
+    "size": "100x100",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 100
+   },
+   {
+    "title": "Изразец с лепным рельефом 200х200 мм Русская Этника (Зеленая окантовка)",
+    "collection": "Камея",
+    "desc": "Арт. 77874/52151/12020-2",
+    "price_ceramic": 6858,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/tsvetnye-izraztsy/cd_izrazets-s-lepnym-relefom-tsvetok-v-zelenoj-okantovke-kollektsii-russkaya-etnika-art-77874-52151-12020-2/",
+    "img": "img/101.webp",
+    "photos": [
+     "img/101.webp",
+     "img/101-2.webp",
+     "img/101-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "relief",
+    "kind": "",
+    "row": 101
+   },
+   {
+    "title": "Изразец Охота с сюжетной росписью (медведь)",
+    "collection": "Камея",
+    "desc": "Арт. 77133/52089/11660-4",
+    "price_ceramic": 10745,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/raspisnye-izraztsy/cd_izrazets-s-dekorativnoj-sinej-rospisyu-medved-kollektsii-kameya-art-77133-52089-11660-4/",
+    "img": "img/102.webp",
+    "photos": [
+     "img/102.webp",
+     "img/102-2.webp",
+     "img/102-3.webp"
+    ],
+    "size": "200x200",
+    "surface": "smooth",
+    "kind": "",
+    "row": 102
+   },
+   {
+    "title": "Изразец с насечкой Альбион",
+    "collection": "Камея",
+    "desc": "Арт. 74036/53517",
+    "price_ceramic": 1312,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/odnotonnye-izraztsy/cd_izrazets-s-lepnym-relefom-v-tsvete-baklazhan-kollektsii-albion-art-74036-53517/",
+    "img": "img/103.webp",
+    "photos": [
+     "img/103.webp",
+     "img/103-2.webp",
+     "img/103-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "",
+    "row": 103
+   },
+   {
+    "title": "Угол с насечкой Альбион",
+    "collection": "Камея",
+    "desc": "Арт. 76069/52123/11745",
+    "price_ceramic": 4322,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/uglovye-izraztsy/cd_izrazets-uglovoj-s-nasechkoj-v-belom-tsvete-s-zheltoj-rospisyu-kollektsii-albion-art-76069-52123-11745/",
+    "img": "img/104.webp",
+    "photos": [
+     "img/104.webp",
+     "img/104-2.webp",
+     "img/104-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "colored",
+    "row": 104
+   },
+   {
+    "title": "Изразец с рельефными полосами и завитками Ар Деко",
+    "collection": "Камея",
+    "desc": "Арт. 71100/51201",
+    "price_ceramic": 1328,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/izrazcy/belye-izraztsy/cd_izrazets-s-dekorativnym-relefom-polosy-v-belom-tsvete-kollektsii-ar-deko-art-71100-51201/",
+    "img": "img/105.webp",
+    "photos": [
+     "img/105.webp",
+     "img/105-2.webp",
+     "img/105-3.webp"
+    ],
+    "size": "150x150",
+    "surface": "relief",
+    "kind": "plain",
+    "row": 105
+   }
+  ]
+ },
+ "pechi-kaminy": {
+  "sheet": "Типовые печи-камины",
+  "items": [
+   {
+    "title": "Печь-камин типовая КерамикаДекор Дорф в цвете Белый Антик",
+    "collection": "",
+    "desc": "",
+    "price_ceramic": 439000,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/tipovye-kaminy-i-pechi-v-nalichii/cd_pech-kamin-tipovaya-keramikadekor-dorf-v-tsvete-belyj-antik/",
+    "photo": "xl/media/image41.png",
+    "row": 1,
+    "img": "img/01.webp"
+   },
+   {
+    "title": "Печь-камин типовая КерамикаДекор Дорф в цвете Горький Шоколад",
+    "collection": "",
+    "desc": "Печь-камин типовая КерамикаДекор Дорф в цвете Белый Антик",
+    "price_ceramic": 439000,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/tipovye-kaminy-i-pechi-v-nalichii/cd_pech-kamin-tipovaya-keramikadekor-dorf-v-tsvete-belyj-antik-2/",
+    "photo": "xl/media/image19.jpg",
+    "row": 2,
+    "img": "img/02.webp"
+   },
+   {
+    "title": "Печь-камин типовая КерамикаДекор Дорф в цвете Муравленый",
+    "collection": "",
+    "desc": "Печь-камин типовая КерамикаДекор Дорф в цвете Белый Антик",
+    "price_ceramic": 439000,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/tipovye-kaminy-i-pechi-v-nalichii/cd_pech-kamin-tipovaya-keramikadekor-dorf-v-tsvete-belyj-antik-1/",
+    "photo": "xl/media/image47.jpg",
+    "row": 3,
+    "img": "img/03.webp"
+   },
+   {
+    "title": "Печь-камин типовая КерамикаДекор Ритм в цвете Белый Антик",
+    "collection": "",
+    "desc": "Печь-камин типовая КерамикаДекор Дорф в цвете Белый Антик",
+    "price_ceramic": 449000,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/tipovye-kaminy-i-pechi-v-nalichii/cd_pech-kamin-tipovaya-keramikadekor-dorf-v-tsvete-belyj-antik-2-1/",
+    "photo": "xl/media/image20.png",
+    "row": 4,
+    "img": "img/04.webp"
+   },
+   {
+    "title": "Печь-камин типовая КерамикаДекор Ритм в цвете Бургундия",
+    "collection": "",
+    "desc": "Печь-камин типовая КерамикаДекор Дорф в цвете Белый Антик",
+    "price_ceramic": 449000,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/tipovye-kaminy-i-pechi-v-nalichii/cd_pech-kamin-tipovaya-keramikadekor-dorf-v-tsvete-belyj-antik-2-1-1-1/",
+    "photo": "xl/media/image62.png",
+    "row": 5,
+    "img": "img/05.webp"
+   },
+   {
+    "title": "Печь-камин типовая КерамикаДекор Ритм в цвете Лазурный",
+    "collection": "",
+    "desc": "Печь-камин типовая КерамикаДекор Дорф в цвете Белый Антик",
+    "price_ceramic": 449000,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/tipovye-kaminy-i-pechi-v-nalichii/cd_pech-kamin-tipovaya-keramikadekor-dorf-v-tsvete-belyj-antik-2-1-1/",
+    "photo": "xl/media/image22.png",
+    "row": 6,
+    "img": "img/06.webp"
+   }
+  ]
+ },
+ "bannye-portaly": {
+  "sheet": "Банные порталы",
+  "items": [
+   {
+    "title": "Банный портал в изразцах с панно с художественной росписью",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-bannyh-pechej-v-interere/cd_oblitsovka-bannoj-pechi-v-predbannike-tyulpan-s-individualnym-panno-ruchnoj-rospisi/",
+    "price_ceramic": 1113067,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-bannyh-pechej-v-interere/cd_oblitsovka-bannoj-pechi-v-predbannike-tyulpan-s-individualnym-panno-ruchnoj-rospisi/",
+    "photo": "xl/media/image1.jpg",
+    "row": 1,
+    "img": "img/01.webp"
+   },
+   {
+    "title": "Банный портал в изразцовой облицовке Сувенир",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-bannyh-pechej-v-interere/cd_yarkaya-oblitsovka-bannogo-portala-izraztsami-suvenir-5426/",
+    "price_ceramic": 410384,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-bannyh-pechej-v-interere/cd_yarkaya-oblitsovka-bannogo-portala-izraztsami-suvenir-5426/",
+    "photo": "xl/media/image2.jpg",
+    "row": 2,
+    "img": "img/02.webp"
+   },
+   {
+    "title": "Банный портал в изразцовой облицовке Усадьба",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-bannyh-pechej-v-interere/cd_keramicheskij-portal-dlya-bannoj-pechi-s-izraztsami-v-medovoj-glazuri-iz-kollektsii-usadba-980/",
+    "price_ceramic": 530997,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-bannyh-pechej-v-interere/cd_keramicheskij-portal-dlya-bannoj-pechi-s-izraztsami-v-medovoj-glazuri-iz-kollektsii-usadba-980/",
+    "photo": "xl/media/image21.jpg",
+    "row": 3,
+    "img": "img/03.webp"
+   },
+   {
+    "title": "Белый изразцовый портал для банной печи в облицовке Пастораль",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-bannyh-pechej-v-interere/cd_belyj-izraztsovyj-portal-dlya-bannoj-pechi-iz-kollektsii-pastoral-2382/",
+    "price_ceramic": 381944,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-bannyh-pechej-v-interere/cd_belyj-izraztsovyj-portal-dlya-bannoj-pechi-iz-kollektsii-pastoral-2382/",
+    "photo": "xl/media/image97.jpg",
+    "row": 4,
+    "img": "img/04.webp"
+   },
+   {
+    "title": "Банный портал в изразцовой облицовке Камея с художественной росписью",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-bannyh-pechej-v-interere/cd_oblitsovka-bannoj-pechi-kollektsii-russkie-izraztsy/",
+    "price_ceramic": 613386,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-bannyh-pechej-v-interere/cd_oblitsovka-bannoj-pechi-kollektsii-russkie-izraztsy/",
+    "photo": "xl/media/image18.jpg",
+    "row": 5,
+    "img": "img/05.webp"
+   },
+   {
+    "title": "Банный портал в изразцовой облицовке с художественной росписью в стиле Прованс",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-bannyh-pechej-v-interere/cd_oblitsovka-provans-dlya-portala-bannoj-pechi/",
+    "price_ceramic": 572034,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-bannyh-pechej-v-interere/cd_oblitsovka-provans-dlya-portala-bannoj-pechi/",
+    "photo": "xl/media/image12.jpg",
+    "row": 6,
+    "img": "img/06.webp"
+   },
+   {
+    "title": "Банный портал в изразцовой облицовке Арт Нуво",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-bannyh-pechej-v-interere/cd_izraztsovyj-bannyj-portal-art-nuvo-dlya-pechi-kamenki-5402/",
+    "price_ceramic": 222779,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-bannyh-pechej-v-interere/cd_izraztsovyj-bannyj-portal-art-nuvo-dlya-pechi-kamenki-5402/",
+    "photo": "xl/media/image5.jpg",
+    "row": 7,
+    "img": "img/07.webp"
+   },
+   {
+    "title": "Банный портал в изразцовой облицовке Арт Нуво в лазурной росписи",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-bannyh-pechej-v-interere/cd_oblitsovka-bannoj-pechi-izraztsami-art-nuvo-v-lazurnoj-rospisi-5480/",
+    "price_ceramic": 281886,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-bannyh-pechej-v-interere/cd_oblitsovka-bannoj-pechi-izraztsami-art-nuvo-v-lazurnoj-rospisi-5480/",
+    "photo": "xl/media/image11.jpg",
+    "row": 8,
+    "img": "img/08.webp"
+   },
+   {
+    "title": "Банный портал в изразцовой облицовке Дорф в муравленом цвете",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-bannyh-pechej-v-interere/cd_oblitsovka-bannoj-pechi-legenda-russkij-par-24-240-s-40-izraztsami-dorf-5623/",
+    "price_ceramic": 523447,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-bannyh-pechej-v-interere/cd_oblitsovka-bannoj-pechi-legenda-russkij-par-24-240-s-40-izraztsami-dorf-5623/",
+    "photo": "xl/media/image15.jpg",
+    "row": 9,
+    "img": "img/09.webp"
+   }
+  ]
+ },
+ "russkie-pechi": {
+  "sheet": "Русские печи",
+  "items": [
+   {
+    "title": "Русская печь в облицовке изразцами в коллекции Русская Этника",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_russkaya-pech-v-oblitsovke-izraztsami-s-rumpoj-v-kollektsii-ptichki-5795/",
+    "price_ceramic": 5094314,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_russkaya-pech-v-oblitsovke-izraztsami-s-rumpoj-v-kollektsii-ptichki-5795/",
+    "photo": "xl/media/image48.jpg",
+    "row": 1,
+    "img": "img/01.webp"
+   },
+   {
+    "title": "Русская печь в облицовке Камея с художественной росписью",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_russkaya-pech-v-oblitsovke-izraztsami-s-medalonami-v-korichnevoj-okantovke-5051/",
+    "price_ceramic": 2181909,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_russkaya-pech-v-oblitsovke-izraztsami-s-medalonami-v-korichnevoj-okantovke-5051/",
+    "photo": "xl/media/image37.jpg",
+    "row": 2,
+    "img": "img/02.webp"
+   },
+   {
+    "title": "Русская печь в облицовке белыми изразцами коллекции Тюльпан",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_komplekt-izraztsov-tyulpan-dlya-otdelki-pechi/",
+    "price_ceramic": 963875,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_komplekt-izraztsov-tyulpan-dlya-otdelki-pechi/",
+    "photo": "xl/media/image69.jpg",
+    "row": 3,
+    "img": "img/03.webp"
+   },
+   {
+    "title": "Русская печь в облицовке белыми изразцами коллекции Неаполь",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_izraztsovaya-pech-so-starinnymi-izraztsami-v-oblitsovke-neapol/",
+    "price_ceramic": 1046948,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_izraztsovaya-pech-so-starinnymi-izraztsami-v-oblitsovke-neapol/",
+    "photo": "xl/media/image35.jpg",
+    "row": 4,
+    "img": "img/04.webp"
+   },
+   {
+    "title": "Русская печь с частичной облицовкой изразцами коллекции Усадьба",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_russkaya-pech-otdelannaya-shtukaturkoj-s-izraztsovymi-vstavkami-7298/",
+    "price_ceramic": 1329259,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_russkaya-pech-otdelannaya-shtukaturkoj-s-izraztsovymi-vstavkami-7298/",
+    "photo": "xl/media/image52.jpg",
+    "row": 5,
+    "img": "img/05.webp"
+   },
+   {
+    "title": "Русская печь в изразцовой облицовке Византия",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_izraztsovaya-russkaya-pech-kollektsii-vizantiya-/",
+    "price_ceramic": 2371049,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_izraztsovaya-russkaya-pech-kollektsii-vizantiya-/",
+    "photo": "xl/media/image26.jpg",
+    "row": 6,
+    "img": "img/06.webp"
+   },
+   {
+    "title": "Русская печь с частичной облицовкой изразцами коллекции Арт Нуво",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_russkaya-pech-s-lezhankoj-i-chastichnoj-oblitsovkoj-izraztsami-art-nuvo-4448/",
+    "price_ceramic": 2169294,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_russkaya-pech-s-lezhankoj-i-chastichnoj-oblitsovkoj-izraztsami-art-nuvo-4448/",
+    "photo": "xl/media/image39.jpg",
+    "row": 7,
+    "img": "img/07.webp"
+   },
+   {
+    "title": "Русская печь в изразцовой облицовке в зеленой майоликовой глазури",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_izraztsovaya-russkaya-pech-s-lezhankoj-v-zelenoj-majolikovoj-glazuri-5672/",
+    "price_ceramic": 4168727,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_izraztsovaya-russkaya-pech-s-lezhankoj-v-zelenoj-majolikovoj-glazuri-5672/",
+    "photo": "xl/media/image58.jpg",
+    "row": 8,
+    "img": "img/08.webp"
+   },
+   {
+    "title": "Русская печь в облицовке изразцами в коллекции Русская Этника",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_russkaya-pech-v-belom-tsvete-s-zelenoj-rospisyu-v-kollektsii-russkaya-etnika-6093/",
+    "price_ceramic": 2543257,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_russkaya-pech-v-belom-tsvete-s-zelenoj-rospisyu-v-kollektsii-russkaya-etnika-6093/",
+    "photo": "xl/media/image33.jpg",
+    "row": 9,
+    "img": "img/09.webp"
+   },
+   {
+    "title": "Русская печь в облицовке изразцами коллекции Тюльпан",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_russkaya-otopitelnaya-pech-v-izratsah-kollektsii-tyulpan-belogo-tsveta-4665/",
+    "price_ceramic": 3966639,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_russkaya-otopitelnaya-pech-v-izratsah-kollektsii-tyulpan-belogo-tsveta-4665/",
+    "photo": "xl/media/image51.jpg",
+    "row": 10,
+    "img": "img/10.webp"
+   },
+   {
+    "title": "Русская печь в облицовке белыми изразцами в коллекции Русская Этника",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_russkaya-pech-v-oblitsovke-belymi-izraztsami-iz-kollektsii-russkaya-etnika-7534/",
+    "price_ceramic": 2631640,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_russkaya-pech-v-oblitsovke-belymi-izraztsami-iz-kollektsii-russkaya-etnika-7534/",
+    "photo": "xl/media/image64.jpg",
+    "row": 11,
+    "img": "img/11.webp"
+   }
+  ]
+ },
+ "otopitelnye-pechi": {
+  "sheet": "Отопительные печи",
+  "items": [
+   {
+    "title": "Отопительная печь с лежанкой в облицовке Птицы с росписью ручной работы",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_komplekt-izraztsovoj-plitki-ptitsy-dlya-otdelki-pechi-dekorativnaya-palitra-individualnaya/",
+    "price_ceramic": 1370832,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-russkie-pechi-v-interere/cd_komplekt-izraztsovoj-plitki-ptitsy-dlya-otdelki-pechi-dekorativnaya-palitra-individualnaya/",
+    "photo": "xl/media/image32.jpg",
+    "row": 1,
+    "img": "img/01.webp"
+   },
+   {
+    "title": "Облицовка печи изразцами с художественной росписью Прованс",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-pechi-v-interere/cd_oblitsovka-pechi-izraztsami-s-rospisyu-provans/",
+    "price_ceramic": 295243,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-pechi-v-interere/cd_oblitsovka-pechi-izraztsami-s-rospisyu-provans/",
+    "photo": "xl/media/image43.jpg",
+    "row": 2,
+    "img": "img/02.webp"
+   },
+   {
+    "title": "Облицовка печи Арт Нуво в лазурной росписи",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-pechi-v-interere/cd_izraztsovaya-pech-art-nuvo-v-lvzurnoj-rospisi/",
+    "price_ceramic": 876023,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-pechi-v-interere/cd_izraztsovaya-pech-art-nuvo-v-lvzurnoj-rospisi/",
+    "photo": "xl/media/image46.jpg",
+    "row": 3,
+    "img": "img/03.webp"
+   },
+   {
+    "title": "Изразцовая печь в облицовке Усадьба с росписью ручной работы",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-pechi-v-interere/cd_oblitsovka-kamina-v-kollektsii-ptichki-s-pechnoj-dvertsej-5393/",
+    "price_ceramic": 912750,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-pechi-v-interere/cd_oblitsovka-kamina-v-kollektsii-ptichki-s-pechnoj-dvertsej-5393/",
+    "photo": "xl/media/image29.jpg",
+    "row": 4,
+    "img": "img/04.webp"
+   },
+   {
+    "title": "Облицовка отопительной печи в коллекции Универсал",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-pechi-v-interere/cd_oblitsovka-otopitelnoj-pechi-v-kollektsii-universal-i-topochnoj-dverkoj-vezuvij-9525/",
+    "price_ceramic": 680401,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-pechi-v-interere/cd_oblitsovka-otopitelnoj-pechi-v-kollektsii-universal-i-topochnoj-dverkoj-vezuvij-9525/",
+    "photo": "xl/media/image27.jpg",
+    "row": 5,
+    "img": "img/05.webp"
+   },
+   {
+    "title": "Облицовка отопительной печи в коллекции Птички",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-pechi-v-interere/cd_izraztsovaya-kaminopech-v-izraztsah-ptichki-palitra-rospisi-lesnaya/",
+    "price_ceramic": 785852,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-pechi-v-interere/cd_izraztsovaya-kaminopech-v-izraztsah-ptichki-palitra-rospisi-lesnaya/",
+    "photo": "xl/media/image40.jpg",
+    "row": 6,
+    "img": "img/06.webp"
+   },
+   {
+    "title": "Облицовка отопительной печи в коллекции Арт Нуво",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-pechi-v-interere/cd_izraztsovaya-pech-art-nuvo-v-krasnom-tsvete/",
+    "price_ceramic": 691369,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-pechi-v-interere/cd_izraztsovaya-pech-art-nuvo-v-krasnom-tsvete/",
+    "photo": "xl/media/image42.jpg",
+    "row": 7,
+    "img": "img/07.webp"
+   },
+   {
+    "title": "Облицовка отопительной печи в коллекции Модерн",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-pechi-v-interere/cd_oblitsovka-pechi-izraztsami-modern/",
+    "price_ceramic": 375169,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-pechi-v-interere/cd_oblitsovka-pechi-izraztsami-modern/",
+    "photo": "xl/media/image67.jpg",
+    "row": 8,
+    "img": "img/08.webp"
+   },
+   {
+    "title": "Облицовка отопительной печи в коллекции Дорф",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-pechi-v-interere/cd_oblitsovka-pechi-s-kaminnoj-dverkoj-svt-409-kollektsiya-dorf/",
+    "price_ceramic": 1368434,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-pechi-v-interere/cd_oblitsovka-pechi-s-kaminnoj-dverkoj-svt-409-kollektsiya-dorf/",
+    "photo": "xl/media/image24.jpg",
+    "row": 9,
+    "img": "img/09.webp"
+   },
+   {
+    "title": "Облицовка отопительной печи белыми изразцами коллекции Неаполь",
+    "collection": "",
+    "desc": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-pechi-v-interere/cd_otopitelnaya-pech-v-belom-tsvete-v-gladkoj-plitke-7500/",
+    "price_ceramic": 968320,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-pechi-v-interere/cd_otopitelnaya-pech-v-belom-tsvete-v-gladkoj-plitke-7500/",
+    "photo": "xl/media/image45.jpg",
+    "row": 10,
+    "img": "img/10.webp"
+   }
+  ]
+ }
+}

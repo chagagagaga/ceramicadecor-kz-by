@@ -1,0 +1,16 @@
+{
+  "name": "ceramicadecor-kz-by",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Сайты ceramicadecor.kz и ceramicadecor.by: камины, барбекю, изразцы, печи-камины из наличия. Один сборщик (build.py) → docs/kz и docs/by.",
+  "scripts": {
+    "build": "python3 build.py",
+    "start": "cd docs/kz && python3 -m http.server 8101",
+    "start:by": "cd docs/by && python3 -m http.server 8102",
+    "shot": "node tests/_shot.mjs kz && node tests/_shot.mjs by",
+    "func": "node tests/_func.mjs kz && node tests/_func.mjs by && node tests/_func2.mjs kz && node tests/_func2.mjs by"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.1"
+  }
+}

@@ -1,0 +1,1384 @@
+/* ============================================================================
+   CERAMICADECOR — ДВИЖОК ПОСАДОЧНОЙ
+   ----------------------------------------------------------------------------
+   Один файл на все семь направлений. Весь контент приходит из <slug>/data.js
+   в объекте window.LP. Здесь — только рендер и поведение.
+
+   Что делает:
+     · конфигуратор первого экрана с живой вилкой цены
+     · каталог топ-моделей с фильтрами и двумя ценами
+     · галерею с лайтбоксом, этапы, гарантии, FAQ
+     · захват заявки: модалка, встроенные формы, валидация, антиспам
+     · атрибуцию до кампании Директа и цели Яндекс.Метрики
+   ========================================================================== */
+(function () {
+  'use strict';
+
+  var P = window.LP;
+  if (!P) return;
+
+  /* ── Утилиты ───────────────────────────────────────────────────────────── */
+  function $(s, c) { return (c || document).querySelector(s); }
+  function $$(s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]; }); }
+  function fmt(n) { return Math.round(n || 0).toLocaleString('ru-RU').replace(/,/g, ' '); }
+  // Валюта приходит из данных: ₸ у Казахстана, BYN у Беларуси.
+  var CUR = P.currency || '₽';
+  function money(n) { return '<i>' + fmt(n) + '&nbsp;' + CUR + '</i>'; }
+  function num(v, d) { return Number(v).toFixed(d).replace('.', ','); }
+
+  var QS = new URLSearchParams(location.search || '');
+
+  /* Превью для сетки. Полный кадр в 1600 px нужен только лайтбоксу, который
+     показывает фото во всю высоту экрана. Копии поменьше лежат рядом,
+     в подпапках s/ (700 px), m/ (1100 px) и b/ (240 px) — путь получается
+     заменой, список превью в данных держать не нужно. Собираются они
+     скриптом tools/make_thumbs.py, там же расписано, зачем каждый уровень. */
+  function tier(src, t) {
+    // Путь бывает и своим («img/01.webp»), и чужим («../kaminy/img/03.webp»),
+    // поэтому цепляемся за начало строки или за косую черту перед папкой.
+    return String(src || '').replace(/(^|\/)img\//, '$1img/' + t + '/');
+  }
+  function thumb(src) { return tier(src, 's'); }
+  /* Плитка каталога занимает до 426 CSS-пикселей: на ретине это 852 точки,
+     на телефоне с DPR 3 — 1065. Отдаём браузеру оба размера, он возьмёт
+     нужный — на обычном экране страница не тяжелеет. */
+  // «От» уместно там, где цена зависит от размеров объекта. У готовой
+  // заводской модели она фиксированная, и приставка только путает.
+  var FROM = P.priceFrom === false ? '' : 'от ';
+  /* Отложенная загрузка кадров.
+
+     Штатный loading="lazy" отдан на откуп браузеру, и Chrome на быстром
+     соединении считает «рядом с экраном» очень широкую полосу: до первой
+     прокрутки он тянул весь каталог вместе с галереей — на отопительных
+     печах мегабайт с лишним, из которого на экране видна одна картинка.
+     Порог задаём сами: четыреста точек до появления в кадре — кадр
+     успевает загрузиться раньше, чем до него доедут.
+
+     Пока кадр не нужен, в src стоит прозрачный пиксель: с пустым src
+     часть браузеров показывает значок битой картинки. */
+  var BLANK = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+  var lazyIO = null;
+
+  function loadNow(img) {
+    if (img.dataset.srcset) { img.srcset = img.dataset.srcset; delete img.dataset.srcset; }
+    if (img.dataset.src) { img.src = img.dataset.src; delete img.dataset.src; }
+  }
+
+  function lazify(root) {
+    var imgs = $$('img[data-src]', root || document);
+    if (!imgs.length) return;
+    if (!window.IntersectionObserver) { imgs.forEach(loadNow); return; }
+    if (!lazyIO) {
+      lazyIO = new IntersectionObserver(function (list) {
+        list.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          loadNow(e.target);
+          lazyIO.unobserve(e.target);
+        });
+      }, { rootMargin: '400px 0px' });
+    }
+    imgs.forEach(function (i) { lazyIO.observe(i); });
+  }
+
+  var CARD_SIZES = P.catalogStyle === 'product'
+    ? '(min-width: 1024px) 320px, (min-width: 700px) 25vw, 50vw'
+    : '(min-width: 1024px) 430px, (min-width: 700px) 50vw, 100vw';
+  function cardSet(src) {
+    return esc(thumb(src)) + ' 700w, ' + esc(tier(src, 'm')) + ' 1100w';
+  }
+
+  /* ══ 1. АТРИБУЦИЯ ═══════════════════════════════════════════════════════
+     Запоминаем первый и последний источник, чтобы в заявке было видно,
+     из какой кампании Директа пришёл человек. Только localStorage, без cookie.
+
+     СКВОЗНАЯ АНАЛИТИКА (задача Дениса, 31.08.2026). Чтобы ЛСО могла вернуть
+     в Метрику офлайн-конверсию по этой заявке, в ней обязаны приехать:
+       · ym_client_id — ClientID Метрики (официальный getClientID,
+         cookie _ym_uid только как запасной вариант);
+       · yclid        — метка клика Директа, держим 90 дней отдельно от utm;
+       · lead_uid     — сквозной номер заявки, по нему CRM и Метрика говорят
+         об одной строке и повтор отправки не задваивается.
+     Контракт полей одинаковый с посадочной «Первого Луча» — приёмник один.
+  ═══════════════════════════════════════════════════════════════════════ */
+  var Attr = (function () {
+    var K1 = 'cd_first', K2 = 'cd_last', KV = 'cd_visits';
+    var K_CID = 'cd_ym_cid', K_YCLID = 'cd_yclid';
+    var YCLID_TTL_DAYS = 90;
+    function read(k) { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch (e) { return null; } }
+    function write(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+    var marks = {};
+    QS.forEach(function (v, k) { if (/^utm_|^y?click|yclid|gclid|roistat/i.test(k)) marks[k] = v; });
+    var snap = { marks: marks, referrer: document.referrer || '', landing: location.pathname, at: new Date().toISOString() };
+    if (!read(K1)) write(K1, snap);
+    var external = document.referrer && document.referrer.indexOf(location.hostname) === -1;
+    if (Object.keys(marks).length || external || !read(K2)) write(K2, snap);
+    var visits = (read(KV) || 0) + 1; write(KV, visits);
+
+    // ClientID Метрики: официальный вызов работает только после инициализации
+    // счётчика, поэтому ответ кэшируем — заявку могут отправить раньше.
+    // Метрики на этих сайтах нет: ClientID не собираем.
+
+    function clientId() {
+      var cached = '';
+      try { cached = localStorage.getItem(K_CID) || ''; } catch (e) {}
+      if (cached) return cached;
+      var ym = document.cookie.match(/(?:^|;\s*)_ym_uid=([^;]+)/);
+      return ym ? decodeURIComponent(ym[1]) : '';
+    }
+
+    // yclid живёт дольше utm: человек может уйти и вернуться напрямую,
+    // а конверсию Директу всё равно нужно вернуть на тот самый клик.
+    if (marks.yclid) write(K_YCLID, { v: marks.yclid, at: snap.at });
+    function yclid() {
+      var box = read(K_YCLID);
+      if (!box || !box.v) return '';
+      return (Date.now() - new Date(box.at).getTime()) / 86400000 <= YCLID_TTL_DAYS ? box.v : '';
+    }
+
+    // Один номер на загрузку страницы: если отправка сорвалась и человек
+    // нажал ещё раз, в CRM приедет тот же номер и она склеит повтор.
+    var LEAD_UID = (function () {
+      var d = new Date();
+      return 'CD-' + String(d.getFullYear()).slice(2) +
+        ('0' + (d.getMonth() + 1)).slice(-2) + ('0' + d.getDate()).slice(-2) +
+        '-' + Math.random().toString(36).slice(2, 8).toUpperCase();
+    })();
+
+    function flatUtm() {
+      var m = (read(K2) || snap).marks || {};
+      var out = {};
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function (k) { out[k] = m[k] || ''; });
+      return out;
+    }
+
+    /* ── Уход в мессенджер ──────────────────────────────────────────────
+       Кнопка мессенджера уводит человека с сайта: заявки не создаётся,
+       и вся накопленная атрибуция до CRM не доезжает — обращение приходит
+       без источника. На клике делаем две вещи.
+
+       1. В предзаполненный текст дописываем номер заявки: менеджер видит его
+          первым сообщением и находит по нему источник. Работает только
+          в WhatsApp — Telegram и MAX предзаполнить личный чат не дают,
+          там остаётся только маячок.
+       2. Шлём маячок на приёмник: ClientID, yclid, метки. Через sendBeacon —
+          он переживает уход со страницы и ничего не задерживает.
+    ─────────────────────────────────────────────────────────────────────── */
+    // Маячка и номера заявки в тексте WhatsApp здесь нет: на kz/by клик по
+    // WhatsApp проходит через попап (см. whatsapp()), как на старых сайтах.
+
+    var api = {
+      payload: function () {
+        var last = read(K2) || snap;
+        return Object.assign({
+          // ── склейка с Метрикой: без этих полей сквозной аналитики нет
+          lead_uid: LEAD_UID,
+          site_key: (P.brand.siteKey || 'cd') + '-' + P.slug,
+          ym_client_id: clientId(),
+          yclid: yclid(),
+          gclid: (last.marks && last.marks.gclid) || '',
+          first_touch: read(K1) || snap, last_touch: last, visits: visits,
+          page_url: location.href, referrer: document.referrer || '',
+          // ym_uid оставлен для обратной совместимости со старым приёмником
+          ym_uid: clientId(),
+          screen: window.innerWidth + 'x' + window.innerHeight,
+          user_agent: navigator.userAgent,
+        }, flatUtm());
+      },
+    };
+    return api;
+  })();
+
+  /* ══ 2. СЧЁТЧИК И ЦЕЛИ МЕТРИКИ ══════════════════════════════════════════
+     Счётчик поднимается здесь, из brand.metrikaId. До 03.09.2026 его на
+     посадочных не было вообще — все вызовы ym() уходили в пустоту, и ни
+     одна цель не доезжала. Без счётчика вся сквозная аналитика не начнётся:
+     офлайн-конверсии привязываются к визиту по ClientID, а ClientID выдаёт
+     именно счётчик.
+
+     Цели, которые нужно завести руками в Метрике (тип «JavaScript-событие»,
+     имена одинаковые с посадочной «Первого Луча», чтобы отчёты сходились):
+       lead_submitted, calc_started, calc_cta_click, cta_click,
+       phone_click, messenger_click, gallery_open, scroll_75
+     Офлайн-цели (тип «Целевое событие») заводятся отдельно — см. план.
+  ═══════════════════════════════════════════════════════════════════════ */
+  // Счётчика Метрики нет: реклама — Meta, события идут в пиксель (см. pixel()).
+
+  function goal(name, params) {
+    if (window.dataLayer) window.dataLayer.push(Object.assign({ event: name, product: P.slug }, params || {}));
+  }
+  /* События Meta Pixel — ровно те, что стояли на старых сайтах kz/by,
+     чтобы кампании в Ads Manager продолжили учиться на тех же событиях:
+       Lead            — форма отправлена (content_name: 'Contact Form')
+       WhatsAppIntent  — клик по WhatsApp (custom)
+       Lead            — подтвердил переход в WhatsApp ('WhatsApp Confirmed Open')
+       ViewContent     — переход в каталог */
+  /* Параметры событий — как на старых сайтах: на .by к Lead добавлялись
+     site_domain/market/country, на .kz — нет. Оставляем как было. */
+  var PIXEL_EXTRA = P.brand.dial === '375' ? { site_domain: 'ceramicadecor.by', market: 'BY', country: 'Belarus' } : {};
+  function pixel(kind, name, params) {
+    if (typeof window.fbq !== 'function') return;
+    var p = params || {};
+    if (name === 'Lead') { var m = {}; for (var k in PIXEL_EXTRA) m[k] = PIXEL_EXTRA[k]; for (var j in p) m[j] = p[j]; p = m; }
+    try { window.fbq(kind, name, p); } catch (e) {}
+  }
+  window.LPGoal = goal;
+
+  /* ══ 3. ОТПРАВКА ЗАЯВОК ═════════════════════════════════════════════════
+     Пока боевой приёмник не подключён — форма показывает успех, но никуда
+     не отправляет, и в консоль пишется предупреждение. Так лендинг можно
+     показывать и проверять, не рискуя потерять реальную заявку.
+  ═══════════════════════════════════════════════════════════════════════ */
+  var SOURCE_LABEL = {
+    calc: 'Калькулятор', 'cta-mid': 'Форма «3D-проект и смета»', contacts: 'Форма «Задать вопрос»',
+    header: 'Кнопка в шапке', hero: 'Первый экран', card: 'Карточка каталога', 'card-detail': 'Карточка объекта',
+    burger: 'Меню', mobilebar: 'Нижняя панель',
+  };
+
+  var Lead = (function () {
+    /* Два получателя, как на старых сайтах, ни один не тронут:
+         1) send-lead.php на хостинге → Telegram-группа страны. Он ждёт
+            {text, website} и проверяет, что текст начинается с «Новая
+            заявка» — формат сообщения сохранён буква в букву.
+         2) cd-attribution.js (скрипт ЛСО) → CRM с ключом ceramicadecor_kz /
+            ceramicadecor_by, через window.submitCdAttributionLead. */
+    var ENDPOINT = P.brand.endpoint || 'send-lead.php';
+    var demo = location.protocol === 'file:' ||
+               /^(localhost|127\.0\.0\.1)$/.test(location.hostname) ||
+               /\.github\.io$/.test(location.hostname) ||
+               /(^|[?&])demo=1(&|$)/.test(location.search);
+
+    function tgText(payload) {
+      var flag = P.brand.flag || '';
+      var t = flag + ' Новая заявка с сайта ' + (P.brand.host || location.hostname) +
+        '\n\uD83D\uDC64 Имя: ' + (payload.name || '') +
+        '\n\uD83D\uDCDE Телефон: ' + (payload.phone || '');
+      t += '\n\uD83D\uDCC4 Страница: ' + document.title;
+      t += '\n\uD83D\uDCCD Источник: ' + (payload.sourceLabel || payload.source || 'Форма сайта');
+      if (payload.comment) t += '\n\u270F\uFE0F Комментарий: ' + payload.comment;
+      if (payload.quiz && payload.quiz.summary) t += '\n\uD83E\uDDEE Конфигурация: ' + payload.quiz.summary;
+      if (payload.channel) t += '\n\uD83D\uDCAC Связаться: ' + payload.channel;
+      return t;
+    }
+
+    /* ЛСО: через скрипт атрибуции (cd-attribution.js) — как на старых сайтах:
+       window.CDAttribution.submitLead(lead) сам добавит UTM, fbclid, первый визит
+       и site_key по домену. Формы НЕ помечаем data-cd-external-lead, чтобы скрипт
+       не отправлял заявку второй раз своим обработчиком. */
+    function toCrm(form, payload) {
+      var A = window.CDAttribution;
+      if (!A || typeof A.submitLead !== 'function') return;
+      var label = payload.sourceLabel || payload.source || 'Форма сайта';
+      try {
+        A.submitLead({
+          subject: 'Заявка с сайта ' + location.hostname.replace(/^www\./, '') + ' — ' + label,
+          name: payload.name || '',
+          phone: payload.phone || '',
+          comment: 'Страница: ' + document.title +
+            (payload.quiz && payload.quiz.summary ? '. Конфигурация: ' + payload.quiz.summary : '') +
+            (payload.comment ? '. ' + payload.comment : ''),
+          contact_method: 'website_form',
+        }).catch(function () {});
+      } catch (e) {}
+    }
+
+    /* Маска номера — по стране. Казахстан: +7 (XXX) XXX-XX-XX, 11 цифр,
+       «8» в начале приводим к «7». Беларусь: +375 (XX) XXX-XX-XX, 12 цифр. */
+    var DIAL = String(P.brand.dial || '7');
+    function maskPhone(el) {
+      var d = el.value.replace(/\D/g, '');
+      if (DIAL === '375') {
+        if (d.indexOf('375') !== 0) d = '375' + d.replace(/^80?/, '');
+        d = d.slice(0, 12);
+        var o = '+375';
+        if (d.length > 3) o += ' (' + d.slice(3, 5);
+        if (d.length >= 5) o += ') ' + d.slice(5, 8);
+        if (d.length >= 8) o += '-' + d.slice(8, 10);
+        if (d.length >= 10) o += '-' + d.slice(10, 12);
+        el.value = d.length > 3 ? o : (d.length ? '+375 ' : '');
+        return;
+      }
+      d = d.slice(0, 11);
+      if (d[0] === '8') d = '7' + d.slice(1);
+      if (d && d[0] !== '7') d = '7' + d;
+      d = d.slice(0, 11);
+      var o7 = '+7';
+      if (d.length > 1) o7 += ' (' + d.slice(1, 4);
+      if (d.length >= 4) o7 += ') ' + d.slice(4, 7);
+      if (d.length >= 7) o7 += '-' + d.slice(7, 9);
+      if (d.length >= 9) o7 += '-' + d.slice(9, 11);
+      el.value = d.length ? o7 : '';
+    }
+    function bindPhone(el) {
+      if (!el || el.dataset.bound) return;
+      el.dataset.bound = '1';
+      el.addEventListener('input', function () { maskPhone(el); });
+      el.addEventListener('focus', function () { if (!el.value) el.value = '+' + DIAL + ' '; });
+      el.addEventListener('blur', function () { if (el.value.replace(/\D/g, '').length < 2) el.value = ''; });
+    }
+    function status(form, text, type) {
+      var b = $('.form-status', form);
+      if (!b) return;
+      b.className = 'form-status' + (type ? ' form-status--' + type : '');
+      b.textContent = text || '';
+    }
+
+    function submit(form, extra, onOk) {
+      if (form.dataset.sending === '1') return;
+      var honey = form.querySelector('[name="website"]');
+      if (honey && honey.value) return;
+
+      var nameEl = form.querySelector('[name="name"]');
+      var phoneEl = form.querySelector('[name="phone"]');
+      if (nameEl && nameEl.value.trim().length < 2) { nameEl.focus(); status(form, 'Напишите, как к вам обращаться', 'error'); return; }
+      var NEED = DIAL === '375' ? 12 : 11;
+      if (phoneEl && phoneEl.value.replace(/\D/g, '').length !== NEED) { phoneEl.focus(); status(form, 'Проверьте номер — нужно ' + NEED + ' цифр', 'error'); return; }
+
+      var fd = {};
+      new FormData(form).forEach(function (v, k) { fd[k] = typeof v === 'string' ? v.trim() : v; });
+      delete fd.website;
+      var payload = Object.assign({
+        product: P.slug, product_title: P.title,
+        source: form.dataset.leadSource || 'form',
+        page: location.pathname, sentAt: new Date().toISOString(),
+        attribution: Attr.payload(),
+      }, fd, extra || {});
+
+      var btn = form.querySelector('[type="submit"]');
+      var label = btn ? btn.textContent : '';
+      form.dataset.sending = '1';
+      if (btn) { btn.disabled = true; btn.textContent = 'Отправляем…'; }
+      status(form, '');
+
+      // В демо-режиме заявку никуда не шлём, но кладём в window.LP_LAST_LEAD:
+      // так её видно в тестах и в консоли.
+      if (demo) window.LP_LAST_LEAD = payload;
+      payload.sourceLabel = SOURCE_LABEL[payload.source] || (P.title || 'Форма сайта');
+      var req = demo
+        ? new Promise(function (r) { setTimeout(function () { r({ ok: true }); }, 450); })
+        : fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+                 body: JSON.stringify({ text: tgText(payload), website: '' }) });
+      if (!demo) toCrm(form, payload);
+
+      req.then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        goal('lead_submitted', { source: payload.source });
+        pixel('track', 'Lead', { content_name: 'Contact Form', content_category: payload.sourceLabel });
+        form.dataset.sending = '';
+        if (typeof onOk === 'function') { onOk(payload); return; }
+        form.reset();
+        status(form, 'Заявка принята. Свяжемся в течение 30 минут.', 'ok');
+        if (btn) { btn.disabled = false; btn.textContent = label; }
+      }).catch(function () {
+        form.dataset.sending = '';
+        if (btn) { btn.disabled = false; btn.textContent = label; }
+        status(form, 'Не удалось отправить. Позвоните: ' + P.brand.phone, 'error');
+      });
+    }
+
+    function bind(form) {
+      if (form.dataset.bound) return;
+      form.dataset.bound = '1';
+      bindPhone(form.querySelector('input[type="tel"]'));
+      form.addEventListener('submit', function (e) { e.preventDefault(); submit(form); });
+    }
+    return { submit: submit, bind: bind, bindPhone: bindPhone, status: status };
+  })();
+
+  /* ══ 4. КОНФИГУРАТОР ════════════════════════════════════════════════════
+     Поля описываются декларативно в data.js. Движок сам считает вилку:
+        итог = (база + Σ ползунок×цена_за_единицу + Σ выбранные опции) × Π коэффициенты
+     Вторая цена («под ключ») — итог × turnkeyFactor, если направление её имеет.
+  ═══════════════════════════════════════════════════════════════════════ */
+  var Calc = (function () {
+    var root = $('[data-calc]');
+    if (!root || !P.quiz) return null;
+    var Q = P.quiz;
+    var state = {};
+    // MAX — основной канал связи компании, с него и начинаем.
+    var modal = null, channel = 'whatsapp';
+    // Какие раскрывашки человек открыл сам: при перерисовке они должны
+    // остаться открытыми, а закрытые — закрытыми.
+    var opened = {};
+
+    Q.fields.forEach(function (f) {
+      if (f.type === 'range') state[f.id] = f.def != null ? f.def : f.min;
+      else if (f.type === 'checks') state[f.id] = new Set((f.options || []).filter(function (o) { return o.def; }).map(function (o) { return o.id; }));
+      else {
+        // Радио стартует с варианта, помеченного default, иначе с первого.
+        var d = (f.options || []).filter(function (o) { return o.def; })[0];
+        state[f.id] = (d || (f.options && f.options[0]) || {}).id || '';
+      }
+    });
+    // стартовые значения можно задать адресом: ?<id>=<value>
+    Q.fields.forEach(function (f) {
+      var v = QS.get(f.id);
+      if (!v) return;
+      if (f.type === 'range') { var n = parseFloat(v); if (!isNaN(n)) state[f.id] = Math.min(f.max, Math.max(f.min, n)); }
+      else if (f.type !== 'checks' && (f.options || []).some(function (o) { return o.id === v; })) state[f.id] = v;
+    });
+
+    // Вариант может зависеть от другого поля: у печей-каминов палитра
+    // у каждой модели своя, и цвета другой модели человеку не показываем.
+    function shown(o) {
+      if (!o.showIf) return true;
+      return Object.keys(o.showIf).every(function (k) { return state[k] === o.showIf[k]; });
+    }
+    function visible(f) { return (f.options || []).filter(shown); }
+    // Если после смены модели выбранный цвет пропал из списка — берём
+    // первый доступный, иначе расчёт держится за невидимый вариант.
+    function settle() {
+      Q.fields.forEach(function (f) {
+        if (f.type !== 'radio' || !(f.options || []).some(function (o) { return o.showIf; })) return;
+        var vis = visible(f);
+        if (vis.length && !vis.some(function (o) { return o.id === state[f.id]; })) state[f.id] = vis[0].id;
+      });
+    }
+    // Карточка каталога, которой проиллюстрирован вариант: либо одна
+    // (card), либо своя под каждое значение другого поля (cards).
+    function cardOf(o) {
+      if (o.card != null) return o.card;
+      if (!o.cards) return null;
+      var k = Object.keys(o.cards).filter(function (key) {
+        return Object.keys(state).some(function (f) { return state[f] === key; });
+      })[0];
+      return k == null ? null : o.cards[k];
+    }
+
+    function selected(f) {
+      return visible(f).filter(function (o) {
+        return f.type === 'checks' ? state[f.id].has(o.id) : state[f.id] === o.id;
+      });
+    }
+
+    function compute() {
+      var base = Q.base || 0, k = 1, fixed = 0, noTurnkey = false;
+      Q.fields.forEach(function (f) {
+        if (f.type === 'range') base += state[f.id] * (f.pricePerUnit || 0);
+        else selected(f).forEach(function (o) {
+          base += (o.add || 0); if (o.k) k *= o.k;
+          // Готовая модель со склада стоит ровно столько — ползунки
+          // и коэффициенты к ней не применяются.
+          if (o.fixed) fixed = o.fixed;
+          // «Уже есть камин, нужна облицовка»: цены под ключ нет по смыслу.
+          if (o.noTurnkey) noTurnkey = true;
+        });
+      });
+      var main = fixed || Math.max(0, base * k);
+      return {
+        main: Math.round(main / 1000) * 1000,
+        mainMax: fixed ? fixed : Math.round(main * (Q.spread || 1.2) / 1000) * 1000,
+        turnkey: (Q.turnkeyFactor && !fixed && !noTurnkey) ? Math.round(main * Q.turnkeyFactor / 1000) * 1000 : 0,
+      };
+    }
+
+    function pick() {
+      if (!Q.matchBy) return null;
+      var val = state[Q.matchBy.field];
+      var list = P.catalog.filter(function (c) { return (c[Q.matchBy.key] || '') === val; });
+      return list[0] || null;
+    }
+
+    function rangeHtml(r) {
+      return money(r.main) + '&#8201;–&#8201;' + money(r.mainMax);
+    }
+
+    function fieldHtml(f, idx) {
+      var head = '<span class="calc__label">' + (f.step ? '<i>' + f.step + '</i>' : '') + esc(f.label) +
+        (f.type === 'range' ? '<b class="calc__value" data-val="' + f.id + '">' + num(state[f.id], f.dec || 0) + ' ' + esc(f.unit || '') + '</b>' : '') +
+        '</span>';
+
+      if (f.type === 'range') {
+        return '<div class="calc__field">' + head +
+          '<div class="calc-range">' +
+            '<input type="range" min="' + f.min + '" max="' + f.max + '" step="' + f.stepSize + '" value="' + state[f.id] + '" data-range="' + f.id + '" aria-label="' + esc(f.label) + '">' +
+            '<div class="calc-range__scale"><span>' + num(f.min, f.dec || 0) + ' ' + esc(f.unit || '') + '</span><span>' + num(f.max, f.dec || 0) + ' ' + esc(f.unit || '') + '</span></div>' +
+          '</div>' +
+          (f.hint ? '<p class="calc__hint">' + esc(f.hint) + '</p>' : '') + '</div>';
+      }
+
+      // Компактный select вместо трёх строк радио: помещается в одну
+      // строку и не растягивает калькулятор. Применяем там, где у
+      // вариантов нет ни цен, ни длинных подсказок.
+      var plain = f.type === 'radio' && (f.options || []).length > 2 &&
+                  !(f.options || []).some(function (o) { return o.add || o.card != null || o.cards || o.img; });
+      if (plain) {
+        return '<div class="calc__field">' + head +
+          '<div class="calc-select">' +
+            '<select data-select="' + f.id + '" aria-label="' + esc(f.label) + '">' +
+              (f.options || []).map(function (o) {
+                return '<option value="' + esc(o.id) + '"' + (state[f.id] === o.id ? ' selected' : '') + '>' +
+                  esc(o.label) + (o.hint ? ' — ' + esc(o.hint) : '') + '</option>';
+              }).join('') +
+            '</select>' +
+            '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+          '</div>' +
+          (f.hint ? '<p class="calc__hint">' + esc(f.hint) + '</p>' : '') + '</div>';
+      }
+
+      var opts = visible(f).map(function (o) {
+        var on = f.type === 'checks' ? state[f.id].has(o.id) : state[f.id] === o.id;
+        var ci = cardOf(o), card = ci != null && P.catalog ? P.catalog[ci] : null;
+        // Кадр не из этого каталога — например, печь-камин на посадочной
+        // каминов: свой файл и ссылка на соседнюю посадочную.
+        if (!card && o.img) card = { img: o.img, title: o.label, href: o.href || '' };
+        return '<button type="button" class="calc-opt' + (f.type === 'checks' ? '' : ' calc-opt--radio') + (on ? ' is-on' : '') +
+          (card ? ' calc-opt--pic' : '') + '" data-field="' + f.id + '" data-opt="' + o.id + '">' +
+          '<span class="calc-opt__box" aria-hidden="true"></span>' +
+          // Миниатюра — отдельная цель клика: открывает карточку объекта,
+          // а не переключает вариант. Человек смотрит, потом выбирает.
+          (card && card.img
+            ? '<span class="calc-opt__thumb"' + (ci != null ? ' data-card-open="' + ci + '"' : (card.href ? ' data-href="' + esc(card.href) + '"' : '')) +
+                ' role="link" title="' + (ci != null ? 'Открыть карточку' : 'Подробнее') + '">' +
+                '<img src="' + esc(ci != null ? tier(card.img, 'b') : card.img) + '" alt="' + esc(card.title) + '" loading="lazy" decoding="async" width="72" height="72"></span>'
+            : '') +
+          '<span class="calc-opt__body"><span class="calc-opt__name">' + esc(o.label) + '</span>' +
+          (o.hint ? '<span class="calc-opt__hint">' + esc(o.hint) + '</span>' : '') + '</span>' +
+          (o.add && !f.hidePrices ? '<span class="calc-opt__price">+' + fmt(o.add) + ' ' + CUR + '</span>' : '') +
+          '</button>';
+      }).join('');
+
+      if (f.collapsed) {
+        var n = f.type === 'checks' ? state[f.id].size : 0;
+        // Пока ничего не выбрано, в скобках подсказка: свёрнутый блок
+        // без неё выглядит как заголовок, а не как раскрывающийся список.
+        return '<details class="calc__more" data-more-id="' + f.id + '"' +
+          (opened[f.id] ? ' open' : '') + '><summary>' + esc(f.label) +
+          ' <span>' + (n ? '(' + n + ')' : '(нажмите, чтобы увидеть список)') + '</span></summary>' +
+          '<div class="calc-opts' + ((f.options || []).length > 3 ? ' calc-opts--grid' : '') + '">' + opts + '</div></details>';
+      }
+      var grid = f.type === 'checks' && (f.options || []).length > 3 ? ' calc-opts--grid' : '';
+      return '<div class="calc__field">' + head + '<div class="calc-opts' + (f.row ? ' calc-opts--row' : '') + grid + '">' + opts + '</div>' +
+        (f.hint ? '<p class="calc__hint">' + esc(f.hint) + '</p>' : '') + '</div>';
+    }
+
+    function render() {
+      var r = compute(), p = pick();
+      root.innerHTML =
+        '<div class="calc">' +
+          '<h2 class="calc__title">' + esc(Q.title) + '</h2>' +
+          '<p class="calc__sub">' + esc(Q.sub) + '</p>' +
+          Q.fields.map(fieldHtml).join('') +
+          (p ? '<div class="calc-pick">' +
+              '<span class="calc-pick__img">' + (p.img ? '<img src="' + esc(p.img) + '" alt="' + esc(p.title) + '" loading="lazy" decoding="async" width="200" height="150">' : '') + '</span>' +
+              '<span class="calc-pick__body"><span class="calc-pick__label">Похожий реализованный проект</span>' +
+              '<span class="calc-pick__name">' + esc(p.title.slice(0, 46)) + '</span>' +
+              '<span class="calc-pick__meta">облицовка от ' + fmt(p.p1) + ' ' + CUR + '</span></span>' +
+            '</div>' : '') +
+          // Цену в калькуляторе не показываем: расчёт уходит человеку
+          // в мессенджер или по телефону — так делает референс, и так
+          // разговор начинается с менеджером, а не с числом на экране.
+          // Цены при этом открыты в каталоге: страница не прячет их.
+          '<div class="calc__result">' +
+            '<p class="calc__result-note">' + esc(Q.note) + '</p>' +
+          '</div>' +
+          '<div class="calc__cta">' +
+            '<div class="calc-actions">' +
+              '<button type="button" class="btn btn--primary" data-cta="whatsapp">Прислать расчёт</button>' +
+              '<button type="button" class="btn btn--ghost" data-cta="call">Обсудить по телефону</button>' +
+            '</div>' +
+            '<div class="calc__social"><span class="calc__pulse"></span>Сегодня заказали расчёт: <b>' + orders() + '</b></div>' +
+          '</div>' +
+        '</div>';
+      bind();
+    }
+
+    function orders() {
+      var d = new Date();
+      return 4 + ((d.getFullYear() * 372 + d.getMonth() * 31 + d.getDate()) % 7) + Math.max(1, Math.round(d.getHours() / 2));
+    }
+
+    function syncFill(el) {
+      var min = +el.min, max = +el.max;
+      el.style.setProperty('--fill', (((+el.value - min) / (max - min)) * 100).toFixed(1) + '%');
+    }
+
+    function refresh() {
+      var r = compute();
+      var sum = $('[data-sum]', root); if (sum) sum.innerHTML = rangeHtml(r);
+      var sec = $('[data-second]', root);
+      if (sec && r.turnkey) sec.innerHTML = 'Под ключ с монтажом — <b>от ' + fmt(r.turnkey) + ' ' + CUR + '</b>';
+    }
+
+    function bind() {
+      $$('[data-range]', root).forEach(function (el) {
+        syncFill(el);
+        el.addEventListener('input', function () {
+          var f = Q.fields.filter(function (x) { return x.id === el.dataset.range; })[0];
+          state[el.dataset.range] = parseFloat(el.value);
+          var lbl = $('[data-val="' + el.dataset.range + '"]', root);
+          if (lbl) lbl.textContent = num(state[el.dataset.range], f.dec || 0) + ' ' + (f.unit || '');
+          syncFill(el); refresh();
+        });
+      });
+      $$('[data-more-id]', root).forEach(function (dt) {
+        dt.addEventListener('toggle', function () { opened[dt.dataset.moreId] = dt.open; });
+      });
+      $$('[data-select]', root).forEach(function (sel) {
+        sel.addEventListener('change', function () {
+          state[sel.dataset.select] = sel.value;
+          render();
+        });
+      });
+      $$('[data-card-open]', root).forEach(function (t) {
+        t.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (window.LPCard) window.LPCard(+t.dataset.cardOpen, t);
+        });
+      });
+      $$('[data-href]', root).forEach(function (t) {
+        t.addEventListener('click', function (e) {
+          e.stopPropagation();
+          window.open(t.dataset.href, '_blank', 'noopener');
+        });
+      });
+      $$('[data-opt]', root).forEach(function (b) {
+        b.addEventListener('click', function () {
+          var f = Q.fields.filter(function (x) { return x.id === b.dataset.field; })[0];
+          if (f.type === 'checks') {
+            var s = state[f.id];
+            if (s.has(b.dataset.opt)) s.delete(b.dataset.opt); else s.add(b.dataset.opt);
+            b.classList.toggle('is-on');
+            refresh();
+          } else { state[f.id] = b.dataset.opt; settle(); render(); }
+        });
+      });
+      $$('[data-cta]', root).forEach(function (b) {
+        b.addEventListener('click', function () { channel = b.dataset.cta; goal('calc_cta_click', { channel: channel }); open(); });
+      });
+    }
+
+    function summary() {
+      var out = [];
+      Q.fields.forEach(function (f) {
+        if (f.type === 'range') out.push(f.label + ': ' + num(state[f.id], f.dec || 0) + ' ' + (f.unit || ''));
+        else {
+          var s = selected(f).map(function (o) { return o.label; });
+          if (s.length) out.push(f.label + ': ' + s.join(', '));
+        }
+      });
+      return out;
+    }
+
+    function quizPayload() {
+      var r = compute(), o = { estimate_min: r.main, estimate_max: r.mainMax, estimate_turnkey: r.turnkey, channel: channel };
+      Q.fields.forEach(function (f) {
+        o[f.id] = f.type === 'checks' ? Array.from(state[f.id]).join(',') : state[f.id];
+      });
+      o.summary = summary().join('; ');
+      return o;
+    }
+
+    /* ── Модалка захвата ─────────────────────────────────────────────────── */
+    var TIMINGS = [{ id: 'now', l: 'Уже сейчас' }, { id: '1-3m', l: 'В ближайшие 1–3 мес.' }, { id: 'later', l: 'Позже, присматриваюсь' }];
+
+    function build() {
+      var w = document.createElement('div');
+      w.className = 'modal'; w.hidden = true;
+      w.innerHTML =
+        '<div class="modal__frame" role="dialog" aria-modal="true">' +
+          '<button type="button" class="modal__close" data-close aria-label="Закрыть">✕</button>' +
+          '<h3 class="modal__title" data-mtitle></h3>' +
+          '<p class="modal__sub" data-msub></p>' +
+
+          '<div class="modal__channels">' +
+            // Звонок первым: он не требует от человека ничего, кроме номера.
+            '<button type="button" class="modal__chan" data-chan="call">Звонок</button>' +
+            '<button type="button" class="modal__chan" data-chan="whatsapp">WhatsApp</button>' +
+          '</div>' +
+          '<form data-lead-source="calc" novalidate>' +
+            '<input type="text" name="website" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">' +
+            '<input type="hidden" name="channel" data-chan-input value="whatsapp">' +
+            '<input type="hidden" name="timing" data-timing-input value="">' +
+            '<label class="field"><span class="field__label">Имя</span><input class="input" type="text" name="name" placeholder="Как к вам обращаться" required></label>' +
+            '<label class="field"><span class="field__label">Телефон</span><input class="input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required inputmode="tel"></label>' +
+            '<div class="field"><span class="field__label">Когда планируете начать?</span><div class="chips-timing">' +
+              TIMINGS.map(function (t) { return '<button type="button" class="chip" data-timing="' + t.id + '">' + t.l + '</button>'; }).join('') +
+            '</div></div>' +
+            '<button type="submit" class="btn btn--primary" style="width:100%">Получить расчёт</button>' +
+            '<p class="policy">Нажимая кнопку, вы соглашаетесь с <a href="privacy.html" target="_blank" rel="noopener">политикой обработки персональных данных</a>. Спама не будет.</p>' +
+            '<div class="form-status" role="status" aria-live="polite"></div>' +
+          '</form>' +
+        '</div>';
+      document.body.appendChild(w);
+      w.addEventListener('click', function (e) { if (e.target === w) close(); });
+      $('[data-close]', w).addEventListener('click', close);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !w.hidden) close(); });
+      $$('[data-chan]', w).forEach(function (b) { b.addEventListener('click', function () { channel = b.dataset.chan; syncChan(); }); });
+      $$('[data-timing]', w).forEach(function (b) {
+        b.addEventListener('click', function () {
+          $$('[data-timing]', w).forEach(function (x) { x.classList.remove('is-on'); });
+          b.classList.add('is-on');
+          $('[data-timing-input]', w).value = b.dataset.timing;
+        });
+      });
+      var form = $('form', w);
+      Lead.bindPhone(form.querySelector('input[type="tel"]'));
+      form.dataset.bound = '1';
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        Lead.submit(form, { quiz: quizPayload() }, function () { success(w); });
+      });
+      return w;
+    }
+
+    function success(w) {
+      $('.modal__frame', w).innerHTML =
+        '<button type="button" class="modal__close" data-close aria-label="Закрыть">✕</button>' +
+        '<div class="modal__success"><b>Заявка принята</b>' +
+        '<p>Инженер свяжется в течение 30 минут в рабочее время, пришлёт расчёт и подборку похожих проектов.</p></div>';
+      $('[data-close]', w).addEventListener('click', close);
+      // Экран успеха затирает форму. Помечаем модалку отработавшей, чтобы
+      // при следующем открытии её собрали заново: иначе человек, отправивший
+      // заявку, больше не может открыть форму — syncChan падает на пустых
+      // полях, и ни одна кнопка на странице не срабатывает.
+      w.dataset.done = '1';
+    }
+
+    function syncChan() {
+      if (!modal) return;
+      $$('[data-chan]', modal).forEach(function (b) { b.classList.toggle('is-on', b.dataset.chan === channel); });
+      $('[data-chan-input]', modal).value = channel;
+      var call = channel === 'call';
+      $('[data-mtitle]', modal).textContent = call ? 'Перезвоним с расчётом' : 'Пришлём расчёт в WhatsApp';
+      $('[data-msub]', modal).textContent = call
+        ? 'Инженер позвонит в течение 30 минут в рабочее время и на словах даст вилку по вашей конфигурации.'
+        : 'Пришлём смету, 3D-эскиз и подборку похожих реализованных проектов. Ответим за 30 минут.';
+    }
+
+    function open() {
+      // Модалка после успешной отправки одноразовая: выбрасываем её и
+      // собираем чистую, чтобы повторная заявка работала.
+      if (modal && modal.dataset.done) { modal.remove(); modal = null; }
+      if (!modal) modal = build();
+      syncChan();
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      setTimeout(function () { var f = modal.querySelector('input[name="name"]'); if (f) f.focus({ preventScroll: true }); }, 60);
+    }
+    function close() { if (modal) modal.hidden = true; document.body.style.overflow = ''; }
+
+    settle();
+    render();
+    return { open: open, state: state };
+  })();
+
+  /* ══ 5. РЕНДЕР СЕКЦИЙ ═══════════════════════════════════════════════════ */
+
+  // Каталог топ-моделей с фильтрами
+  (function catalog() {
+    var grid = $('[data-cards]');
+    // Товарные снимки: карточки как на основном сайте — четыре в ряд,
+    // кадр целиком на белом, без квадратной обрезки. Включается флагом
+    // catalogStyle в data.js, остальные направления не задеты.
+    if (grid && P.catalogStyle === 'product') grid.classList.add('cards--product');
+    if (!grid || !P.catalog) return;
+    var empty = $('[data-cards-empty]');
+    var f = {};
+    (P.filters || []).forEach(function (x) { f[x.key] = 'all'; });
+    // Девять карточек ложатся ровно в три ряда по три. В товарном каталоге
+    // ряд четвёрочный, и девятая висела бы одна в третьем ряду — берём восемь.
+    // Девять карточек ложатся ровно в три ряда по три. В товарном каталоге
+    // ряд четвёрочный и позиций сотня — показываем двенадцать, три полных ряда.
+    var LIMIT = P.catalogStyle === 'product' ? 12 : 9, expanded = false;
+
+    function match(c) {
+      return (P.filters || []).every(function (x) {
+        if (f[x.key] === 'all') return true;
+        var o = x.options.filter(function (o) { return o.id === f[x.key]; })[0];
+        if (!o) return true;
+        if (o.max != null) return c.p1 <= o.max && c.p1 >= (o.min || 0);
+        return (c[x.field] || '') === o.id;
+      });
+    }
+
+    function card(c, idx) {
+      var n = (c.photos || []).length;
+      // Кадры листаются прямо в плитке: у объекта их обычно 4–6, и
+      // человеку удобнее пролистать их на месте, чем открывать лайтбокс
+      // ради второго ракурса. Стрелки — соседи кнопки-фото, а не её
+      // потомки: кнопка внутри кнопки — невалидная разметка.
+      return '<article class="card" data-card="' + idx + '">' +
+        '<div class="card__media">' +
+          '<button type="button" class="card__photo" data-gal="' + idx + '" data-start="0"' +
+            ' aria-label="' + (n > 1 ? 'Открыть галерею: ' : 'Открыть фото: ') + esc(c.title) + '">' +
+            (c.img
+              ? '<img class="card__bg" src="' + BLANK + '" data-src="' + esc(tier(c.img, 'b')) + '" alt="" aria-hidden="true" loading="lazy" decoding="async" width="600" height="600">' +
+                '<img class="card__pic" src="' + BLANK + '" data-src="' + esc(thumb(c.img)) + '" data-srcset="' + cardSet(c.img) + '" sizes="' + CARD_SIZES + '"' +
+                ' alt="' + esc(c.title) + '" loading="lazy" decoding="async" width="600" height="600">'
+              : '') +
+          '</button>' +
+          (c.collection ? '<span class="card__tag">' + esc(c.collection) + '</span>' : '') +
+          (n > 1
+            ? '<button type="button" class="card__nav card__nav--prev" data-step="-1" aria-label="Предыдущий кадр">\u2039</button>' +
+              '<button type="button" class="card__nav card__nav--next" data-step="1" aria-label="Следующий кадр">\u203a</button>'
+            : '') +
+        '</div>' +
+        '<div class="card__body">' +
+          '<h3 class="card__name">' + esc(c.title) + '</h3>' +
+          (c.desc ? '<p class="card__desc">' + esc(c.desc) + '</p>' : '') +
+          // Размер и вес — проверяемые числа: они доказывают ручную работу
+          // убедительнее любого прилагательного.
+          // Главная цена — та, за которую покупают. Обычно это «под ключ»,
+          // но у направлений вроде изразцов монтажа нет и единственная
+          // цена — за материал: тогда главной становится она, иначе цена
+          // осталась бы набрана мелким серым и потерялась.
+          // Акцент отдан цене облицовки: она ниже, и именно с неё
+          // начинается разговор. «Под ключ» стоит выше строкой помельче,
+          // чтобы не выглядеть спрятанным.
+          '<div class="card__prices">' +
+            (c.p2
+              ? '<div class="card__p2"><span>Под ключ с монтажом</span><b>' + FROM + fmt(c.p2) + ' ' + CUR + '</b></div>' +
+                '<div class="card__p1"><span>' + esc(P.priceLabel1 || 'Облицовка') + '</span><b>' + FROM + fmt(c.p1) + ' ' + CUR + '</b></div>'
+              : '<div class="card__p1 card__p1--solo"><span>' + esc(P.priceLabel1 || 'Облицовка') + '</span><b>' + FROM + fmt(c.p1) + ' ' + CUR + '</b></div>') +
+          '</div>' +
+        '</div>' +
+        '<footer class="card__foot">' +
+          '<button type="button" class="btn btn--primary" data-lead data-src="card">Рассчитать такой же</button>' +
+          '<button type="button" class="btn btn--ghost" data-more-card="' + idx + '" aria-label="Подробнее: ' + esc(c.title) + '">Подробнее</button>' +
+        '</footer>' +
+      '</article>';
+    }
+
+    function draw() {
+      var list = P.catalog.filter(match);
+      var shown = expanded ? list : list.slice(0, LIMIT);
+      // индекс в общем каталоге — чтобы галерея открыла кадры нужного объекта
+      grid.innerHTML = shown.map(function (c) { return card(c, P.catalog.indexOf(c)); }).join('');
+      lazify(grid);
+      if (empty) empty.hidden = list.length > 0;
+      var more = $('[data-cards-more]');
+      if (more) { more.hidden = expanded || list.length <= LIMIT; more.textContent = 'Показать ещё ' + (list.length - LIMIT); }
+    }
+
+    var box = $('[data-filters]');
+    if (box) box.addEventListener('click', function (e) {
+      var b = e.target.closest('.chip'); if (!b) return;
+      var group = b.closest('[data-filter-key]');
+      $$('.chip', group).forEach(function (x) { x.classList.remove('is-on'); });
+      b.classList.add('is-on');
+      f[group.dataset.filterKey] = b.dataset.v;
+      expanded = false; draw();
+    });
+    var more = $('[data-cards-more]');
+    if (more) more.addEventListener('click', function () { expanded = true; draw(); });
+
+    // Листание кадров прямо в плитке. Индекс живём в data-start кнопки-фото:
+    // её же читает лайтбокс, поэтому он открывается на том кадре, который
+    // человек досмотрел, а не всегда на первом.
+    grid.addEventListener('click', function (e) {
+      var b = e.target.closest('.card__nav');
+      if (!b) return;
+      var art = b.closest('.card'), shot = $('[data-gal]', art);
+      if (!shot) return;
+      var it = P.catalog[+shot.dataset.gal], n = (it && it.photos || []).length;
+      if (n < 2) return;
+      var i = (((+shot.dataset.start || 0) + (+b.dataset.step)) % n + n) % n;
+      shot.dataset.start = i;
+      var pic = $('.card__pic', art);
+      if (pic) { delete pic.dataset.src; delete pic.dataset.srcset; pic.srcset = cardSet(it.photos[i]); pic.src = thumb(it.photos[i]); }
+      var bg = $('.card__bg', art); if (bg) { delete bg.dataset.src; bg.src = tier(it.photos[i], 'b'); }
+    });
+
+    draw();
+  })();
+
+  /* Карточка объекта внутри лендинга.
+
+     Раньше «Подробнее» уводило на основной сайт: человек уходил со
+     страницы, где стоит форма и счётчик, и назад почти не возвращался.
+     Теперь то же содержимое — кадры, описание, габариты, обе цены —
+     открывается поверх лендинга, а кнопка расчёта остаётся под рукой. */
+  (function productCard() {
+    if (!P.catalog || !P.catalog.length) return;
+    var box = null, cur = 0, item = null, back = null;
+
+    function specRows(sp, props) {
+      var rows = [];
+      sp = sp || {};
+      if (sp.width) rows.push(['Ширина', Math.round(sp.width / 10) + ' см']);
+      if (sp.height) rows.push(['Высота', Math.round(sp.height / 10) + ' см']);
+      if (sp.depth) rows.push(['Глубина', Math.round(sp.depth / 10) + ' см']);
+      if (sp.weight) rows.push(['Вес облицовки', sp.weight + ' кг']);
+      // У товарного каталога габаритов нет, зато есть типоразмер,
+      // поверхность и тип росписи — без них карточка почти пустая.
+      (props || []).forEach(function (x) { rows.push(x); });
+      if (!rows.length) return '';
+      return '<dl class="pcard__spec">' + rows.map(function (r) {
+        return '<div><dt>' + r[0] + '</dt><dd>' + r[1] + '</dd></div>';
+      }).join('') + '</dl>';
+    }
+
+    function shots() { return (item.photos && item.photos.length) ? item.photos : (item.img ? [item.img] : []); }
+
+    function paint() {
+      var set = shots();
+      if (!set.length) return;
+      cur = (cur % set.length + set.length) % set.length;
+      $('.pcard__pic', box).src = set[cur];
+      $('.pcard__pic', box).alt = item.title;
+      $$('.pcard__thumb', box).forEach(function (b, i) {
+        b.classList.toggle('is-on', i === cur);
+      });
+      var cnt = $('.pcard__count', box);
+      if (cnt) cnt.textContent = (cur + 1) + ' / ' + set.length;
+    }
+
+    function fill() {
+      var set = shots(), many = set.length > 1;
+      var price = item.p2
+        ? '<div class="pcard__p2"><span>Под ключ с монтажом</span><b>' + FROM + fmt(item.p2) + ' ' + CUR + '</b></div>' +
+          '<div class="pcard__p1"><span>' + esc(P.priceLabel1 || 'Облицовка') + '</span><b>' + FROM + fmt(item.p1) + ' ' + CUR + '</b></div>'
+        : '<div class="pcard__p1"><span>' + esc(P.priceLabel1 || 'Облицовка') + '</span><b>' + FROM + fmt(item.p1) + ' ' + CUR + '</b></div>';
+      $('.pcard__box', box).innerHTML =
+        '<button type="button" class="pcard__close" data-close aria-label="Закрыть">✕</button>' +
+        '<div class="pcard__gal">' +
+          '<img class="pcard__pic" src="" alt="" width="1200" height="900">' +
+          (many
+            ? '<button type="button" class="pcard__nav pcard__nav--prev" data-step="-1" aria-label="Предыдущий кадр">‹</button>' +
+              '<button type="button" class="pcard__nav pcard__nav--next" data-step="1" aria-label="Следующий кадр">›</button>' +
+              '<span class="pcard__count"></span>'
+            : '') +
+          (many
+            ? '<div class="pcard__thumbs">' + set.map(function (src, i) {
+                return '<button type="button" class="pcard__thumb" data-i="' + i + '" aria-label="Кадр ' + (i + 1) + '">' +
+                  '<img src="' + esc(tier(src, 'b')) + '" alt="" loading="lazy" decoding="async" width="120" height="90"></button>';
+              }).join('') + '</div>'
+            : '') +
+        '</div>' +
+        '<div class="pcard__info">' +
+          (item.collection ? '<span class="pcard__tag">' + esc(item.collection) + '</span>' : '') +
+          '<h3 class="pcard__name" id="pcard-title">' + esc(item.title) + '</h3>' +
+          '<p class="pcard__desc">' + esc(item.full || item.desc || '') + '</p>' +
+          specRows(item.spec, item.props) +
+          '<div class="pcard__prices">' + price + '</div>' +
+          '<div class="pcard__acts">' +
+            '<button type="button" class="btn btn--primary" data-lead data-src="card-detail">Рассчитать такой же</button>' +
+          '</div>' +
+          (P.priceNote ? '<p class="pcard__note">' + esc(P.priceNote) + '</p>' : '') +
+        '</div>';
+      paint();
+    }
+
+    function make() {
+      var el = document.createElement('div');
+      el.className = 'pcard'; el.hidden = true;
+      el.innerHTML = '<div class="pcard__box" role="dialog" aria-modal="true" aria-labelledby="pcard-title"></div>';
+      document.body.appendChild(el);
+      el.addEventListener('click', function (e) {
+        if (e.target === el || e.target.closest('[data-close]')) { close(); return; }
+        var st = e.target.closest('[data-step]');
+        if (st) { cur += +st.dataset.step; paint(); return; }
+        var th = e.target.closest('.pcard__thumb');
+        if (th) { cur = +th.dataset.i; paint(); return; }
+        // Кнопка расчёта живёт в общем обработчике: закрываем карточку,
+        // чтобы форма не открывалась под ней.
+        if (e.target.closest('[data-lead]')) close();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (el.hidden) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') { cur--; paint(); }
+        if (e.key === 'ArrowRight') { cur++; paint(); }
+      });
+      return el;
+    }
+
+    function close() {
+      if (!box) return;
+      box.hidden = true;
+      document.body.style.overflow = '';
+      if (back && back.focus) back.focus();
+    }
+
+    window.LPCard = function (idx, opener) {
+      item = P.catalog[idx];
+      if (!item) return;
+      back = opener || null; cur = 0;
+      if (!box) box = make();
+      fill();
+      box.hidden = false;
+      document.body.style.overflow = 'hidden';
+      var c = $('.pcard__close', box); if (c) c.focus();
+      goal('card_detail', { item: item.title });
+    };
+  })();
+
+  // Фильтры
+  (function filters() {
+    var box = $('[data-filters]');
+    if (!box || !P.filters) return;
+    var VISIBLE_CHIPS = 4;
+    box.innerHTML = P.filters.map(function (x) {
+      var extra = x.options.length - VISIBLE_CHIPS;
+      return '<div class="filters" data-filter-key="' + x.key + '">' +
+        '<button type="button" class="chip is-on" data-v="all">' + esc(x.label) + ': все</button>' +
+        x.options.map(function (o, i) {
+          return '<button type="button" class="chip' + (i >= VISIBLE_CHIPS ? ' chip--extra' : '') + '"' +
+            (i >= VISIBLE_CHIPS ? ' hidden' : '') + ' data-v="' + o.id + '">' + esc(o.label) + '</button>';
+        }).join('') +
+        (extra > 0 ? '<button type="button" class="chip chip--more" data-more>Ещё ' + extra + '</button>' : '') +
+        '</div>';
+    }).join('');
+
+    // «Ещё N» раскрывает остальные коллекции: список из четырнадцати
+    // чипов занимал на телефоне три строки и выглядел стеной.
+    box.addEventListener('click', function (e) {
+      var m = e.target.closest('[data-more]');
+      if (!m) return;
+      var row = m.closest('.filters');
+      $$('.chip--extra', row).forEach(function (c) { c.hidden = false; });
+      m.remove();
+    });
+  })();
+
+  // Этапы, гарантии, FAQ, галерея
+  (function sections() {
+    var s = $('[data-steps]');
+    if (s && P.steps) s.innerHTML = P.steps.map(function (x, i) {
+      return '<div class="step">' +
+        (x.img ? '<div class="step__media"><img src="' + BLANK + '" data-src="assets/img/steps/' + esc(x.img) + '.webp" alt="" loading="lazy" decoding="async" width="700" height="466"></div>' : '') +
+        '<div class="step__text">' +
+          '<span class="step__n">' + (i + 1) + '</span>' +
+          '<h3>' + esc(x.title) + '</h3>' +
+          '<p>' + esc(x.text) + '</p>' +
+          (x.day ? '<span class="step__day">' + esc(x.day) + '</span>' : '') +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    var g = $('[data-guarantees]');
+    if (g && P.guarantees) g.innerHTML = P.guarantees.map(function (x) {
+      // Иконка вместо буквенной заглушки: смысл считывается до чтения.
+      return '<div class="gcard">' +
+        (x.svg ? '<span class="gcard__icon">' + x.svg + '</span>' : '') +
+        (x.b ? '<b>' + esc(x.b) + '</b>' : '') +
+        '<h3>' + esc(x.title) + '</h3><p>' + esc(x.text) + '</p></div>';
+    }).join('');
+
+    var q = $('[data-faq]');
+    if (q && P.faq) {
+      q.innerHTML = P.faq.map(function (x, i) {
+        // Длинная простыня вопросов режет конверсию: сразу видно шесть,
+        // остальные открываются кнопкой. В микроразметке остаются все.
+        return '<details class="qa' + (i >= 6 ? ' qa--extra' : '') + '"' +
+          (i === 0 ? ' open' : '') + (i >= 6 ? ' hidden' : '') +
+          '><summary><span>' + esc(x.q) + '</span><i aria-hidden="true"></i></summary><div class="qa__body"><p>' + esc(x.a) + '</p></div></details>';
+      }).join('');
+      q.addEventListener('toggle', function (e) {
+        if (e.target.tagName !== 'DETAILS' || !e.target.open) return;
+        $$('details.qa', q).forEach(function (d) { if (d !== e.target) d.open = false; });
+      }, true);
+
+      if (P.faq.length > 6) {
+        var rest = P.faq.length - 6;
+        var tail = rest % 10, tens = rest % 100;
+        var word = (tail === 1 && tens !== 11) ? 'вопрос'
+                 : (tail >= 2 && tail <= 4 && (tens < 12 || tens > 14)) ? 'вопроса' : 'вопросов';
+        var more = document.createElement('button');
+        more.type = 'button';
+        more.className = 'btn btn--ghost';
+        more.style.width = '100%';
+        more.style.marginTop = '.6rem';
+        more.textContent = 'Ещё ' + rest + ' ' + word;
+        more.addEventListener('click', function () {
+          $$('.qa--extra', q).forEach(function (d) { d.hidden = false; });
+          more.remove();
+        });
+        q.appendChild(more);
+      }
+      var ld = document.createElement('script');
+      ld.type = 'application/ld+json';
+      ld.textContent = JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage',
+        mainEntity: P.faq.map(function (x) { return { '@type': 'Question', name: x.q, acceptedAnswer: { '@type': 'Answer', text: x.a } }; }) });
+      document.head.appendChild(ld);
+    }
+
+    /* Русский текст роняет предлог на следующую строку: «и», «в», «по»
+       повисают в конце. Один проход по DOM после отрисовки приклеивает
+       короткие слова к следующему и не даёт разорвать число с единицей. */
+    function typography() {
+      var SHORT = /(^|[\s(«"])([А-Яа-яЁё]{1,2}|из|под|над|при|про|без|для|как|что|это|уже|или|его|её|их)\s+/g;
+      var UNITS = /(\d)\s+(₽|₸|BYN|м²|м³|мм|см|м|кг|шт|дней|дня|день|мес|лет|года|год|тыс|млн|°C|%)/g;
+      var SKIP = { SCRIPT: 1, STYLE: 1, TEXTAREA: 1, INPUT: 1, CODE: 1, PRE: 1 };
+      function walk(node) {
+        for (var n = node.firstChild; n; n = n.nextSibling) {
+          if (n.nodeType === 3) {
+            var t = n.nodeValue.replace(SHORT, '$1$2\u00A0').replace(UNITS, '$1\u00A0$2');
+            if (t !== n.nodeValue) n.nodeValue = t;
+          } else if (n.nodeType === 1 && !SKIP[n.tagName]) walk(n);
+        }
+      }
+      ['.section__title', '.section__lead', '.hero__title', '.hero__sub', '.hero__badge',
+       '.hero__usp li', '.card__desc', '.why', '.steps', '.guarantees', '.cta__list li',
+       '.qa__body', '.contacts__list', '.calc__result-note', '.calc__sub'
+      ].forEach(function (sel) { $$(sel).forEach(walk); });
+    }
+
+    var w = $('[data-why]');
+    if (w && P.why) w.innerHTML =
+      '<div class="why__card why__card--bad"><h3>' + esc(P.why.badTitle) + '</h3><ul>' +
+        P.why.bad.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul></div>' +
+      '<div class="why__card why__card--good"><h3>' + esc(P.why.goodTitle) + '</h3><ul>' +
+        P.why.good.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul></div>' +
+        // Кадр вынесен под обе колонки. Внутри правой карточки он оставлял
+        // левую наполовину пустой, и эта пустота читалась как картинка,
+        // которая не загрузилась.
+        (P.why.media
+          ? '<div class="why__media"><img src="' + BLANK + '" data-src="' + esc(P.why.media) + '"' +
+            // Собранный вручную кадр (коллаж) лежит одним файлом — у него
+            // нет уровней s/m, и srcset ему не нужен.
+            (P.why.single ? '' :
+              ' data-srcset="' + esc(tier(P.why.media, 's')) + ' 700w, ' + esc(tier(P.why.media, 'm')) + ' 1100w, ' +
+                esc(P.why.media) + ' 1600w' + (P.why.mediaHi ? ', ' + esc(P.why.mediaHi) : '') + '"' +
+              ' sizes="(min-width: 1024px) min(1280px, 100vw), 100vw"') +
+            ' alt="" loading="lazy" decoding="async" width="1200" height="800"></div>'
+          : '');
+
+    // Галерея с лайтбоксом
+    var gal = $('[data-gallery]');
+    // Товарный стиль галереи (кадр целиком на светлом) нужен там, где
+    // в ней лежат снимки изделий на подставке. Если галерея собрана из
+    // объектов соседних направлений — это обычные интерьерные кадры,
+    // и они должны заполнять плитку, а не висеть в белых полях.
+    // Кадры из соседнего раздела начинаются с его папки, свои — с папки этого.
+    var galExternal = P.gallery && P.gallery.length && P.gallery[0].indexOf(P.slug + '/') !== 0;
+    if (gal && P.catalogStyle === 'product' && !galExternal) gal.classList.add('gallery--product');
+    if (gal && P.gallery && P.gallery.length) {
+      // Плитка галереи занимает до 206 CSS-пикселей: на обычном экране
+      // хватает лёгкого уровня, на ретине — превью карточки. Раньше сюда
+      // уходило восемнадцать кадров по 700 px — почти мегабайт на блок,
+      // который человек чаще всего пролистывает.
+      var GAL_SIZES = '(min-width: 1024px) 210px, (min-width: 700px) 25vw, 33vw';
+      gal.innerHTML = P.gallery.map(function (src, i) {
+        return '<button type="button" data-i="' + i + '" aria-label="Открыть фото ' + (i + 1) + '">' +
+          '<img src="' + BLANK + '" data-src="' + esc(tier(src, 'g')) + '" data-srcset="' + esc(tier(src, 'b')) + ' 240w, ' + esc(tier(src, 'g')) + ' 460w, ' + esc(thumb(src)) + ' 700w"' +
+          ' sizes="' + GAL_SIZES + '" alt="Реализованный проект" loading="lazy" decoding="async" width="400" height="400"></button>';
+      }).join('');
+      lazify(gal);
+      var lb = null, cur = 0;
+      // Набор кадров и подпись задаются при открытии: из общей галереи
+      // раздела или из фотографий конкретного объекта.
+      var set = P.gallery, caption = P.title + ' — реализованный проект';
+      function show() {
+        cur = (cur + set.length) % set.length;
+        $('img', lb).src = set[cur];
+        $('figcaption', lb).textContent = caption + ' · ' + (cur + 1) + '/' + set.length;
+      }
+      // Открыть галерею конкретного объекта — вызывается из карточки каталога
+      window.LPGallery = function (photos, title, start) {
+        if (!photos || !photos.length) return;
+        set = photos; caption = title; cur = start || 0;
+        if (!lb) lb = makeLb();
+        show(); lb.hidden = false;
+      };
+      function makeLb() {
+        var el = document.createElement('div');
+        el.className = 'lightbox'; el.hidden = true;
+        el.innerHTML = '<button class="lightbox__close" data-c aria-label="Закрыть">✕</button>' +
+          '<button class="lightbox__nav lightbox__nav--prev" data-p aria-label="Предыдущее">‹</button>' +
+          '<figure><img alt="" width="1200" height="900"><figcaption></figcaption></figure>' +
+          '<button class="lightbox__nav lightbox__nav--next" data-n aria-label="Следующее">›</button>';
+        document.body.appendChild(el);
+        el.addEventListener('click', function (e) { if (e.target === el) el.hidden = true; });
+        $('[data-c]', el).addEventListener('click', function () { el.hidden = true; });
+        $('[data-p]', el).addEventListener('click', function () { cur--; show(); });
+        $('[data-n]', el).addEventListener('click', function () { cur++; show(); });
+        document.addEventListener('keydown', function (e) {
+          if (el.hidden) return;
+          if (e.key === 'Escape') el.hidden = true;
+          if (e.key === 'ArrowLeft') { cur--; show(); }
+          if (e.key === 'ArrowRight') { cur++; show(); }
+        });
+        var x0 = null;
+        el.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+        el.addEventListener('touchend', function (e) {
+          if (x0 === null) return;
+          var dx = e.changedTouches[0].clientX - x0;
+          if (Math.abs(dx) > 50) { cur += dx < 0 ? 1 : -1; show(); }
+          x0 = null;
+        }, { passive: true });
+        return el;
+      }
+      gal.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-i]'); if (!b) return;
+        if (!lb) lb = makeLb();
+        set = P.gallery; caption = P.title + ' — реализованный проект';
+        cur = +b.dataset.i; show(); lb.hidden = false;
+      });
+    }
+
+    // Вызываем в самом конце: к этому моменту отрисованы все блоки,
+    // включая те, что собираются из data.js.
+    lazify();
+    typography();
+  })();
+
+  /* ══ 6. КОНТАКТЫ, ШАПКА, CTA ════════════════════════════════════════════ */
+  (function chrome() {
+    var b = P.brand;
+    /* Кнопку канала показываем всегда, даже пока не прислали адрес.
+       Раньше пустой адрес её прятал, и MAX пропадал из шапки, подвала,
+       дока и нижней панели — человек не видел, что канал вообще есть.
+       Без адреса кнопка просто ничего не делает: это честнее, чем увести
+       в несуществующий чат, и лучше, чем скрыть канал целиком. */
+    function wire(sel, url) {
+      $$(sel).forEach(function (a) {
+        a.hidden = false;
+        if (url) {
+          a.href = url;
+          a.rel = 'noopener noreferrer';
+          if (!a.target) a.target = '_blank';
+          a.removeAttribute('aria-disabled');
+        } else {
+          a.removeAttribute('href');
+          a.removeAttribute('target');
+          a.setAttribute('aria-disabled', 'true');
+        }
+      });
+    }
+    /* Один менеджер на страну, один WhatsApp. Текст первого сообщения —
+       тот же, что стоял на старых сайтах, менеджеры к нему привыкли. */
+    var txt = encodeURIComponent(P.brand.waText || 'Здравствуйте, меня интересует камин/барбекю в облицовке. Помогите подобрать');
+    wire('[data-wa]', b.whatsapp ? 'https://wa.me/' + b.whatsapp + '?text=' + txt : '');
+    // Плавающий кружок в углу — один, WhatsApp.
+    (function msgDock() {
+      var dock = $('[data-msgdock]');
+      if (dock) dock.hidden = !b.whatsapp;
+    })();
+    // В нижней панели слот мессенджера занимает WhatsApp.
+    (function barMessenger() {
+      var el = document.querySelector('.mobilebar [data-wa]');
+      if (el) el.hidden = !b.whatsapp;
+    })();
+
+    /* WhatsApp через попап «Открыть в приложении WhatsApp?» — один в один
+       со старых сайтов. Клик по кнопке — событие WhatsAppIntent, подтверждение
+       в попапе — Lead «WhatsApp Confirmed Open». Так Ads Manager считает
+       намерение написать, а не просто клик. */
+    (function whatsapp() {
+      var pending = '';
+      var popup = document.createElement('div');
+      popup.className = 'wa-system-popup'; popup.id = 'waSystemPopup';
+      popup.innerHTML =
+        '<div class="wa-system-popup__dialog" role="dialog" aria-modal="true" aria-labelledby="waSystemPopupTitle">' +
+          '<div class="wa-system-popup__body"><p class="wa-system-popup__title" id="waSystemPopupTitle">Открыть в приложении «WhatsApp»?</p></div>' +
+          '<div class="wa-system-popup__actions">' +
+            '<button type="button" class="wa-system-popup__button" data-wa-cancel>Отмена</button>' +
+            '<button type="button" class="wa-system-popup__button wa-system-popup__button--confirm" data-wa-confirm>Открыть</button>' +
+          '</div></div>';
+      document.body.appendChild(popup);
+      popup.addEventListener('click', function (e) {
+        if (e.target === popup || e.target.closest('[data-wa-cancel]')) { popup.classList.remove('active'); pending = ''; }
+      });
+      $('[data-wa-confirm]', popup).addEventListener('click', function () {
+        var url = pending; popup.classList.remove('active'); pending = '';
+        pixel('track', 'Lead', { content_name: 'WhatsApp Confirmed Open', content_category: '3D Project Request' });
+        goal('messenger_click', { messenger: 'whatsapp' });
+        if (url) window.location.href = url;
+      });
+      document.addEventListener('click', function (e) {
+        var link = e.target.closest && e.target.closest('a[href*="wa.me"]');
+        if (!link) return;
+        e.preventDefault();
+        pending = link.href;
+        pixel('trackCustom', 'WhatsAppIntent', { content_name: 'WhatsApp Button Click' });
+        popup.classList.add('active');
+      });
+    })();
+
+    // Ссылка на звонок — в международном виде: с мобильного за границей
+    // «8» не наберётся, «+7» наберётся отовсюду.
+    var digits = b.phone.replace(/\D/g, '').replace(/^8(\d{10})$/, '7$1');
+    $$('[data-tel]').forEach(function (a) { a.href = 'tel:+' + digits; });
+    $$('[data-phone-text]').forEach(function (el) { el.textContent = b.phone; });
+    var y = $('[data-year]'); if (y) y.textContent = new Date().getFullYear();
+
+    var header = $('[data-header]'), bar = $('[data-mobilebar]');
+    function onScroll() {
+      if (header) header.classList.toggle('is-stuck', window.scrollY > 20);
+      if (bar) bar.classList.toggle('is-visible', window.scrollY > 500);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+    var burger = $('[data-burger]'), nav = $('[data-nav]');
+    if (burger && nav) {
+      burger.addEventListener('click', function () {
+        var open = nav.classList.toggle('is-open');
+        burger.classList.toggle('is-open', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
+      nav.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') { nav.classList.remove('is-open'); burger.classList.remove('is-open'); document.body.style.overflow = ''; }
+      });
+    }
+
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a[href^="#"]');
+      if (a && a.getAttribute('href').length > 1) {
+        var t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      }
+      // Клик по фото карточки открывает галерею объекта, а не форму
+      var gal = e.target.closest('[data-gal]');
+      if (gal && window.LPGallery && window.LP) {
+        var it = window.LP.catalog[+gal.dataset.gal];
+        // Одного кадра тоже достаточно: человек хочет рассмотреть плитку,
+        // а не пролистать галерею.
+        var shots = (it && it.photos && it.photos.length) ? it.photos : (it && it.img ? [it.img] : []);
+        if (shots.length) {
+          goal('gallery_open', { item: it.title });
+          window.LPGallery(shots, it.title, +gal.dataset.start || 0);
+          return;
+        }
+      }
+      var det = e.target.closest('[data-more-card]');
+      if (det && window.LPCard) { window.LPCard(+det.dataset.moreCard, det); return; }
+      var lead = e.target.closest('[data-lead]');
+      if (lead) {
+        goal('cta_click', { source: lead.dataset.src || 'cta' });
+        if (Calc) { Calc.open(); }
+        else {
+          // На странице без калькулятора — к форме, а без формы — на контакты.
+          var f = $('form[data-lead-source]');
+          if (f) { f.scrollIntoView({ behavior: 'smooth', block: 'center' }); var inp = $('input[name="name"]', f); if (inp) setTimeout(function () { inp.focus({ preventScroll: true }); }, 500); }
+          else location.href = 'contacts.html#contacts';
+        }
+      }
+      var tel = e.target.closest('a[href^="tel:"]');
+      if (tel) goal('phone_click');
+      var cat = e.target.closest('a[href*="catalog.html"], a[href="#catalog"], a.dir');
+      if (cat) pixel('track', 'ViewContent', { content_type: 'product_group', content_name: 'Catalog' });
+    });
+
+    $$('form[data-lead-source]').forEach(Lead.bind);
+
+    // Выбор канала в обычной форме — тот же, что в модалке расчёта.
+    // Значение уходит в заявку скрытым полем, отдельной логики не нужно.
+    $$('[data-chans]').forEach(function (box) {
+      box.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-chan]');
+        if (!b) return;
+        $$('[data-chan]', box).forEach(function (x) { x.classList.remove('is-on'); });
+        b.classList.add('is-on');
+        var input = $('[data-chan-input]', box.closest('form') || document);
+        if (input) input.value = b.dataset.chan;
+        goal('channel_pick', { channel: b.dataset.chan });
+      });
+    });
+
+    // микроконверсия: первое касание конфигуратора
+    var calcBox = $('[data-calc]'), fired = false;
+    if (calcBox) {
+      ['input', 'click'].forEach(function (ev) {
+        calcBox.addEventListener(ev, function () { if (!fired) { fired = true; goal('calc_started'); } }, { passive: true });
+      });
+    }
+    var deep = false;
+    window.addEventListener('scroll', function () {
+      if (deep) return;
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      if (h > 0 && window.scrollY / h >= .75) { deep = true; goal('scroll_75'); }
+    }, { passive: true });
+  })();
+})();
