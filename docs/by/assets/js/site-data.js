@@ -45,7 +45,7 @@ window.LP = {
       "label": "Камин",
       "hint": "В изразцах под вашу топку",
       "k": 1,
-      "img": "kaminy/img/b/01.webp",
+      "img": "content/kaminy/img/b/01.webp",
       "href": "kaminy.html"
      },
      {
@@ -53,7 +53,7 @@ window.LP = {
       "label": "Барбекю комплекс",
       "hint": "Для беседки или террасы",
       "k": 1,
-      "img": "barbekyu-kompleksy/img/b/03.webp",
+      "img": "content/barbekyu-kompleksy/img/b/03.webp",
       "href": "bbq.html"
      },
      {
@@ -61,7 +61,7 @@ window.LP = {
       "label": "Печь-камин из наличия",
       "hint": "Готовая модель, цена сразу",
       "k": 1,
-      "img": "pechi-kaminy/img/b/01.webp",
+      "img": "content/pechi-kaminy/img/b/01.webp",
       "href": "ready.html"
      },
      {
@@ -69,7 +69,7 @@ window.LP = {
       "label": "Изразцы",
       "hint": "Облицовка, панно, плитка",
       "k": 1,
-      "img": "izraztsy/img/b/002.webp",
+      "img": "content/izraztsy/img/b/002.webp",
       "href": "izrazcy.html"
      }
     ]

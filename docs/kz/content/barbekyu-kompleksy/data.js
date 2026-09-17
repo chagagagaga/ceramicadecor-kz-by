@@ -151,12 +151,12 @@ window.LP = {
    "desc": "Барбекю комплекс в изразцовой облицовке Версаль. Лаконичный печной комплекс включает в себя открытый камин и духовку. Облицовка изразцами природного зелёного оттенка превращает зону барбекю в произведение искусства.",
    "p1": 18600000,
    "p2": 37000000,
-   "img": "barbekyu-kompleksy/img/03.webp",
+   "img": "content/barbekyu-kompleksy/img/03.webp",
    "photos": [
-    "barbekyu-kompleksy/img/03.webp",
-    "barbekyu-kompleksy/img/03-2.webp",
-    "barbekyu-kompleksy/img/03-3.webp",
-    "barbekyu-kompleksy/img/03-4.webp"
+    "content/barbekyu-kompleksy/img/03.webp",
+    "content/barbekyu-kompleksy/img/03-2.webp",
+    "content/barbekyu-kompleksy/img/03-3.webp",
+    "content/barbekyu-kompleksy/img/03-4.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_letnyaya-kuhnya-barbekyu-v-oblitsovke-versal/",
    "size": "",
@@ -176,11 +176,11 @@ window.LP = {
    },
    "p1": 23000000,
    "p2": 46000000,
-   "img": "barbekyu-kompleksy/img/04.webp",
+   "img": "content/barbekyu-kompleksy/img/04.webp",
    "photos": [
-    "barbekyu-kompleksy/img/04.webp",
-    "barbekyu-kompleksy/img/04-2.webp",
-    "barbekyu-kompleksy/img/04-3.webp"
+    "content/barbekyu-kompleksy/img/04.webp",
+    "content/barbekyu-kompleksy/img/04-2.webp",
+    "content/barbekyu-kompleksy/img/04-3.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_letnyaya-kuhnya-versal-tsvet-bolotnyj-1311/",
    "size": "",
@@ -200,11 +200,11 @@ window.LP = {
    },
    "p1": 6400000,
    "p2": 15600000,
-   "img": "barbekyu-kompleksy/img/06.webp",
+   "img": "content/barbekyu-kompleksy/img/06.webp",
    "photos": [
-    "barbekyu-kompleksy/img/06.webp",
-    "barbekyu-kompleksy/img/06-2.webp",
-    "barbekyu-kompleksy/img/06-3.webp"
+    "content/barbekyu-kompleksy/img/06.webp",
+    "content/barbekyu-kompleksy/img/06-2.webp",
+    "content/barbekyu-kompleksy/img/06-3.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_belyj-mangal-v-oblitsovke-izraztsami-kollektsii-tyulpan-7757/",
    "size": "",
@@ -218,14 +218,14 @@ window.LP = {
    "desc": "Масштабный проект в облицовке изразцами коллекции Дорф. Полный набор необходимого оборудования: большой мангал, мойка, рабочие поверхности, плита, а также встроенная посудомоечная машина, ящики и шкафчики для хранения.",
    "p1": 25000000,
    "p2": 45000000,
-   "img": "barbekyu-kompleksy/img/07.webp",
+   "img": "content/barbekyu-kompleksy/img/07.webp",
    "photos": [
-    "barbekyu-kompleksy/img/07.webp",
-    "barbekyu-kompleksy/img/07-2.webp",
-    "barbekyu-kompleksy/img/07-3.webp",
-    "barbekyu-kompleksy/img/07-4.webp",
-    "barbekyu-kompleksy/img/07-5.webp",
-    "barbekyu-kompleksy/img/07-6.webp"
+    "content/barbekyu-kompleksy/img/07.webp",
+    "content/barbekyu-kompleksy/img/07-2.webp",
+    "content/barbekyu-kompleksy/img/07-3.webp",
+    "content/barbekyu-kompleksy/img/07-4.webp",
+    "content/barbekyu-kompleksy/img/07-5.webp",
+    "content/barbekyu-kompleksy/img/07-6.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_eksklyuzivnaya-kuhnya-s-mangalom-v-izraztsovoj-oblitsovke-5268/",
    "size": "",
@@ -245,13 +245,13 @@ window.LP = {
    },
    "p1": 6600000,
    "p2": 16300000,
-   "img": "barbekyu-kompleksy/img/09.webp",
+   "img": "content/barbekyu-kompleksy/img/09.webp",
    "photos": [
-    "barbekyu-kompleksy/img/09.webp",
-    "barbekyu-kompleksy/img/09-2.webp",
-    "barbekyu-kompleksy/img/09-3.webp",
-    "barbekyu-kompleksy/img/09-4.webp",
-    "barbekyu-kompleksy/img/09-5.webp"
+    "content/barbekyu-kompleksy/img/09.webp",
+    "content/barbekyu-kompleksy/img/09-2.webp",
+    "content/barbekyu-kompleksy/img/09-3.webp",
+    "content/barbekyu-kompleksy/img/09-4.webp",
+    "content/barbekyu-kompleksy/img/09-5.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_barbekyu-kompleks-v-yarkoj-oblitsovke-ptichki-3548/",
    "size": "",
@@ -271,13 +271,13 @@ window.LP = {
    },
    "p1": 21000000,
    "p2": 37700000,
-   "img": "barbekyu-kompleksy/img/11.webp",
+   "img": "content/barbekyu-kompleksy/img/11.webp",
    "photos": [
-    "barbekyu-kompleksy/img/11.webp",
-    "barbekyu-kompleksy/img/11-3.webp",
-    "barbekyu-kompleksy/img/11-4.webp",
-    "barbekyu-kompleksy/img/11-5.webp",
-    "barbekyu-kompleksy/img/11-6.webp"
+    "content/barbekyu-kompleksy/img/11.webp",
+    "content/barbekyu-kompleksy/img/11-3.webp",
+    "content/barbekyu-kompleksy/img/11-4.webp",
+    "content/barbekyu-kompleksy/img/11-5.webp",
+    "content/barbekyu-kompleksy/img/11-6.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_pechnoj-kompleks-iz-kirpicha-v-kollektsii-ptichki-7676/",
    "size": "",
@@ -291,13 +291,13 @@ window.LP = {
    "desc": "Облицовка печного комплекса с высоким открытым камином изразцами Византия.",
    "p1": 42000000,
    "p2": 58500000,
-   "img": "barbekyu-kompleksy/img/12.webp",
+   "img": "content/barbekyu-kompleksy/img/12.webp",
    "photos": [
-    "barbekyu-kompleksy/img/12.webp",
-    "barbekyu-kompleksy/img/12-2.webp",
-    "barbekyu-kompleksy/img/12-3.webp",
-    "barbekyu-kompleksy/img/12-4.webp",
-    "barbekyu-kompleksy/img/12-5.webp"
+    "content/barbekyu-kompleksy/img/12.webp",
+    "content/barbekyu-kompleksy/img/12-2.webp",
+    "content/barbekyu-kompleksy/img/12-3.webp",
+    "content/barbekyu-kompleksy/img/12-4.webp",
+    "content/barbekyu-kompleksy/img/12-5.webp"
    ],
    "url": "https://ceramicadecor.ru/izraztsovye-pechi/cd_letnyaya-kuhnya-v-izraztsovoj-oblitsovke-vizantiya/",
    "size": "",
@@ -312,13 +312,13 @@ window.LP = {
    "desc": "Изразцовая облицовка Византия в палитре росписи Бирюзовая. Масштабный проект беседки включает в себя навес из дерева, а также печной комплекс с мангалом, тандыром, печью под казан и другими необходимыми функциями.",
    "p1": 28500000,
    "p2": 58800000,
-   "img": "barbekyu-kompleksy/img/14.webp",
+   "img": "content/barbekyu-kompleksy/img/14.webp",
    "photos": [
-    "barbekyu-kompleksy/img/14.webp",
-    "barbekyu-kompleksy/img/14-2.webp",
-    "barbekyu-kompleksy/img/14-3.webp",
-    "barbekyu-kompleksy/img/14-4.webp",
-    "barbekyu-kompleksy/img/14-5.webp"
+    "content/barbekyu-kompleksy/img/14.webp",
+    "content/barbekyu-kompleksy/img/14-2.webp",
+    "content/barbekyu-kompleksy/img/14-3.webp",
+    "content/barbekyu-kompleksy/img/14-4.webp",
+    "content/barbekyu-kompleksy/img/14-5.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_izraztsovaya-oblitsovka-vizantiya-dlya-pechnogo-kompleksa/",
    "size": "",
@@ -338,13 +338,13 @@ window.LP = {
    },
    "p1": 3700000,
    "p2": 9800000,
-   "img": "barbekyu-kompleksy/img/15.webp",
+   "img": "content/barbekyu-kompleksy/img/15.webp",
    "photos": [
-    "barbekyu-kompleksy/img/15.webp",
-    "barbekyu-kompleksy/img/15-2.webp",
-    "barbekyu-kompleksy/img/15-3.webp",
-    "barbekyu-kompleksy/img/15-4.webp",
-    "barbekyu-kompleksy/img/15-5.webp"
+    "content/barbekyu-kompleksy/img/15.webp",
+    "content/barbekyu-kompleksy/img/15-2.webp",
+    "content/barbekyu-kompleksy/img/15-3.webp",
+    "content/barbekyu-kompleksy/img/15-4.webp",
+    "content/barbekyu-kompleksy/img/15-5.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_mangal-na-kuhne-v-izraztsah-iz-kollektsii-azulezhu-7094/",
    "size": "",
@@ -364,14 +364,14 @@ window.LP = {
    },
    "p1": 16300000,
    "p2": 48800000,
-   "img": "barbekyu-kompleksy/img/16.webp",
+   "img": "content/barbekyu-kompleksy/img/16.webp",
    "photos": [
-    "barbekyu-kompleksy/img/16.webp",
-    "barbekyu-kompleksy/img/16-2.webp",
-    "barbekyu-kompleksy/img/16-3.webp",
-    "barbekyu-kompleksy/img/16-4.webp",
-    "barbekyu-kompleksy/img/16-5.webp",
-    "barbekyu-kompleksy/img/16-6.webp"
+    "content/barbekyu-kompleksy/img/16.webp",
+    "content/barbekyu-kompleksy/img/16-2.webp",
+    "content/barbekyu-kompleksy/img/16-3.webp",
+    "content/barbekyu-kompleksy/img/16-4.webp",
+    "content/barbekyu-kompleksy/img/16-5.webp",
+    "content/barbekyu-kompleksy/img/16-6.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_oblitsovka-gotovogo-pechnogo-kompleksa-s-mangalom-pechyu-i-plitoj-6514/",
    "size": "",
@@ -391,12 +391,12 @@ window.LP = {
    },
    "p1": 4700000,
    "p2": 26000000,
-   "img": "barbekyu-kompleksy/img/17.webp",
+   "img": "content/barbekyu-kompleksy/img/17.webp",
    "photos": [
-    "barbekyu-kompleksy/img/17.webp",
-    "barbekyu-kompleksy/img/17-2.webp",
-    "barbekyu-kompleksy/img/17-3.webp",
-    "barbekyu-kompleksy/img/17-4.webp"
+    "content/barbekyu-kompleksy/img/17.webp",
+    "content/barbekyu-kompleksy/img/17-2.webp",
+    "content/barbekyu-kompleksy/img/17-3.webp",
+    "content/barbekyu-kompleksy/img/17-4.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/gotovye-izraztsovye-barbekyu-kompleksy/cd_letnyaya-kuhnya-v-izraztsovoj-oblitsovke-elegans-so-stoleshnitsej-iz-granita-4100/",
    "size": "",
@@ -410,14 +410,14 @@ window.LP = {
    "desc": "Зона барбекю с мангалом и казаном в загородном доме коллекции «Альбион». Полноценный печной комплекс с мангалом и печью под казан, облицованный белоснежными изразцами. Функциональность и красота в одном решении.",
    "p1": 7400000,
    "p2": 23000000,
-   "img": "barbekyu-kompleksy/img/kz-bbq-albion-1.webp",
+   "img": "content/barbekyu-kompleksy/img/kz-bbq-albion-1.webp",
    "photos": [
-    "barbekyu-kompleksy/img/kz-bbq-albion-1.webp",
-    "barbekyu-kompleksy/img/kz-bbq-albion-2.webp",
-    "barbekyu-kompleksy/img/kz-bbq-albion-3.webp",
-    "barbekyu-kompleksy/img/kz-bbq-albion-4.webp",
-    "barbekyu-kompleksy/img/kz-bbq-albion-5.webp",
-    "barbekyu-kompleksy/img/kz-bbq-albion-6.webp"
+    "content/barbekyu-kompleksy/img/kz-bbq-albion-1.webp",
+    "content/barbekyu-kompleksy/img/kz-bbq-albion-2.webp",
+    "content/barbekyu-kompleksy/img/kz-bbq-albion-3.webp",
+    "content/barbekyu-kompleksy/img/kz-bbq-albion-4.webp",
+    "content/barbekyu-kompleksy/img/kz-bbq-albion-5.webp",
+    "content/barbekyu-kompleksy/img/kz-bbq-albion-6.webp"
    ],
    "url": "",
    "size": "",
@@ -431,10 +431,10 @@ window.LP = {
    "desc": "Печной комплекс с мангалом и печью под казан в облицовке изразцами коллекции Элеганс и Птички. Сочетание двух коллекций создаёт многослойный и интересный визуальный образ.",
    "p1": 10400000,
    "p2": 19500000,
-   "img": "barbekyu-kompleksy/img/kz-bbq-ptichki-elegans-1.webp",
+   "img": "content/barbekyu-kompleksy/img/kz-bbq-ptichki-elegans-1.webp",
    "photos": [
-    "barbekyu-kompleksy/img/kz-bbq-ptichki-elegans-1.webp",
-    "barbekyu-kompleksy/img/kz-bbq-ptichki-elegans-2.webp"
+    "content/barbekyu-kompleksy/img/kz-bbq-ptichki-elegans-1.webp",
+    "content/barbekyu-kompleksy/img/kz-bbq-ptichki-elegans-2.webp"
    ],
    "url": "",
    "size": "",
@@ -448,14 +448,14 @@ window.LP = {
    "desc": "Летняя кухня в изразцовой облицовке Византия. Компактный барбекю комплекс с богатым византийским орнаментом. Идеальное сочетание функциональности и декоративного искусства.",
    "p1": 4600000,
    "p2": 15400000,
-   "img": "barbekyu-kompleksy/img/kz-bbq-vizantiya-1.webp",
+   "img": "content/barbekyu-kompleksy/img/kz-bbq-vizantiya-1.webp",
    "photos": [
-    "barbekyu-kompleksy/img/kz-bbq-vizantiya-1.webp",
-    "barbekyu-kompleksy/img/kz-bbq-vizantiya-2.webp",
-    "barbekyu-kompleksy/img/kz-bbq-vizantiya-3.webp",
-    "barbekyu-kompleksy/img/kz-bbq-vizantiya-4.webp",
-    "barbekyu-kompleksy/img/kz-bbq-vizantiya-5.webp",
-    "barbekyu-kompleksy/img/kz-bbq-vizantiya-6.webp"
+    "content/barbekyu-kompleksy/img/kz-bbq-vizantiya-1.webp",
+    "content/barbekyu-kompleksy/img/kz-bbq-vizantiya-2.webp",
+    "content/barbekyu-kompleksy/img/kz-bbq-vizantiya-3.webp",
+    "content/barbekyu-kompleksy/img/kz-bbq-vizantiya-4.webp",
+    "content/barbekyu-kompleksy/img/kz-bbq-vizantiya-5.webp",
+    "content/barbekyu-kompleksy/img/kz-bbq-vizantiya-6.webp"
    ],
    "url": "",
    "size": "",
@@ -469,11 +469,11 @@ window.LP = {
    "desc": "Барбекю комплекс в изразцовой облицовке с художественной росписью Птицы. Каждый изразец - сценка с изображением птиц, выполненная вручную. Настоящее произведение искусства, которое хочется разглядывать.",
    "p1": 9600000,
    "p2": 26000000,
-   "img": "barbekyu-kompleksy/img/kz-bbq-scenki-1.webp",
+   "img": "content/barbekyu-kompleksy/img/kz-bbq-scenki-1.webp",
    "photos": [
-    "barbekyu-kompleksy/img/kz-bbq-scenki-1.webp",
-    "barbekyu-kompleksy/img/kz-bbq-scenki-2.webp",
-    "barbekyu-kompleksy/img/kz-bbq-scenki-3.webp"
+    "content/barbekyu-kompleksy/img/kz-bbq-scenki-1.webp",
+    "content/barbekyu-kompleksy/img/kz-bbq-scenki-2.webp",
+    "content/barbekyu-kompleksy/img/kz-bbq-scenki-3.webp"
    ],
    "url": "",
    "size": "",
@@ -524,7 +524,7 @@ window.LP = {
    "Больше двадцати коллекций и десятки цветов глазури — комплекс собирается под характер вашего дома.",
    "Гарантия 50 лет на облицовку — зафиксирована в договоре."
   ],
-  "media": "barbekyu-kompleksy/img/14.webp",
+  "media": "content/barbekyu-kompleksy/img/14.webp",
   "single": false,
   "mediaHi": "assets/img/why/barbekyu-kompleksy.webp 1996w"
  },
@@ -615,20 +615,20 @@ window.LP = {
   }
  ],
  "gallery": [
-  "barbekyu-kompleksy/img/03.webp",
-  "barbekyu-kompleksy/img/04.webp",
-  "barbekyu-kompleksy/img/06.webp",
-  "barbekyu-kompleksy/img/07.webp",
-  "barbekyu-kompleksy/img/09.webp",
-  "barbekyu-kompleksy/img/11.webp",
-  "barbekyu-kompleksy/img/12.webp",
-  "barbekyu-kompleksy/img/14.webp",
-  "barbekyu-kompleksy/img/15.webp",
-  "barbekyu-kompleksy/img/16.webp",
-  "barbekyu-kompleksy/img/17.webp",
-  "barbekyu-kompleksy/img/kz-bbq-albion-1.webp",
-  "barbekyu-kompleksy/img/kz-bbq-ptichki-elegans-1.webp",
-  "barbekyu-kompleksy/img/kz-bbq-vizantiya-1.webp",
-  "barbekyu-kompleksy/img/kz-bbq-scenki-1.webp"
+  "content/barbekyu-kompleksy/img/03.webp",
+  "content/barbekyu-kompleksy/img/04.webp",
+  "content/barbekyu-kompleksy/img/06.webp",
+  "content/barbekyu-kompleksy/img/07.webp",
+  "content/barbekyu-kompleksy/img/09.webp",
+  "content/barbekyu-kompleksy/img/11.webp",
+  "content/barbekyu-kompleksy/img/12.webp",
+  "content/barbekyu-kompleksy/img/14.webp",
+  "content/barbekyu-kompleksy/img/15.webp",
+  "content/barbekyu-kompleksy/img/16.webp",
+  "content/barbekyu-kompleksy/img/17.webp",
+  "content/barbekyu-kompleksy/img/kz-bbq-albion-1.webp",
+  "content/barbekyu-kompleksy/img/kz-bbq-ptichki-elegans-1.webp",
+  "content/barbekyu-kompleksy/img/kz-bbq-vizantiya-1.webp",
+  "content/barbekyu-kompleksy/img/kz-bbq-scenki-1.webp"
  ]
 };

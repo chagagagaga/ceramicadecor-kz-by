@@ -1142,7 +1142,7 @@
     // объектов соседних направлений — это обычные интерьерные кадры,
     // и они должны заполнять плитку, а не висеть в белых полях.
     // Кадры из соседнего раздела начинаются с его папки, свои — с папки этого.
-    var galExternal = P.gallery && P.gallery.length && P.gallery[0].indexOf(P.slug + '/') !== 0;
+    var galExternal = P.gallery && P.gallery.length && P.gallery[0].indexOf(P.slug + '/img/') === -1;
     if (gal && P.catalogStyle === 'product' && !galExternal) gal.classList.add('gallery--product');
     if (gal && P.gallery && P.gallery.length) {
       // Плитка галереи занимает до 206 CSS-пикселей: на обычном экране

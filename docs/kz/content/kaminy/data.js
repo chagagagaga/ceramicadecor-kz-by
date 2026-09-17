@@ -70,7 +70,7 @@ window.LP = {
       "label": "Печь-камин",
       "hint": "Самый бюджетный вариант: готовая модель, 2 850 000 ₸",
       "fixed": 2850000,
-      "img": "pechi-kaminy/img/b/01.webp",
+      "img": "content/pechi-kaminy/img/b/01.webp",
       "href": "ready.html"
      },
      {
@@ -166,13 +166,13 @@ window.LP = {
    },
    "p1": 4000000,
    "p2": 7800000,
-   "img": "kaminy/img/01.webp",
+   "img": "content/kaminy/img/01.webp",
    "photos": [
-    "kaminy/img/01.webp",
-    "kaminy/img/01-2.webp",
-    "kaminy/img/01-3.webp",
-    "kaminy/img/01-4.webp",
-    "kaminy/img/01-5.webp"
+    "content/kaminy/img/01.webp",
+    "content/kaminy/img/01-2.webp",
+    "content/kaminy/img/01-3.webp",
+    "content/kaminy/img/01-4.webp",
+    "content/kaminy/img/01-5.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_klassicheskij-belyj-kamin-albion-s-topkoj-liseo-castiron/",
    "size": "",
@@ -193,14 +193,14 @@ window.LP = {
    },
    "p1": 6000000,
    "p2": 11000000,
-   "img": "kaminy/img/03.webp",
+   "img": "content/kaminy/img/03.webp",
    "photos": [
-    "kaminy/img/03.webp",
-    "kaminy/img/03-2.webp",
-    "kaminy/img/03-3.webp",
-    "kaminy/img/03-4.webp",
-    "kaminy/img/03-5.webp",
-    "kaminy/img/03-6.webp"
+    "content/kaminy/img/03.webp",
+    "content/kaminy/img/03-2.webp",
+    "content/kaminy/img/03-3.webp",
+    "content/kaminy/img/03-4.webp",
+    "content/kaminy/img/03-5.webp",
+    "content/kaminy/img/03-6.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_kamin-v-oblitsovke-tyulpan-s-g-obraznoj-topkoj-ekokamin-alfa-1000-rb/",
    "size": "",
@@ -214,13 +214,13 @@ window.LP = {
    "desc": "Комплект каминной облицовки Тюльпан в цвете Арктика. Белоснежные изразцы с рельефными тюльпанами создают нежный и воздушный образ камина. Идеально подходит для светлых интерьеров.",
    "p1": 4300000,
    "p2": 6500000,
-   "img": "kaminy/img/04.webp",
+   "img": "content/kaminy/img/04.webp",
    "photos": [
-    "kaminy/img/04.webp",
-    "kaminy/img/04-2.webp",
-    "kaminy/img/04-3.webp",
-    "kaminy/img/04-4.webp",
-    "kaminy/img/04-5.webp"
+    "content/kaminy/img/04.webp",
+    "content/kaminy/img/04-2.webp",
+    "content/kaminy/img/04-3.webp",
+    "content/kaminy/img/04-4.webp",
+    "content/kaminy/img/04-5.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_komplekt-kaminnoj-oblitsovki-tyulpan-tsvet-arktika/",
    "size": "",
@@ -234,12 +234,12 @@ window.LP = {
    "desc": "Изразцовый камин Версаль в цвете Арктическая лагуна. Облицовка с детализированным орнаментом в насыщенных лазурных тонах. Вдохновлен интерьерами французских дворцов. Каждый изразец изготовлен вручную.",
    "p1": 5500000,
    "p2": 16000000,
-   "img": "kaminy/img/05.webp",
+   "img": "content/kaminy/img/05.webp",
    "photos": [
-    "kaminy/img/05.webp",
-    "kaminy/img/05-2.webp",
-    "kaminy/img/05-3.webp",
-    "kaminy/img/05-4.webp"
+    "content/kaminy/img/05.webp",
+    "content/kaminy/img/05-2.webp",
+    "content/kaminy/img/05-3.webp",
+    "content/kaminy/img/05-4.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_izraztsovyj-kamin-versal-v-sinem-tsvete/",
    "size": "",
@@ -259,14 +259,14 @@ window.LP = {
    },
    "p1": 5300000,
    "p2": 13000000,
-   "img": "kaminy/img/06.webp",
+   "img": "content/kaminy/img/06.webp",
    "photos": [
-    "kaminy/img/06.webp",
-    "kaminy/img/06-2.webp",
-    "kaminy/img/06-3.webp",
-    "kaminy/img/06-4.webp",
-    "kaminy/img/06-5.webp",
-    "kaminy/img/06-6.webp"
+    "content/kaminy/img/06.webp",
+    "content/kaminy/img/06-2.webp",
+    "content/kaminy/img/06-3.webp",
+    "content/kaminy/img/06-4.webp",
+    "content/kaminy/img/06-5.webp",
+    "content/kaminy/img/06-6.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_kamin-s-p-obraznoj-topkoj-v-oblitsovke-bristol-v-tsvete-chernaya-noch/",
    "size": "",
@@ -286,12 +286,12 @@ window.LP = {
    },
    "p1": 9800000,
    "p2": 16300000,
-   "img": "kaminy/img/07.webp",
+   "img": "content/kaminy/img/07.webp",
    "photos": [
-    "kaminy/img/07.webp",
-    "kaminy/img/07-2.webp",
-    "kaminy/img/07-3.webp",
-    "kaminy/img/07-4.webp"
+    "content/kaminy/img/07.webp",
+    "content/kaminy/img/07-2.webp",
+    "content/kaminy/img/07-3.webp",
+    "content/kaminy/img/07-4.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_dekorativnyj-kamin-s-ochagom-airtone-andalle-1000-oblitsovan-izraztsami-kollektsii-dorf-spetsialno-dlya-restorana-5013/",
    "size": "",
@@ -305,11 +305,11 @@ window.LP = {
    "desc": "Комплект каминной облицовки Арт Нуво в фисташковой декоративной палитре. Изящные линии модерна в сочетании с нежными зелёными тонами. Вдохновлён стилем ар-нуво начала XX века.",
    "p1": 4000000,
    "p2": 8800000,
-   "img": "kaminy/img/09.webp",
+   "img": "content/kaminy/img/09.webp",
    "photos": [
-    "kaminy/img/09.webp",
-    "kaminy/img/09-2.webp",
-    "kaminy/img/09-3.webp"
+    "content/kaminy/img/09.webp",
+    "content/kaminy/img/09-2.webp",
+    "content/kaminy/img/09-3.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_kamin-art-nuvo-1/",
    "size": "",
@@ -323,14 +323,14 @@ window.LP = {
    "desc": "Изразцовый камин с топкой Астов П2С в облицовке Птицы. Ручная роспись с изображением птиц в природном окружении. Каждый изразец — это маленькое произведение искусства.",
    "p1": 7500000,
    "p2": 14000000,
-   "img": "kaminy/img/10.webp",
+   "img": "content/kaminy/img/10.webp",
    "photos": [
-    "kaminy/img/10.webp",
-    "kaminy/img/10-2.webp",
-    "kaminy/img/10-3.webp",
-    "kaminy/img/10-4.webp",
-    "kaminy/img/10-5.webp",
-    "kaminy/img/10-6.webp"
+    "content/kaminy/img/10.webp",
+    "content/kaminy/img/10-2.webp",
+    "content/kaminy/img/10-3.webp",
+    "content/kaminy/img/10-4.webp",
+    "content/kaminy/img/10-5.webp",
+    "content/kaminy/img/10-6.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_izraztsovyj-kamin-astov-p2s-v-oblitsovke-ptitsy/",
    "size": "",
@@ -344,13 +344,13 @@ window.LP = {
    "desc": "Изразцовый камин Византия в росписи Олива. Богатый орнамент, вдохновлённый византийским искусством, выполнен в тёплых оливковых тонах. Сложная многослойная роспись с золотистыми акцентами.",
    "p1": 6800000,
    "p2": 13500000,
-   "img": "kaminy/img/11.webp",
+   "img": "content/kaminy/img/11.webp",
    "photos": [
-    "kaminy/img/11.webp",
-    "kaminy/img/11-2.webp",
-    "kaminy/img/11-3.webp",
-    "kaminy/img/11-4.webp",
-    "kaminy/img/11-5.webp"
+    "content/kaminy/img/11.webp",
+    "content/kaminy/img/11-2.webp",
+    "content/kaminy/img/11-3.webp",
+    "content/kaminy/img/11-4.webp",
+    "content/kaminy/img/11-5.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_izraztsovyj-kamin-vizantiya-v-rospisi-oliva/",
    "size": "",
@@ -370,14 +370,14 @@ window.LP = {
    },
    "p1": 5000000,
    "p2": 13000000,
-   "img": "kaminy/img/12.webp",
+   "img": "content/kaminy/img/12.webp",
    "photos": [
-    "kaminy/img/12.webp",
-    "kaminy/img/12-2.webp",
-    "kaminy/img/12-3.webp",
-    "kaminy/img/12-4.webp",
-    "kaminy/img/12-5.webp",
-    "kaminy/img/12-6.webp"
+    "content/kaminy/img/12.webp",
+    "content/kaminy/img/12-2.webp",
+    "content/kaminy/img/12-3.webp",
+    "content/kaminy/img/12-4.webp",
+    "content/kaminy/img/12-5.webp",
+    "content/kaminy/img/12-6.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_kamin-v-klassicheskom-stile-iz-kollektsii-luna-i-topkoj-spartherm-linear-4s-arte-1672/",
    "size": "",
@@ -397,13 +397,13 @@ window.LP = {
    },
    "p1": 2000000,
    "p2": 9000000,
-   "img": "kaminy/img/14.webp",
+   "img": "content/kaminy/img/14.webp",
    "photos": [
-    "kaminy/img/14.webp",
-    "kaminy/img/14-2.webp",
-    "kaminy/img/14-3.webp",
-    "kaminy/img/14-4.webp",
-    "kaminy/img/14-5.webp"
+    "content/kaminy/img/14.webp",
+    "content/kaminy/img/14-2.webp",
+    "content/kaminy/img/14-3.webp",
+    "content/kaminy/img/14-4.webp",
+    "content/kaminy/img/14-5.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_oblitsovka-uglovogo-kamina-izraztsami-universal/",
    "size": "",
@@ -423,13 +423,13 @@ window.LP = {
    },
    "p1": 4600000,
    "p2": 9800000,
-   "img": "kaminy/img/16.webp",
+   "img": "content/kaminy/img/16.webp",
    "photos": [
-    "kaminy/img/16.webp",
-    "kaminy/img/16-2.webp",
-    "kaminy/img/16-3.webp",
-    "kaminy/img/16-4.webp",
-    "kaminy/img/16-5.webp"
+    "content/kaminy/img/16.webp",
+    "content/kaminy/img/16-2.webp",
+    "content/kaminy/img/16-3.webp",
+    "content/kaminy/img/16-4.webp",
+    "content/kaminy/img/16-5.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_kamin-v-oblitsovke-izraztsami-kollektsii-bravo-s-rospisyu/",
    "size": "",
@@ -449,13 +449,13 @@ window.LP = {
    },
    "p1": 8500000,
    "p2": 18200000,
-   "img": "kaminy/img/17.webp",
+   "img": "content/kaminy/img/17.webp",
    "photos": [
-    "kaminy/img/17.webp",
-    "kaminy/img/17-2.webp",
-    "kaminy/img/17-3.webp",
-    "kaminy/img/17-4.webp",
-    "kaminy/img/17-5.webp"
+    "content/kaminy/img/17.webp",
+    "content/kaminy/img/17-2.webp",
+    "content/kaminy/img/17-3.webp",
+    "content/kaminy/img/17-4.webp",
+    "content/kaminy/img/17-5.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_oblitsovka-kamina-do-polki-s-drovnikami-po-bokam-v-kollektsii-soho-6749/",
    "size": "",
@@ -475,11 +475,11 @@ window.LP = {
    },
    "p1": 5100000,
    "p2": 9100000,
-   "img": "kaminy/img/18.webp",
+   "img": "content/kaminy/img/18.webp",
    "photos": [
-    "kaminy/img/18.webp",
-    "kaminy/img/18-3.webp",
-    "kaminy/img/18-4.webp"
+    "content/kaminy/img/18.webp",
+    "content/kaminy/img/18-3.webp",
+    "content/kaminy/img/18-4.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_izraztsovyj-kamin-usadba-s-podiumami-i-prizmatichnoj-uglovoj-topkoj/",
    "size": "",
@@ -493,13 +493,13 @@ window.LP = {
    "desc": "Каминная облицовка Птички в декоративной палитре Лесная. Изразцы с миниатюрными птичками среди растительного орнамента в зелёных лесных тонах. Создаёт атмосферу природной гармонии.",
    "p1": 4400000,
    "p2": 9100000,
-   "img": "kaminy/img/19.webp",
+   "img": "content/kaminy/img/19.webp",
    "photos": [
-    "kaminy/img/19.webp",
-    "kaminy/img/19-2.webp",
-    "kaminy/img/19-3.webp",
-    "kaminy/img/19-4.webp",
-    "kaminy/img/19-5.webp"
+    "content/kaminy/img/19.webp",
+    "content/kaminy/img/19-2.webp",
+    "content/kaminy/img/19-3.webp",
+    "content/kaminy/img/19-4.webp",
+    "content/kaminy/img/19-5.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_kaminnaya-oblitsovka-ptichki-dekorativnaya-palitra-lesnaya/",
    "size": "",
@@ -513,12 +513,12 @@ window.LP = {
    "desc": "Комплект каминной облицовки Элеганс в цвете Лесной Туман. Изысканные изразцы с мягкими приглушёнными тонами, напоминающими утренний туман в лесу. Идеальный выбор для создания спокойной и расслабляющей атмосферы.",
    "p1": 5100000,
    "p2": 11300000,
-   "img": "kaminy/img/20.webp",
+   "img": "content/kaminy/img/20.webp",
    "photos": [
-    "kaminy/img/20.webp",
-    "kaminy/img/20-2.webp",
-    "kaminy/img/20-3.webp",
-    "kaminy/img/20-4.webp"
+    "content/kaminy/img/20.webp",
+    "content/kaminy/img/20-2.webp",
+    "content/kaminy/img/20-3.webp",
+    "content/kaminy/img/20-4.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/izraztsovye-kaminy-v-interere/cd_izraztsovyj-kamin-elegans-v-glazuri-lesnoj-tuman/",
    "size": "",
@@ -532,9 +532,9 @@ window.LP = {
    "desc": "Каминная облицовка в стиле минимализм. Чистые линии и лаконичные формы без лишнего декора. Идеальный выбор для современных интерьеров, где ценится сдержанность и функциональность.",
    "p1": 5000000,
    "p2": 7200000,
-   "img": "kaminy/img/21.webp",
+   "img": "content/kaminy/img/21.webp",
    "photos": [
-    "kaminy/img/21.webp"
+    "content/kaminy/img/21.webp"
    ],
    "url": "",
    "size": "",
@@ -548,11 +548,11 @@ window.LP = {
    "desc": "Электрокамин белого цвета в изразцах коллекции Венская. Элегантная облицовка в венском стиле для электрокамина. Белоснежные изразцы с утончённым рельефом создают образ без необходимости дымохода.",
    "p1": 4400000,
    "p2": 7800000,
-   "img": "kaminy/img/22.webp",
+   "img": "content/kaminy/img/22.webp",
    "photos": [
-    "kaminy/img/22.webp",
-    "kaminy/img/22-2.webp",
-    "kaminy/img/22-3.webp"
+    "content/kaminy/img/22.webp",
+    "content/kaminy/img/22-2.webp",
+    "content/kaminy/img/22-3.webp"
    ],
    "url": "https://ceramicadecor.ru/nashi-raboti/portaly-dlya-elektrokamina-v-interere/cd_elektrokamin-belogo-tsveta-v-izraztsah-kollektsii-venskaya-99999/",
    "size": "",
@@ -566,14 +566,14 @@ window.LP = {
    "desc": "Облицовка биокамина изразцами Альбион в майоликовой глазури. Проект, сочетающий современный биокамин с традиционной изразцовой облицовкой. Майоликовая глазурь придаёт поверхности особый блеск и глубину цвета.",
    "p1": 4000000,
    "p2": 7900000,
-   "img": "kaminy/img/kz-kamin-albion-bio-1.webp",
+   "img": "content/kaminy/img/kz-kamin-albion-bio-1.webp",
    "photos": [
-    "kaminy/img/kz-kamin-albion-bio-1.webp",
-    "kaminy/img/kz-kamin-albion-bio-2.webp",
-    "kaminy/img/kz-kamin-albion-bio-3.webp",
-    "kaminy/img/kz-kamin-albion-bio-4.webp",
-    "kaminy/img/kz-kamin-albion-bio-5.webp",
-    "kaminy/img/kz-kamin-albion-bio-6.webp"
+    "content/kaminy/img/kz-kamin-albion-bio-1.webp",
+    "content/kaminy/img/kz-kamin-albion-bio-2.webp",
+    "content/kaminy/img/kz-kamin-albion-bio-3.webp",
+    "content/kaminy/img/kz-kamin-albion-bio-4.webp",
+    "content/kaminy/img/kz-kamin-albion-bio-5.webp",
+    "content/kaminy/img/kz-kamin-albion-bio-6.webp"
    ],
    "url": "",
    "size": "",
@@ -587,14 +587,14 @@ window.LP = {
    "desc": "Комплект каминной облицовки Дорф в цвете Муравленый. Изразцы с характерной зеленоватой «муравленой» глазурью — традиционной для русского изразцового искусства. Каждый элемент выполнен вручную.",
    "p1": 6800000,
    "p2": 13700000,
-   "img": "kaminy/img/kz-kamin-dorf-murav-1.webp",
+   "img": "content/kaminy/img/kz-kamin-dorf-murav-1.webp",
    "photos": [
-    "kaminy/img/kz-kamin-dorf-murav-1.webp",
-    "kaminy/img/kz-kamin-dorf-murav-2.webp",
-    "kaminy/img/kz-kamin-dorf-murav-3.webp",
-    "kaminy/img/kz-kamin-dorf-murav-4.webp",
-    "kaminy/img/kz-kamin-dorf-murav-5.webp",
-    "kaminy/img/kz-kamin-dorf-murav-6.webp"
+    "content/kaminy/img/kz-kamin-dorf-murav-1.webp",
+    "content/kaminy/img/kz-kamin-dorf-murav-2.webp",
+    "content/kaminy/img/kz-kamin-dorf-murav-3.webp",
+    "content/kaminy/img/kz-kamin-dorf-murav-4.webp",
+    "content/kaminy/img/kz-kamin-dorf-murav-5.webp",
+    "content/kaminy/img/kz-kamin-dorf-murav-6.webp"
    ],
    "url": "",
    "size": "",
@@ -608,14 +608,14 @@ window.LP = {
    "desc": "Камин с топкой Астов П2С 8457 в облицовке изразцами коллекции Роллерс. Современный дизайн с геометрическим рельефом в светлых тонах. Идеальное сочетание классического мастерства и современной эстетики.",
    "p1": 8000000,
    "p2": 16300000,
-   "img": "kaminy/img/kz-kamin-rollers-1.webp",
+   "img": "content/kaminy/img/kz-kamin-rollers-1.webp",
    "photos": [
-    "kaminy/img/kz-kamin-rollers-1.webp",
-    "kaminy/img/kz-kamin-rollers-2.webp",
-    "kaminy/img/kz-kamin-rollers-3.webp",
-    "kaminy/img/kz-kamin-rollers-4.webp",
-    "kaminy/img/kz-kamin-rollers-5.webp",
-    "kaminy/img/kz-kamin-rollers-6.webp"
+    "content/kaminy/img/kz-kamin-rollers-1.webp",
+    "content/kaminy/img/kz-kamin-rollers-2.webp",
+    "content/kaminy/img/kz-kamin-rollers-3.webp",
+    "content/kaminy/img/kz-kamin-rollers-4.webp",
+    "content/kaminy/img/kz-kamin-rollers-5.webp",
+    "content/kaminy/img/kz-kamin-rollers-6.webp"
    ],
    "url": "",
    "size": "",
@@ -635,14 +635,14 @@ window.LP = {
    },
    "p1": 2000000,
    "p2": 9000000,
-   "img": "kaminy/img/kz-kamin-universal-1.webp",
+   "img": "content/kaminy/img/kz-kamin-universal-1.webp",
    "photos": [
-    "kaminy/img/kz-kamin-universal-1.webp",
-    "kaminy/img/kz-kamin-universal-2.webp",
-    "kaminy/img/kz-kamin-universal-3.webp",
-    "kaminy/img/kz-kamin-universal-4.webp",
-    "kaminy/img/kz-kamin-universal-5.webp",
-    "kaminy/img/kz-kamin-universal-6.webp"
+    "content/kaminy/img/kz-kamin-universal-1.webp",
+    "content/kaminy/img/kz-kamin-universal-2.webp",
+    "content/kaminy/img/kz-kamin-universal-3.webp",
+    "content/kaminy/img/kz-kamin-universal-4.webp",
+    "content/kaminy/img/kz-kamin-universal-5.webp",
+    "content/kaminy/img/kz-kamin-universal-6.webp"
    ],
    "url": "",
    "size": "",
@@ -656,14 +656,14 @@ window.LP = {
    "desc": "Изразцовый камин в коллекции Камея с художественной росписью ручной работы. Классический голландский стиль с характерными сине-белыми медальонами. Широкая полочка и продуманный дровник добавляют функциональности и уюта.",
    "p1": 3300000,
    "p2": 7800000,
-   "img": "kaminy/img/kz-kamin-provans-1.webp",
+   "img": "content/kaminy/img/kz-kamin-provans-1.webp",
    "photos": [
-    "kaminy/img/kz-kamin-provans-1.webp",
-    "kaminy/img/kz-kamin-provans-2.webp",
-    "kaminy/img/kz-kamin-provans-3.webp",
-    "kaminy/img/kz-kamin-provans-4.webp",
-    "kaminy/img/kz-kamin-provans-5.webp",
-    "kaminy/img/kz-kamin-provans-6.webp"
+    "content/kaminy/img/kz-kamin-provans-1.webp",
+    "content/kaminy/img/kz-kamin-provans-2.webp",
+    "content/kaminy/img/kz-kamin-provans-3.webp",
+    "content/kaminy/img/kz-kamin-provans-4.webp",
+    "content/kaminy/img/kz-kamin-provans-5.webp",
+    "content/kaminy/img/kz-kamin-provans-6.webp"
    ],
    "url": "",
    "size": "",
@@ -682,11 +682,11 @@ window.LP = {
    },
    "p1": 11500000,
    "p2": 19500000,
-   "img": "kaminy/img/kz-kamin-dorf-brunner-1.webp",
+   "img": "content/kaminy/img/kz-kamin-dorf-brunner-1.webp",
    "photos": [
-    "kaminy/img/kz-kamin-dorf-brunner-1.webp",
-    "kaminy/img/kz-kamin-dorf-brunner-2.webp",
-    "kaminy/img/kz-kamin-dorf-brunner-3.webp"
+    "content/kaminy/img/kz-kamin-dorf-brunner-1.webp",
+    "content/kaminy/img/kz-kamin-dorf-brunner-2.webp",
+    "content/kaminy/img/kz-kamin-dorf-brunner-3.webp"
    ],
    "url": "",
    "size": "",
@@ -737,7 +737,7 @@ window.LP = {
    "Коллекция, цвет глазури и сюжет росписи подбираются под интерьер.",
    "Керамика с обжигом свыше 1100 °C, гарантия 50 лет, отдельный изразец заменяется точечно."
   ],
-  "media": "kaminy/img/20.webp",
+  "media": "content/kaminy/img/20.webp",
   "single": false,
   "mediaHi": "assets/img/why/kaminy.webp 1596w"
  },
@@ -828,29 +828,29 @@ window.LP = {
   }
  ],
  "gallery": [
-  "kaminy/img/01.webp",
-  "kaminy/img/03.webp",
-  "kaminy/img/04.webp",
-  "kaminy/img/05.webp",
-  "kaminy/img/06.webp",
-  "kaminy/img/07.webp",
-  "kaminy/img/09.webp",
-  "kaminy/img/10.webp",
-  "kaminy/img/11.webp",
-  "kaminy/img/12.webp",
-  "kaminy/img/14.webp",
-  "kaminy/img/16.webp",
-  "kaminy/img/17.webp",
-  "kaminy/img/18.webp",
-  "kaminy/img/19.webp",
-  "kaminy/img/20.webp",
-  "kaminy/img/21.webp",
-  "kaminy/img/22.webp",
-  "kaminy/img/kz-kamin-albion-bio-1.webp",
-  "kaminy/img/kz-kamin-dorf-murav-1.webp",
-  "kaminy/img/kz-kamin-rollers-1.webp",
-  "kaminy/img/kz-kamin-universal-1.webp",
-  "kaminy/img/kz-kamin-provans-1.webp",
-  "kaminy/img/kz-kamin-dorf-brunner-1.webp"
+  "content/kaminy/img/01.webp",
+  "content/kaminy/img/03.webp",
+  "content/kaminy/img/04.webp",
+  "content/kaminy/img/05.webp",
+  "content/kaminy/img/06.webp",
+  "content/kaminy/img/07.webp",
+  "content/kaminy/img/09.webp",
+  "content/kaminy/img/10.webp",
+  "content/kaminy/img/11.webp",
+  "content/kaminy/img/12.webp",
+  "content/kaminy/img/14.webp",
+  "content/kaminy/img/16.webp",
+  "content/kaminy/img/17.webp",
+  "content/kaminy/img/18.webp",
+  "content/kaminy/img/19.webp",
+  "content/kaminy/img/20.webp",
+  "content/kaminy/img/21.webp",
+  "content/kaminy/img/22.webp",
+  "content/kaminy/img/kz-kamin-albion-bio-1.webp",
+  "content/kaminy/img/kz-kamin-dorf-murav-1.webp",
+  "content/kaminy/img/kz-kamin-rollers-1.webp",
+  "content/kaminy/img/kz-kamin-universal-1.webp",
+  "content/kaminy/img/kz-kamin-provans-1.webp",
+  "content/kaminy/img/kz-kamin-dorf-brunner-1.webp"
  ]
 };

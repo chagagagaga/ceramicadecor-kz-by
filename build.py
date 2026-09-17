@@ -2014,6 +2014,37 @@ def build(cc):
     os.makedirs(os.path.join(out_dir, 'js'), exist_ok=True)
     shutil.copy(os.path.join(SRC, 'cd-attribution.js'), os.path.join(out_dir, 'js', 'cd-attribution.js'))
     build_pages(out_dir, summary)
+    nest_content(out_dir)
+
+
+# Папки разделов (kaminy/, barbekyu-kompleksy/, …) лежат в content/, а не в
+# корне: на хостинге .htaccess отдаёт kaminy.html по адресу /kaminy, и папка
+# с тем же именем перехватывала адрес — сервер отвечал 403 (17.09.2026, .by
+# лёг сразу после выкладки). Пути в html и data.js переписываются здесь же.
+CONTENT = 'content'
+def nest_content(out_dir):
+    import re
+    cdir = os.path.join(out_dir, CONTENT)
+    if os.path.isdir(cdir):
+        shutil.rmtree(cdir)
+    os.makedirs(cdir)
+    for slug in PAGE_OF:
+        src = os.path.join(out_dir, slug)
+        if os.path.isdir(src):
+            shutil.move(src, os.path.join(cdir, slug))
+    rx = re.compile(r'(?<![\w/.-])(' + '|'.join(re.escape(s) for s in PAGE_OF) + r')/(img/|data\.js)')
+    rx_abs = re.compile(r'(https?://[a-z0-9.-]+/)(' + '|'.join(re.escape(s) for s in PAGE_OF) + r')/img/')
+    files = [os.path.join(out_dir, f) for f in os.listdir(out_dir) if f.endswith('.html')]
+    files += [os.path.join(out_dir, 'assets', 'js', 'site-data.js')]
+    files += [os.path.join(cdir, slug, 'data.js') for slug in PAGE_OF]
+    for f in files:
+        if not os.path.isfile(f):
+            continue
+        t = io.open(f, encoding='utf-8').read()
+        t2 = rx.sub(CONTENT + r'/\1/\2', t)
+        t2 = rx_abs.sub(r'\1' + CONTENT + r'/\2/img/', t2)
+        if t2 != t:
+            io.open(f, 'w', encoding='utf-8').write(t2)
 
 
 def relocate(data, slug):

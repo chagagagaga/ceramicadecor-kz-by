@@ -1,26 +1,26 @@
-/* Контент раздела «Типовые печи-камины» для ceramicadecor.kz. Правится в build.py — вёрстка и логика общие. */
+/* Контент раздела «Типовые печи-камины» для ceramicadecor.by. Правится в build.py — вёрстка и логика общие. */
 window.LP = {
  "slug": "pechi-kaminy",
  "title": "Типовые печи-камины",
  "brand": {
-  "phone": "+7 705 248 86 57",
+  "phone": "+375 33 358 77 33",
   "worktime": "Ежедневно 10:00–20:00",
-  "address": "Астана · ул. Розы Баглановой, 3/1",
-  "site": "https://ceramicadecor.kz",
-  "host": "ceramicadecor.kz",
-  "flag": "🇰🇿",
-  "whatsapp": "77052488657",
+  "address": "Минске",
+  "site": "https://ceramicadecor.by",
+  "host": "ceramicadecor.by",
+  "flag": "🇧🇾",
+  "whatsapp": "375333587733",
   "telegram": "",
   "maxUrl": "",
   "waText": "Здравствуйте, меня интересует камин/барбекю в облицовке. Помогите подобрать",
   "endpoint": "send-lead.php",
   "beacon": "",
   "metrikaId": 0,
-  "siteKey": "ceramicadecor_kz",
+  "siteKey": "ceramicadecor_by",
   "email": "info@ceramicadecor.ru",
-  "dial": "7"
+  "dial": "375"
  },
- "currency": "₸",
+ "currency": "BYN",
  "priceLabel1": "Цена",
  "priceNote": "Цена за комплект со склада: облицовка и топка. Дымоход, монтаж и доставка считаются отдельно — в калькуляторе выше.",
  "priceFrom": false,
@@ -43,15 +43,15 @@ window.LP = {
      {
       "id": "dorf",
       "label": "Дорф",
-      "hint": "Классика с рельефом, 2 850 000 ₸",
-      "add": 2850000,
+      "hint": "Классика с рельефом, 16 900 BYN",
+      "add": 16900,
       "card": 0
      },
      {
       "id": "ritm",
       "label": "Ритм",
-      "hint": "Современный минимализм, 2 950 000 ₸",
-      "add": 2950000,
+      "hint": "Современный минимализм, 17 500 BYN",
+      "add": 17500,
       "card": 3
      }
     ]
@@ -111,8 +111,8 @@ window.LP = {
      {
       "id": "palette",
       "label": "Другой оттенок",
-      "hint": "Любой из 150 цветов палитры, +325 000 ₸",
-      "add": 325000
+      "hint": "Любой из 150 цветов палитры, +1 900 BYN",
+      "add": 1900
      }
     ]
    },
@@ -127,23 +127,23 @@ window.LP = {
       "id": "chimney",
       "label": "Дымоход-сэндвич",
       "hint": "Нержавейка, с проходом кровли",
-      "add": 374000
+      "add": 2200
      },
      {
       "id": "mount",
       "label": "Монтаж и пусконаладка",
-      "add": 231000
+      "add": 1300
      },
      {
       "id": "screen",
       "label": "Защитный экран из камня",
-      "add": 302000
+      "add": 1800
      },
      {
       "id": "delivery",
       "label": "Доставка",
       "hint": "Считаем под ваш адрес",
-      "add": 82000
+      "add": 500
      }
     ]
    }
@@ -160,13 +160,13 @@ window.LP = {
     "depth": 575,
     "weight": 290
    },
-   "p1": 2850000,
+   "p1": 16900,
    "p2": 0,
-   "img": "pechi-kaminy/img/01.webp",
+   "img": "content/pechi-kaminy/img/01.webp",
    "photos": [
-    "pechi-kaminy/img/01.webp",
-    "pechi-kaminy/img/01-2.webp",
-    "pechi-kaminy/img/01-3.webp"
+    "content/pechi-kaminy/img/01.webp",
+    "content/pechi-kaminy/img/01-2.webp",
+    "content/pechi-kaminy/img/01-3.webp"
    ],
    "url": "https://ceramicadecor.ru/tipovye-kaminy-i-pechi-v-nalichii/cd_pech-kamin-tipovaya-keramikadekor-dorf-v-tsvete-belyj-antik/",
    "size": "",
@@ -184,13 +184,13 @@ window.LP = {
     "depth": 575,
     "weight": 290
    },
-   "p1": 2850000,
+   "p1": 16900,
    "p2": 0,
-   "img": "pechi-kaminy/img/02.webp",
+   "img": "content/pechi-kaminy/img/02.webp",
    "photos": [
-    "pechi-kaminy/img/02.webp",
-    "pechi-kaminy/img/02-2.webp",
-    "pechi-kaminy/img/02-3.webp"
+    "content/pechi-kaminy/img/02.webp",
+    "content/pechi-kaminy/img/02-2.webp",
+    "content/pechi-kaminy/img/02-3.webp"
    ],
    "url": "https://ceramicadecor.ru/tipovye-kaminy-i-pechi-v-nalichii/cd_pech-kamin-tipovaya-keramikadekor-dorf-v-tsvete-belyj-antik-2/",
    "size": "",
@@ -208,13 +208,13 @@ window.LP = {
     "depth": 575,
     "weight": 290
    },
-   "p1": 2850000,
+   "p1": 16900,
    "p2": 0,
-   "img": "pechi-kaminy/img/03.webp",
+   "img": "content/pechi-kaminy/img/03.webp",
    "photos": [
-    "pechi-kaminy/img/03.webp",
-    "pechi-kaminy/img/03-2.webp",
-    "pechi-kaminy/img/03-3.webp"
+    "content/pechi-kaminy/img/03.webp",
+    "content/pechi-kaminy/img/03-2.webp",
+    "content/pechi-kaminy/img/03-3.webp"
    ],
    "url": "https://ceramicadecor.ru/tipovye-kaminy-i-pechi-v-nalichii/cd_pech-kamin-tipovaya-keramikadekor-dorf-v-tsvete-belyj-antik-1/",
    "size": "",
@@ -232,13 +232,13 @@ window.LP = {
     "depth": 571,
     "weight": 290
    },
-   "p1": 2950000,
+   "p1": 17500,
    "p2": 0,
-   "img": "pechi-kaminy/img/04.webp",
+   "img": "content/pechi-kaminy/img/04.webp",
    "photos": [
-    "pechi-kaminy/img/04.webp",
-    "pechi-kaminy/img/04-2.webp",
-    "pechi-kaminy/img/04-3.webp"
+    "content/pechi-kaminy/img/04.webp",
+    "content/pechi-kaminy/img/04-2.webp",
+    "content/pechi-kaminy/img/04-3.webp"
    ],
    "url": "https://ceramicadecor.ru/tipovye-kaminy-i-pechi-v-nalichii/cd_pech-kamin-tipovaya-keramikadekor-dorf-v-tsvete-belyj-antik-2-1/",
    "size": "",
@@ -256,13 +256,13 @@ window.LP = {
     "depth": 571,
     "weight": 290
    },
-   "p1": 2950000,
+   "p1": 17500,
    "p2": 0,
-   "img": "pechi-kaminy/img/05.webp",
+   "img": "content/pechi-kaminy/img/05.webp",
    "photos": [
-    "pechi-kaminy/img/05.webp",
-    "pechi-kaminy/img/05-2.webp",
-    "pechi-kaminy/img/05-3.webp"
+    "content/pechi-kaminy/img/05.webp",
+    "content/pechi-kaminy/img/05-2.webp",
+    "content/pechi-kaminy/img/05-3.webp"
    ],
    "url": "https://ceramicadecor.ru/tipovye-kaminy-i-pechi-v-nalichii/cd_pech-kamin-tipovaya-keramikadekor-dorf-v-tsvete-belyj-antik-2-1-1-1/",
    "size": "",
@@ -280,13 +280,13 @@ window.LP = {
     "depth": 571,
     "weight": 290
    },
-   "p1": 2950000,
+   "p1": 17500,
    "p2": 0,
-   "img": "pechi-kaminy/img/06.webp",
+   "img": "content/pechi-kaminy/img/06.webp",
    "photos": [
-    "pechi-kaminy/img/06.webp",
-    "pechi-kaminy/img/06-2.webp",
-    "pechi-kaminy/img/06-3.webp"
+    "content/pechi-kaminy/img/06.webp",
+    "content/pechi-kaminy/img/06-2.webp",
+    "content/pechi-kaminy/img/06-3.webp"
    ],
    "url": "https://ceramicadecor.ru/tipovye-kaminy-i-pechi-v-nalichii/cd_pech-kamin-tipovaya-keramikadekor-dorf-v-tsvete-belyj-antik-2-1-1/",
    "size": "",
@@ -307,11 +307,11 @@ window.LP = {
   ],
   "good": [
    "Модель готова: выбираете цвет и обвязку, цена известна сразу.",
-   "Цена известна заранее: 2 850 000 ₸ за Дорф, 2 950 000 ₸ за Ритм, обвязка по прайсу.",
+   "Цена известна заранее: 16 900 BYN за Дорф, 17 500 BYN за Ритм, обвязка по прайсу.",
    "Срок от 2 недель со склада, монтаж за один день.",
    "Та же керамика ручной формовки и та же гарантия 50 лет."
   ],
-  "media": "pechi-kaminy/img/02.webp",
+  "media": "content/pechi-kaminy/img/02.webp",
   "single": false,
   "mediaHi": "assets/img/why/pechi-kaminy.webp 1998w"
  },
@@ -362,8 +362,8 @@ window.LP = {
   {
    "icon": "truck",
    "b": "",
-   "title": "Доставка и монтаж по Казахстану",
-   "text": "Монтаж выполняет наша команда. Керамику везём в любой город Казахстана в жёстком каркасе, груз застрахован.",
+   "title": "Доставка и монтаж по Беларуси",
+   "text": "Монтаж выполняет наша команда. Керамику везём в любой город Беларуси в жёстком каркасе, груз застрахован.",
    "svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2.8 6.4h10.4v9.2H2.8zM13.2 9.6h4l3 3.2v2.8h-7z\"/><circle cx=\"7\" cy=\"18\" r=\"2\"/><circle cx=\"17.4\" cy=\"18\" r=\"2\"/></svg>"
   }
  ],
@@ -374,7 +374,7 @@ window.LP = {
   },
   {
    "q": "Сколько стоит с монтажом?",
-   "a": "Печь-камин Дорф — 2 850 000 ₸, Ритм — 2 950 000 ₸. Другой оттенок глазури из палитры — плюс 325 000 ₸. Дымоход, монтаж и доставку считаем отдельно под ваш адрес — пришлём точную смету."
+   "a": "Печь-камин Дорф — 16 900 BYN, Ритм — 17 500 BYN. Другой оттенок глазури из палитры — плюс 1 900 BYN. Дымоход, монтаж и доставку считаем отдельно под ваш адрес — пришлём точную смету."
   },
   {
    "q": "Какая площадь отапливается?",
@@ -402,11 +402,11 @@ window.LP = {
   }
  ],
  "gallery": [
-  "pechi-kaminy/img/01.webp",
-  "pechi-kaminy/img/02.webp",
-  "pechi-kaminy/img/03.webp",
-  "pechi-kaminy/img/04.webp",
-  "pechi-kaminy/img/05.webp",
-  "pechi-kaminy/img/06.webp"
+  "content/pechi-kaminy/img/01.webp",
+  "content/pechi-kaminy/img/02.webp",
+  "content/pechi-kaminy/img/03.webp",
+  "content/pechi-kaminy/img/04.webp",
+  "content/pechi-kaminy/img/05.webp",
+  "content/pechi-kaminy/img/06.webp"
  ]
 };
