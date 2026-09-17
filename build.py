@@ -44,7 +44,7 @@ COUNTRIES = {
         "host": "ceramicadecor.kz", "flag": "🇰🇿",
         "country": "Казахстан", "country_loc": "Казахстане", "country_gen": "Казахстана",
         "currency": "₸", "rate": 5.5, "round": 1000, "round_tile": 10,
-        "phone": "+7 778 863 99 11", "whatsapp": "77788639911",
+        "phone": "+7 705 248 86 57", "whatsapp": "77052488657",
         "worktime": "Ежедневно 10:00–20:00",
         "showroom": {"city": "Астана", "address": "ул. Розы Баглановой, 3/1"},
         "cities": "Астане и Алматы",
