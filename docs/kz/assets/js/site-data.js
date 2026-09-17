@@ -46,7 +46,7 @@ window.LP = {
       "hint": "В изразцах под вашу топку",
       "k": 1,
       "img": "content/kaminy/img/b/01.webp",
-      "href": "kaminy.html"
+      "href": "izraztsovye-kaminy.html"
      },
      {
       "id": "bbq",

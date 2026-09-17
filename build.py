@@ -17,7 +17,7 @@
   · Meta Pixel с теми же событиями, что стояли; Яндекса нет, MAX нет.
 
 Страницы сохраняют старые адреса, на которые ведёт реклама:
-  index.html, catalog.html?cat=kaminy|bbq (переброс на kaminy.html /
+  index.html, catalog.html?cat=kaminy|bbq (переброс на izraztsovye-kaminy.html /
   bbq.html), izrazcy.html, ready.html, about.html, contacts.html,
   privacy.html.
 
@@ -99,10 +99,13 @@ STOCK = {
     'by': {'dorf': 16_900, 'ritm': 17_500, 'palette': 1_900},
 }
 
-# Адреса страниц — старые, на них ведёт реклама в Meta.
-PAGE_OF = {'kaminy': 'kaminy.html', 'barbekyu-kompleksy': 'bbq.html',
+# Адреса страниц — старые, на них ведёт реклама в Meta. Камины — не kaminy.html:
+# на хостинге .htaccess отдаёт по /kaminy старый catalog.html?cat=kaminy, а сам
+# catalog.html перебрасывает на страницу каминов — с именем kaminy.html выходила
+# бесконечная петля редиректов (.by лёг 17.09.2026).
+PAGE_OF = {'kaminy': 'izraztsovye-kaminy.html', 'barbekyu-kompleksy': 'bbq.html',
            'izraztsy': 'izrazcy.html', 'pechi-kaminy': 'ready.html'}
-SITE_NAV = [('kaminy.html', 'Камины'), ('bbq.html', 'Барбекю'), ('izrazcy.html', 'Изразцы'),
+SITE_NAV = [('izraztsovye-kaminy.html', 'Камины'), ('bbq.html', 'Барбекю'), ('izrazcy.html', 'Изразцы'),
             ('ready.html', 'Печи-камины'), ('about.html', 'О компании'), ('contacts.html', 'Контакты')]
 
 PIXEL_TPL = '''<!-- Meta Pixel — тот же, что стоял на старых сайтах kz/by -->
@@ -2018,7 +2021,7 @@ def build(cc):
 
 
 # Папки разделов (kaminy/, barbekyu-kompleksy/, …) лежат в content/, а не в
-# корне: на хостинге .htaccess отдаёт kaminy.html по адресу /kaminy, и папка
+# корне: на хостинге .htaccess отдаёт izraztsovye-kaminy.html по адресу /kaminy, и папка
 # с тем же именем перехватывала адрес — сервер отвечал 403 (17.09.2026, .by
 # лёг сразу после выкладки). Пути в html и data.js переписываются здесь же.
 CONTENT = 'content'
@@ -2160,7 +2163,7 @@ def site_data():
         note="Ответим в рабочее время, обычно в течение часа.",
         base=0, spread=1.2, turnkeyFactor=0, matchBy=None,
         fields=[dict(id="what", type="radio", step=1, label="Что хотите сделать", options=[
-            dict(id="kamin", label="Камин", hint="В изразцах под вашу топку", k=1, img="kaminy/img/b/01.webp", href="kaminy.html"),
+            dict(id="kamin", label="Камин", hint="В изразцах под вашу топку", k=1, img="kaminy/img/b/01.webp", href="izraztsovye-kaminy.html"),
             dict(id="bbq", label="Барбекю комплекс", hint="Для беседки или террасы", k=1, img="barbekyu-kompleksy/img/b/03.webp", href="bbq.html"),
             dict(id="stove", label="Печь-камин из наличия", hint="Готовая модель, цена сразу", k=1, img="pechi-kaminy/img/b/01.webp", href="ready.html"),
             dict(id="tiles", label="Изразцы", hint="Облицовка, панно, плитка", k=1, img="izraztsy/img/b/002.webp", href="izrazcy.html")])],
@@ -2375,14 +2378,14 @@ CATALOG_REDIRECT = '''<!DOCTYPE html>
   // поэтому адрес живёт, а страница — новая. Метки в адресе сохраняем.
   (function () {
     var q = new URLSearchParams(location.search);
-    var to = q.get('cat') === 'bbq' ? 'bbq.html' : 'kaminy.html';
+    var to = q.get('cat') === 'bbq' ? 'bbq.html' : 'izraztsovye-kaminy.html';
     q.delete('cat');
     var qs = q.toString();
     location.replace(to + (qs ? '?' + qs : '') + location.hash);
   })();
 </script>
-<noscript><meta http-equiv="refresh" content="0;url=kaminy.html"></noscript>
-</head><body><p><a href="kaminy.html">Камины</a> · <a href="bbq.html">Барбекю комплексы</a></p></body></html>
+<noscript><meta http-equiv="refresh" content="0;url=izraztsovye-kaminy.html"></noscript>
+</head><body><p><a href="izraztsovye-kaminy.html">Камины</a> · <a href="bbq.html">Барбекю комплексы</a></p></body></html>
 '''
 
 HUB_MINS = {}
@@ -2415,6 +2418,13 @@ def build_pages(out_dir, summary):
         html = (html.replace('@PHONE_PLACEHOLDER@', '+7 (___) ___-__-__' if cc == 'kz' else '+375 (__) ___-__-__'))
         io.open(os.path.join(out_dir, page), 'w', encoding='utf-8').write(html)
     io.open(os.path.join(out_dir, 'catalog.html'), 'w', encoding='utf-8').write(CATALOG_REDIRECT)
+    # Старое имя страницы каминов — заглушка с переброской (на хостинге файл
+    # с таким именем уже лежал, и там он был бы со старыми путями).
+    io.open(os.path.join(out_dir, 'kaminy.html'), 'w', encoding='utf-8').write(
+        '<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="robots" content="noindex">'
+        '<script>location.replace("izraztsovye-kaminy.html"+location.search+location.hash)</script>'
+        '<noscript><meta http-equiv="refresh" content="0;url=izraztsovye-kaminy.html"></noscript></head>'
+        '<body><a href="izraztsovye-kaminy.html">Изразцовые камины</a></body></html>')
     print('%s  страницы: index, about, contacts, privacy, catalog(→)' % cc)
 
 

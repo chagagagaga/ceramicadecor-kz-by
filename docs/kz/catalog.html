@@ -6,11 +6,11 @@
   // поэтому адрес живёт, а страница — новая. Метки в адресе сохраняем.
   (function () {
     var q = new URLSearchParams(location.search);
-    var to = q.get('cat') === 'bbq' ? 'bbq.html' : 'kaminy.html';
+    var to = q.get('cat') === 'bbq' ? 'bbq.html' : 'izraztsovye-kaminy.html';
     q.delete('cat');
     var qs = q.toString();
     location.replace(to + (qs ? '?' + qs : '') + location.hash);
   })();
 </script>
-<noscript><meta http-equiv="refresh" content="0;url=kaminy.html"></noscript>
-</head><body><p><a href="kaminy.html">Камины</a> · <a href="bbq.html">Барбекю комплексы</a></p></body></html>
+<noscript><meta http-equiv="refresh" content="0;url=izraztsovye-kaminy.html"></noscript>
+</head><body><p><a href="izraztsovye-kaminy.html">Камины</a> · <a href="bbq.html">Барбекю комплексы</a></p></body></html>

@@ -4,7 +4,7 @@ const cc = process.argv[2]||'kz', port = cc==='kz'?8101:8102, mobile = process.a
 const b = await chromium.launch({channel:'chrome'});
 const ctx = await b.newContext(mobile?{viewport:{width:390,height:844},deviceScaleFactor:1,isMobile:true,hasTouch:true}:{viewport:{width:1440,height:1000}});
 const p = await ctx.newPage();
-for (const pg of ['index.html','kaminy.html','bbq.html','izrazcy.html','ready.html','about.html','contacts.html','privacy.html']) {
+for (const pg of ['index.html','izraztsovye-kaminy.html','bbq.html','izrazcy.html','ready.html','about.html','contacts.html','privacy.html']) {
   const errs=[]; const bad=[];
   const h1=e=>errs.push(e.message), h2=r=>{ if(r.status()>=400) bad.push(r.status()+' '+r.url().replace(`http://localhost:${port}/`,'')); };
   p.on('pageerror',h1); p.on('response',h2);

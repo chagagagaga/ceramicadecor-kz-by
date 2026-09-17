@@ -18,7 +18,7 @@ await p.route('**/*', async route => {
   return route.abort();
 });
 const errs=[]; p.on('pageerror',e=>errs.push(e.message));
-for (const pg of ['kaminy.html','bbq.html','izrazcy.html','ready.html','index.html','contacts.html']) {
+for (const pg of ['izraztsovye-kaminy.html','bbq.html','izrazcy.html','ready.html','index.html','contacts.html']) {
   posts.length=0;
   await p.goto(`http://${host}/${pg}`, {waitUntil:'networkidle'});
   // 1) калькулятор / квиз: кнопка «Прислать расчёт» → модалка

@@ -19,7 +19,7 @@ await p.route('**/*', async route => {
   return route.abort();
 });
 const errs=[]; p.on('pageerror',e=>errs.push(e.message));
-await p.goto(`http://${host}/kaminy.html`, {waitUntil:'networkidle'});
+await p.goto(`http://${host}/izraztsovye-kaminy.html`, {waitUntil:'networkidle'});
 // маска телефона
 const tel = p.locator('form input[type="tel"]').first();
 await tel.click(); await tel.type(cc==='by'?'291234567':'7788639911');
