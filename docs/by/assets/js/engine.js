@@ -691,7 +691,7 @@
             '<input type="hidden" name="channel" data-chan-input value="whatsapp">' +
             '<input type="hidden" name="timing" data-timing-input value="">' +
             '<label class="field"><span class="field__label">Имя</span><input class="input" type="text" name="name" placeholder="Как к вам обращаться" required></label>' +
-            '<label class="field"><span class="field__label">Телефон</span><input class="input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required inputmode="tel"></label>' +
+            '<label class="field"><span class="field__label">Телефон</span><input class="input" type="tel" name="phone" placeholder="' + (String(P.brand.dial) === '375' ? '+375 (__) ___-__-__' : '+7 (___) ___-__-__') + '" required inputmode="tel"></label>' +
             '<div class="field"><span class="field__label">Когда планируете начать?</span><div class="chips-timing">' +
               TIMINGS.map(function (t) { return '<button type="button" class="chip" data-timing="' + t.id + '">' + t.l + '</button>'; }).join('') +
             '</div></div>' +
