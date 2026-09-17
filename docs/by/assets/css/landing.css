@@ -65,7 +65,8 @@
 .msgdock__btn--max svg { width: 100%; height: 100%; border-radius: 22%; box-shadow: 0 8px 22px rgba(0,0,0,.45); }
 .msgdock__btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0, 0, 0, .55); }
 .msgdock__btn--tg { background: #2aabee; }
-.msgdock__btn--wa { background: #25d366; }
+.msgdock__btn--wa { background: none; box-shadow: none; }
+.msgdock__btn--wa svg { width: 100%; height: 100%; border-radius: 22%; box-shadow: 0 8px 22px rgba(0,0,0,.45); }
 /* Подпись выезжает при наведении: кружок остаётся компактным, но
    человеку не нужно гадать, куда он попадёт. */
 .msgdock__btn span {
@@ -90,9 +91,11 @@
 }
 .header__max svg { width: 28px; height: 28px; display: block; }
 .header__max i {
-  font-style: normal; font-size: .5rem; font-weight: 700; letter-spacing: .12em;
+  font-style: normal; font-size: .5rem; text-transform: uppercase; font-weight: 700; letter-spacing: .12em;
   color: var(--text-muted); line-height: 1; text-align: center;
 }
+.header__wa { width: auto; min-width: 44px; }
+.header__wa i { letter-spacing: .06em; }
 
 /* Липкая шапка накрывала верх блока, к которому ведёт ссылка. Отступ
    задаём через scroll-margin-top: ручной расчёт спорит с нативной
@@ -556,6 +559,7 @@ textarea.input { resize: vertical; min-height: 84px; }
   color: var(--white); font: inherit; font-size: .78rem; line-height: 1.2; cursor: pointer;
 }
 .mobilebar svg { width: 19px; height: 19px; fill: currentColor; }
+.mobilebar [data-wa] svg { width: 22px; height: 22px; }
 .mobilebar .is-primary { flex: 1.5; background: var(--primary); border-color: var(--primary); font-size: .88rem; font-weight: 600; }
 /* Подпись под иконкой была 10,5 px — нечитаемо. Мессенджер получает
    свой фирменный цвет, чтобы панель не выглядела пустой. */

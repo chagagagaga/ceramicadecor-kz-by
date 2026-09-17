@@ -1,0 +1,15 @@
+import { chromium } from 'playwright';
+const S='/private/tmp/claude-501/-Users-alex/7b318732-29a6-4a8e-b2aa-2cabee36b183/scratchpad/kzby/';
+const b = await chromium.launch({channel:'chrome'});
+let p = await b.newPage({viewport:{width:1440,height:400}});
+await p.goto('http://localhost:8101/kaminy.html', {waitUntil:'networkidle'});
+await p.screenshot({path:S+'hdr_desktop.png', clip:{x:0,y:0,width:1440,height:90}});
+await p.screenshot({path:S+'dock.png', clip:{x:1300,y:280,width:140,height:120}});
+await p.close();
+const ctx = await b.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+p = await ctx.newPage();
+await p.goto('http://localhost:8102/kaminy.html', {waitUntil:'networkidle'});
+await p.evaluate(()=>window.scrollTo(0,900)); await p.waitForTimeout(500);
+await p.screenshot({path:S+'hdr_mobile.png', clip:{x:0,y:0,width:390,height:70}});
+await p.screenshot({path:S+'bar_mobile.png', clip:{x:0,y:764,width:390,height:80}});
+await b.close();
