@@ -94,7 +94,7 @@
   font-style: normal; font-size: .5rem; text-transform: uppercase; font-weight: 700; letter-spacing: .12em;
   color: var(--text-muted); line-height: 1; text-align: center;
 }
-.header__wa { width: auto; min-width: 44px; }
+.header__wa { width: auto; min-width: 44px; gap: 5px; }
 .header__wa i { letter-spacing: .06em; }
 
 /* Липкая шапка накрывала верх блока, к которому ведёт ссылка. Отступ
