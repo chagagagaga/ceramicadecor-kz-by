@@ -573,7 +573,7 @@ INDEX_TPL = """<!DOCTYPE html>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/golos-text-cyrillic.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-cyrillic.woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/system.css?v=1">
-<link rel="stylesheet" href="assets/css/landing.css?v=2">
+<link rel="stylesheet" href="assets/css/landing.css?v=3">
 @PIXEL@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"CeramicaDecor","url":"https://@HOST@","description":"@SEO@","telephone":"@PHONE_E164@","address":{"@type":"PostalAddress","addressCountry":"@CC@"},"sameAs":["https://www.instagram.com/ceramicadecor.@CC_LOWER@/","https://wa.me/@WHATSAPP@"]}

@@ -553,9 +553,9 @@ textarea.input { resize: vertical; min-height: 84px; }
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; display: none; gap: .4rem;
   padding: .5rem .6rem calc(.5rem + env(safe-area-inset-bottom));
   background: rgba(16,16,16,.97); border-top: 1px solid var(--border);
-  transform: translateY(110%); transition: transform var(--transition);
 }
-.mobilebar.is-visible { transform: none; }
+/* Панель видна всегда, с первого экрана: раньше выезжала после 500 px
+   прокрутки, и наверху страницы кнопок не было (Алексей, 17.09.2026). */
 .mobilebar a, .mobilebar button {
   flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: .2rem; min-height: 54px;

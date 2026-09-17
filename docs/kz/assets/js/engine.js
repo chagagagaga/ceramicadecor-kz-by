@@ -1297,7 +1297,6 @@
     var header = $('[data-header]'), bar = $('[data-mobilebar]');
     function onScroll() {
       if (header) header.classList.toggle('is-stuck', window.scrollY > 20);
-      if (bar) bar.classList.toggle('is-visible', window.scrollY > 500);
     }
     window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
