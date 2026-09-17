@@ -449,6 +449,10 @@ main > section:nth-of-type(n+4) { content-visibility: auto; contain-intrinsic-si
 .lightbox__nav--prev { left: clamp(.5rem, 2vw, 2rem); }
 .lightbox__nav--next { right: clamp(.5rem, 2vw, 2rem); }
 
+/* Хаб: вводный текст над калькулятором, а не впритык к нему. */
+.calc__intro { margin-bottom: 2.2rem; max-width: 62ch; }
+.calc__intro .section__lead { margin-top: .8rem; }
+
 /* ── Гарантии ────────────────────────────────────────────────────────────── */
 .guarantees { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--seam-w); background: var(--seam); }
 .guarantees > * { flex: 0 1 calc((100% - 4.5rem) / 4); min-width: 260px; }

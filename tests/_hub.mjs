@@ -1,0 +1,11 @@
+import { chromium } from 'playwright';
+const S='/private/tmp/claude-501/-Users-alex/7b318732-29a6-4a8e-b2aa-2cabee36b183/scratchpad/kzby/';
+const b = await chromium.launch({channel:'chrome'});
+const p = await b.newPage({viewport:{width:1440,height:1000}});
+await p.goto('http://localhost:8101/index.html', {waitUntil:'networkidle'});
+await p.addStyleTag({content:'main > section{content-visibility:visible!important}'});
+await p.locator('#calc').scrollIntoViewIfNeeded(); await p.waitForTimeout(500);
+await p.screenshot({path:S+'hub_calc.png'});
+await p.locator('[data-guarantees]').scrollIntoViewIfNeeded(); await p.evaluate(()=>window.scrollBy(0,-250)); await p.waitForTimeout(500);
+await p.screenshot({path:S+'hub_guar.png'});
+await b.close();
