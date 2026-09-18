@@ -193,9 +193,7 @@ window.LP = {
    "photos": [
     "content/pechi-kaminy/img/01.webp",
     "content/pechi-kaminy/img/01-2.webp",
-    "content/pechi-kaminy/img/01-3.webp",
-    "content/pechi-kaminy/img/01-4.webp",
-    "content/pechi-kaminy/img/01-5.webp"
+    "content/pechi-kaminy/img/01-3.webp"
    ],
    "url": "https://ceramicadecor.ru/tipovye-kaminy-i-pechi-v-nalichii/cd_pech-kamin-tipovaya-keramikadekor-dorf-v-tsvete-belyj-antik/",
    "size": "",
@@ -432,9 +430,9 @@ window.LP = {
    "Срок поставки от 2 недель, монтаж 1–2 дня.",
    "Тоже премиальная изразцовая облицовка и тоже гарантия 50 лет на керамику, но за существенно меньшую цену."
   ],
-  "media": "content/pechi-kaminy/img/02.webp",
-  "single": false,
-  "mediaHi": "assets/img/why/pechi-kaminy.webp 1998w"
+  "media": "assets/img/why/pechi-kaminy.webp",
+  "single": true,
+  "mediaHi": ""
  },
  "steps": [
   {
