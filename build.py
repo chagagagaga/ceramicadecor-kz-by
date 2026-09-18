@@ -48,7 +48,7 @@ COUNTRIES = {
         "worktime": "Ежедневно 10:00–20:00",
         "showroom": {"city": "Астана", "address": "ул. Розы Баглановой, 3/1"},
         "cities": "Астане и Алматы",
-        "email": "info@ceramicadecor.kz",
+        "email": "info@ceramicadecor.ru",
         "title_suffix": "в Казахстане",
         "siteKey": "ceramicadecor_kz",
     },

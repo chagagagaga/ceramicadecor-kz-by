@@ -17,7 +17,7 @@ window.LP = {
   "beacon": "",
   "metrikaId": 0,
   "siteKey": "ceramicadecor_kz",
-  "email": "info@ceramicadecor.kz",
+  "email": "info@ceramicadecor.ru",
   "dial": "7"
  },
  "currency": "₸",
