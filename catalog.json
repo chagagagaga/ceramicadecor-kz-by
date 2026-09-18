@@ -2421,6 +2421,39 @@
     "photo": "xl/media/image22.png",
     "row": 6,
     "img": "img/06.webp"
+   },
+   {
+    "title": "Печь-камин типовая КерамикаДекор Флора в цвете Белый Антик",
+    "collection": "",
+    "desc": "",
+    "price_ceramic": 630000,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/tipovye-kaminy-i-pechi-v-nalichii/cd_pech-kamin-tipovaya-keramikadekor-flora-v-tsvete-belyj-antik/",
+    "photo": "",
+    "row": 7,
+    "img": "img/07.webp"
+   },
+   {
+    "title": "Печь-камин типовая КерамикаДекор Флора в цвете Олива",
+    "collection": "",
+    "desc": "",
+    "price_ceramic": 630000,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/tipovye-kaminy-i-pechi-v-nalichii/cd_pech-kamin-tipovaya-keramikadekor-flora-v-tsvete-belyj-antik-1/",
+    "photo": "",
+    "row": 8,
+    "img": "img/08.webp"
+   },
+   {
+    "title": "Печь-камин типовая КерамикаДекор Флора в цвете Сапфир",
+    "collection": "",
+    "desc": "",
+    "price_ceramic": 630000,
+    "price_turnkey": null,
+    "url": "https://ceramicadecor.ru/tipovye-kaminy-i-pechi-v-nalichii/cd_pech-kamin-tipovaya-keramikadekor-flora-v-tsvete-belyj-antik-1-1/",
+    "photo": "",
+    "row": 9,
+    "img": "img/09.webp"
    }
   ]
  },

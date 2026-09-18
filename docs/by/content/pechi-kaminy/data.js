@@ -53,6 +53,13 @@ window.LP = {
       "hint": "Современный минимализм, 17 500 BYN",
       "add": 17500,
       "card": 3
+     },
+     {
+      "id": "flora",
+      "label": "Флора",
+      "hint": "Большое стекло 4:3, до 200 м³, 24 300 BYN",
+      "add": 24300,
+      "card": 6
      }
     ]
    },
@@ -68,7 +75,8 @@ window.LP = {
       "k": 1,
       "cards": {
        "dorf": 0,
-       "ritm": 3
+       "ritm": 3,
+       "flora": 6
       }
      },
      {
@@ -106,6 +114,25 @@ window.LP = {
       "card": 5,
       "showIf": {
        "model": "ritm"
+      }
+     },
+     {
+      "id": "oliva",
+      "label": "Олива",
+      "k": 1,
+      "card": 7,
+      "showIf": {
+       "model": "flora"
+      }
+     },
+     {
+      "id": "sapfir",
+      "label": "Сапфир",
+      "hint": "Глубокий синий",
+      "k": 1,
+      "card": 8,
+      "showIf": {
+       "model": "flora"
       }
      },
      {
@@ -293,9 +320,101 @@ window.LP = {
    "surface": "",
    "kind": "",
    "props": []
+  },
+  {
+   "title": "Печь-камин Флора, Белый Антик",
+   "collection": "Флора",
+   "desc": "Заводская модель на топке Астов ПС 700: обогрев до 200 м³, дымоход 200 мм. Облицовка изразцами Флора в цвете белый антик. Комплект со склада, монтаж под ключ.",
+   "spec": {
+    "width": 1060,
+    "height": 1442,
+    "depth": 600,
+    "weight": 360
+   },
+   "p1": 24300,
+   "p2": 0,
+   "img": "content/pechi-kaminy/img/07.webp",
+   "photos": [
+    "content/pechi-kaminy/img/07.webp",
+    "content/pechi-kaminy/img/07-2.webp",
+    "content/pechi-kaminy/img/07-3.webp"
+   ],
+   "url": "https://ceramicadecor.ru/tipovye-kaminy-i-pechi-v-nalichii/cd_pech-kamin-tipovaya-keramikadekor-flora-v-tsvete-belyj-antik/",
+   "size": "",
+   "surface": "",
+   "kind": "",
+   "props": []
+  },
+  {
+   "title": "Печь-камин Флора, Олива",
+   "collection": "Флора",
+   "desc": "Заводская модель на топке Астов ПС 700: обогрев до 200 м³, дымоход 200 мм. Облицовка изразцами Флора в цвете олива. Комплект со склада, монтаж под ключ.",
+   "spec": {
+    "width": 1060,
+    "height": 1442,
+    "depth": 600,
+    "weight": 360
+   },
+   "p1": 24300,
+   "p2": 0,
+   "img": "content/pechi-kaminy/img/08.webp",
+   "photos": [
+    "content/pechi-kaminy/img/08.webp",
+    "content/pechi-kaminy/img/08-2.webp",
+    "content/pechi-kaminy/img/08-3.webp"
+   ],
+   "url": "https://ceramicadecor.ru/tipovye-kaminy-i-pechi-v-nalichii/cd_pech-kamin-tipovaya-keramikadekor-flora-v-tsvete-belyj-antik-1/",
+   "size": "",
+   "surface": "",
+   "kind": "",
+   "props": []
+  },
+  {
+   "title": "Печь-камин Флора, Сапфир",
+   "collection": "Флора",
+   "desc": "Заводская модель на топке Астов ПС 700: обогрев до 200 м³, дымоход 200 мм. Облицовка изразцами Флора в цвете сапфир. Комплект со склада, монтаж под ключ.",
+   "spec": {
+    "width": 1060,
+    "height": 1442,
+    "depth": 600,
+    "weight": 360
+   },
+   "p1": 24300,
+   "p2": 0,
+   "img": "content/pechi-kaminy/img/09.webp",
+   "photos": [
+    "content/pechi-kaminy/img/09.webp",
+    "content/pechi-kaminy/img/09-2.webp",
+    "content/pechi-kaminy/img/09-3.webp"
+   ],
+   "url": "https://ceramicadecor.ru/tipovye-kaminy-i-pechi-v-nalichii/cd_pech-kamin-tipovaya-keramikadekor-flora-v-tsvete-belyj-antik-1-1/",
+   "size": "",
+   "surface": "",
+   "kind": "",
+   "props": []
   }
  ],
- "filters": [],
+ "filters": [
+  {
+   "key": "collection",
+   "label": "Коллекция",
+   "field": "collection",
+   "options": [
+    {
+     "id": "Дорф",
+     "label": "Дорф"
+    },
+    {
+     "id": "Ритм",
+     "label": "Ритм"
+    },
+    {
+     "id": "Флора",
+     "label": "Флора"
+    }
+   ]
+  }
+ ],
  "why": {
   "badTitle": "Индивидуальный проект",
   "goodTitle": "Типовая модель",
@@ -307,7 +426,7 @@ window.LP = {
   ],
   "good": [
    "Модель готова: выбираете цвет и обвязку, цена известна сразу.",
-   "Цена известна заранее: 16 900 BYN за Дорф, 17 500 BYN за Ритм, обвязка по прайсу.",
+   "Цена известна заранее: 16 900 BYN за Дорф, 17 500 BYN за Ритм, 24 300 BYN за Флору, обвязка по прайсу.",
    "Срок от 2 недель со склада, монтаж за один день.",
    "Та же керамика ручной формовки и та же гарантия 50 лет."
   ],
@@ -374,11 +493,11 @@ window.LP = {
   },
   {
    "q": "Сколько стоит с монтажом?",
-   "a": "Печь-камин Дорф — 16 900 BYN, Ритм — 17 500 BYN. Другой оттенок глазури из палитры — плюс 1 900 BYN. Дымоход, монтаж и доставку считаем отдельно под ваш адрес — пришлём точную смету."
+   "a": "Печь-камин Дорф — 16 900 BYN, Ритм — 17 500 BYN, Флора — 24 300 BYN. Другой оттенок глазури из палитры — плюс 1 900 BYN. Дымоход, монтаж и доставку считаем отдельно под ваш адрес — пришлём точную смету."
   },
   {
    "q": "Какая площадь отапливается?",
-   "a": "Типовая печь-камин рассчитана на 60–90 м² при нормальном утеплении. Если дом больше или потолки выше трёх метров — лучше индивидуальный проект, подберём на замере."
+   "a": "Дорф и Ритм рассчитаны на 60–90 м² при нормальном утеплении, Флора с топкой 8 кВт — до 200 м³, то есть около 70–80 м². Если дом больше или потолки выше трёх метров — лучше индивидуальный проект, подберём на замере."
   },
   {
    "q": "Нужен ли фундамент?",
@@ -407,6 +526,9 @@ window.LP = {
   "content/pechi-kaminy/img/03.webp",
   "content/pechi-kaminy/img/04.webp",
   "content/pechi-kaminy/img/05.webp",
-  "content/pechi-kaminy/img/06.webp"
+  "content/pechi-kaminy/img/06.webp",
+  "content/pechi-kaminy/img/07.webp",
+  "content/pechi-kaminy/img/08.webp",
+  "content/pechi-kaminy/img/09.webp"
  ]
 };
