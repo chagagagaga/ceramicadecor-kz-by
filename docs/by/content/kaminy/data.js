@@ -94,7 +94,7 @@ window.LP = {
     "id": "width",
     "type": "range",
     "step": 3,
-    "label": "Ширина портала",
+    "label": "Ширина камина",
     "min": 0.9,
     "max": 2.6,
     "stepSize": 0.1,
