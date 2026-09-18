@@ -66,7 +66,9 @@ COUNTRIES = {
     },
 }
 # Meta Pixel — один на оба сайта, как стоял. Clarity — тоже со старых сайтов.
-META_PIXEL = '5387903231434965'
+# Пиксель Meta — свой на страну (18.09.2026, Алексей: «разделить, чтобы данные
+# были чистые»). До этого оба сайта слали в один 5387903231434965.
+META_PIXEL = {'kz': '5387903231434965', 'by': '887024874416559'}
 
 # Заполняется на каждую страну в build(): всё остальное читает отсюда.
 BRAND = {}
@@ -108,7 +110,7 @@ PAGE_OF = {'kaminy': 'izraztsovye-kaminy.html', 'barbekyu-kompleksy': 'bbq.html'
 SITE_NAV = [('izraztsovye-kaminy.html', 'Камины'), ('bbq.html', 'Барбекю'), ('izrazcy.html', 'Изразцы'),
             ('ready.html', 'Печи-камины'), ('about.html', 'О компании'), ('contacts.html', 'Контакты')]
 
-PIXEL_TPL = '''<!-- Meta Pixel — тот же, что стоял на старых сайтах kz/by -->
+PIXEL_TPL = '''<!-- Meta Pixel — свой на страну -->
 <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -129,7 +131,11 @@ function load(){if(c.__clarityLoaded)return;c.__clarityLoaded=true;var t=l.creat
 function go(){setTimeout(function(){('requestIdleCallback' in c)?c.requestIdleCallback(load,{timeout:2500}):load();},1500);}
 if(l.readyState==='complete')go();else c.addEventListener('load',go,{once:true});
 })(window,document,'clarity','script','wn9tvhnw8i');
-</script>''' % (META_PIXEL, META_PIXEL)
+</script>'''
+
+
+def pixel_tpl():
+    return PIXEL_TPL % (META_PIXEL[CC['code']], META_PIXEL[CC['code']])
 
 
 def country_text(v):
@@ -1963,7 +1969,7 @@ def build(cc):
         html = (INDEX_TPL
                 .replace('@LOGO_SVG@', logo_svg)
                 .replace('@SITE_NAV@', site_nav(page))
-                .replace('@PIXEL@', PIXEL_TPL)
+                .replace('@PIXEL@', pixel_tpl())
                 .replace('@PAGE@', page)
                 .replace('@SHOWROOM_COL@', showroom_col())
                 .replace('@TITLE@', P["title"]).replace('@SEO@', P["seo"])
@@ -2144,7 +2150,7 @@ def page_html(cc_page, title, seo, body, extra_head='', hero=None):
                 .replace('<link rel="preload" as="image" href="@HERO_TALL@" media="(max-width: 700px)" fetchpriority="high">\n', '')
                 .replace('"description":"@SEO@"', '"description":"%s"' % seo))
     html = (head + extra_head + '</head>\n<body>\n\n' + header + '<main id="top">\n' + body + '\n</main>\n\n' + tail)
-    html = (html.replace('@SITE_NAV@', site_nav(cc_page)).replace('@PIXEL@', PIXEL_TPL).replace('@PAGE@', cc_page)
+    html = (html.replace('@SITE_NAV@', site_nav(cc_page)).replace('@PIXEL@', pixel_tpl()).replace('@PAGE@', cc_page)
                 .replace('@SHOWROOM_COL@', showroom_col()).replace('@LOGO_SVG@', LOGO_SVG)
                 .replace('@SLUG@/data.js?v=1', 'assets/js/site-data.js?v=1')
                 .replace('@PHONE@', BRAND["phone"]).replace('@WORKTIME@', BRAND["worktime"])
