@@ -812,7 +812,7 @@ INDEX_TPL = """<!DOCTYPE html>
 </div>
 
 <script src="@SLUG@/data.js?v=1"></script>
-<script src="assets/js/engine.js?v=2"></script>
+<script src="assets/js/engine.js?v=3"></script>
 <script>window.CD_ATTRIBUTION_CONFIG = { dryRun: false };</script>
 <script src="js/cd-attribution.js" defer></script>
 </body>

@@ -248,35 +248,70 @@
                /\.github\.io$/.test(location.hostname) ||
                /(^|[?&])demo=1(&|$)/.test(location.search);
 
+    /* Человеческие названия для менеджера. Главное — выбранный канал: если
+       человек просил не звонить, это первая строка везде (Иван, 17.09.2026:
+       «менеджеры не видят, что заказчик выбрал не звонить, и звонят»). */
+    var CHAN = { call: 'Звонок', whatsapp: 'WhatsApp', telegram: 'Telegram', max: 'MAX' };
+    var TIMING = { now: 'уже сейчас', '1-3m': 'в ближайшие 1–3 месяца', later: 'позже, присматривается' };
+    function chanLine(p) {
+      var ch = p.channel || '';
+      if (!ch) return '';
+      return ch === 'call' ? 'ПОЗВОНИТЬ' : 'НЕ ЗВОНИТЬ — написать в ' + (CHAN[ch] || ch);
+    }
+    function estimate(q) {
+      if (!q || !q.estimate_min) return '';
+      var f = function (n) { return Math.round(n).toLocaleString('ru-RU').replace(/,/g, ' '); };
+      return f(q.estimate_min) + (q.estimate_max ? ' – ' + f(q.estimate_max) : '') + ' ' + CUR +
+             (q.estimate_turnkey ? ', под ключ ' + f(q.estimate_turnkey) + ' ' + CUR : '');
+    }
+
     function tgText(payload) {
       var flag = P.brand.flag || '';
+      var q = payload.quiz || null;
       var t = flag + ' Новая заявка с сайта ' + (P.brand.host || location.hostname) +
         '\n\uD83D\uDC64 Имя: ' + (payload.name || '') +
         '\n\uD83D\uDCDE Телефон: ' + (payload.phone || '');
+      if (payload.channel) t += '\n' + (payload.channel === 'call' ? '\uD83D\uDCAC ' : '\u2757 ') + chanLine(payload);
+      if (payload.timing) t += '\n\uD83D\uDDD3 Сроки: ' + (TIMING[payload.timing] || payload.timing);
       t += '\n\uD83D\uDCC4 Страница: ' + document.title;
       t += '\n\uD83D\uDCCD Источник: ' + (payload.sourceLabel || payload.source || 'Форма сайта');
+      if (q && q.summary) t += '\n\uD83E\uDDEE Конфигурация: ' + q.summary;
+      if (estimate(q)) t += '\n\uD83D\uDCB0 Расчёт на сайте: ' + estimate(q);
       if (payload.comment) t += '\n\u270F\uFE0F Комментарий: ' + payload.comment;
-      if (payload.quiz && payload.quiz.summary) t += '\n\uD83E\uDDEE Конфигурация: ' + payload.quiz.summary;
-      if (payload.channel) t += '\n\uD83D\uDCAC Связаться: ' + payload.channel;
       return t;
     }
 
     /* ЛСО: через скрипт атрибуции (cd-attribution.js) — как на старых сайтах:
        window.CDAttribution.submitLead(lead) сам добавит UTM, fbclid, первый визит
        и site_key по домену. Формы НЕ помечаем data-cd-external-lead, чтобы скрипт
-       не отправлял заявку второй раз своим обработчиком. */
+       не отправлял заявку второй раз своим обработчиком.
+       subject / comment / quiz_answers — готовый текст для менеджера, тот же
+       формат, что на РФ-посадочных. */
     function toCrm(form, payload) {
       var A = window.CDAttribution;
       if (!A || typeof A.submitLead !== 'function') return;
       var label = payload.sourceLabel || payload.source || 'Форма сайта';
+      var q = payload.quiz || null, ch = payload.channel || '';
+      var noCall = !!ch && ch !== 'call';
+      var lines = [];
+      if (ch) lines.push('Связь: ' + (noCall ? chanLine(payload) : 'позвонить'));
+      if (payload.timing) lines.push('Сроки: ' + (TIMING[payload.timing] || payload.timing));
+      if (q && q.summary) lines.push('Конфигурация: ' + q.summary);
+      if (estimate(q)) lines.push('Расчёт на сайте: ' + estimate(q));
+      if (payload.comment) lines.push('Комментарий клиента: ' + payload.comment);
+      lines.push('Откуда: ' + label + ', ' + document.title);
+      lines.push('Страница: ' + location.origin + location.pathname);
+      var qa = [];
+      if (ch) qa.push(chanLine(payload));
+      if (q && q.summary) qa.push(q.summary);
       try {
         A.submitLead({
-          subject: 'Заявка с сайта ' + location.hostname.replace(/^www\./, '') + ' — ' + label,
+          subject: (noCall ? '\u2757НЕ ЗВОНИТЬ, ' + (CHAN[ch] || ch) + ' · ' : '') +
+                   'Заявка с сайта ' + location.hostname.replace(/^www\./, '') + ' — ' + label,
           name: payload.name || '',
           phone: payload.phone || '',
-          comment: 'Страница: ' + document.title +
-            (payload.quiz && payload.quiz.summary ? '. Конфигурация: ' + payload.quiz.summary : '') +
-            (payload.comment ? '. ' + payload.comment : ''),
+          comment: lines.join('\n'),
+          quiz_answers: qa.join('. '),
           contact_method: 'website_form',
         }).catch(function () {});
       } catch (e) {}
@@ -288,8 +323,14 @@
     function maskPhone(el) {
       var d = el.value.replace(/\D/g, '');
       if (DIAL === '375') {
-        if (d.indexOf('375') !== 0) d = '375' + d.replace(/^80?/, '');
-        d = d.slice(0, 12);
+        // Приводим к «375» + 9 цифр. Человек может вставить «+375 29…»,
+        // «80 29…» (внутренний формат) или набрать код страны поверх
+        // уже подставленного «+375» — все три случая сводим к одному.
+        var loc = d.indexOf('375') === 0 ? d.slice(3) : d;
+        if (loc.indexOf('80') === 0) loc = loc.slice(2);
+        else if (loc === '8' || loc === '0') loc = '';
+        if (loc.indexOf('375') === 0 && loc.length > 9) loc = loc.slice(3);
+        d = ('375' + loc).slice(0, 12);
         var o = '+375';
         if (d.length > 3) o += ' (' + d.slice(3, 5);
         if (d.length >= 5) o += ') ' + d.slice(5, 8);
