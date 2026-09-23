@@ -199,7 +199,8 @@ window.LP = {
    "size": "",
    "surface": "",
    "kind": "",
-   "props": []
+   "props": [],
+   "id": "pech-kamin-dorf-belyj-antik"
   },
   {
    "title": "Печь-камин Дорф, Горький Шоколад",
@@ -223,7 +224,8 @@ window.LP = {
    "size": "",
    "surface": "",
    "kind": "",
-   "props": []
+   "props": [],
+   "id": "pech-kamin-dorf-gorkij-shokolad"
   },
   {
    "title": "Печь-камин Дорф, Муравленый",
@@ -247,7 +249,8 @@ window.LP = {
    "size": "",
    "surface": "",
    "kind": "",
-   "props": []
+   "props": [],
+   "id": "pech-kamin-dorf-muravlenyj"
   },
   {
    "title": "Печь-камин Ритм, Белый Антик",
@@ -271,7 +274,8 @@ window.LP = {
    "size": "",
    "surface": "",
    "kind": "",
-   "props": []
+   "props": [],
+   "id": "pech-kamin-ritm-belyj-antik"
   },
   {
    "title": "Печь-камин Ритм, Вишнёвый",
@@ -295,7 +299,8 @@ window.LP = {
    "size": "",
    "surface": "",
    "kind": "",
-   "props": []
+   "props": [],
+   "id": "pech-kamin-ritm-vishnevyj"
   },
   {
    "title": "Печь-камин Ритм, Лазурный",
@@ -319,7 +324,8 @@ window.LP = {
    "size": "",
    "surface": "",
    "kind": "",
-   "props": []
+   "props": [],
+   "id": "pech-kamin-ritm-lazurnyj"
   },
   {
    "title": "Печь-камин Флора, Белый Антик",
@@ -343,7 +349,8 @@ window.LP = {
    "size": "",
    "surface": "",
    "kind": "",
-   "props": []
+   "props": [],
+   "id": "pech-kamin-flora-belyj-antik"
   },
   {
    "title": "Печь-камин Флора, Олива",
@@ -367,7 +374,8 @@ window.LP = {
    "size": "",
    "surface": "",
    "kind": "",
-   "props": []
+   "props": [],
+   "id": "pech-kamin-flora-oliva"
   },
   {
    "title": "Печь-камин Флора, Сапфир",
@@ -391,7 +399,8 @@ window.LP = {
    "size": "",
    "surface": "",
    "kind": "",
-   "props": []
+   "props": [],
+   "id": "pech-kamin-flora-sapfir"
   }
  ],
  "filters": [

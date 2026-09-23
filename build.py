@@ -822,7 +822,7 @@ INDEX_TPL = """<!DOCTYPE html>
 </div>
 
 <script src="@SLUG@/data.js?v=1"></script>
-<script src="assets/js/engine.js?v=3"></script>
+<script src="assets/js/engine.js?v=4"></script>
 <script>window.CD_ATTRIBUTION_CONFIG = { dryRun: false };</script>
 <script src="js/cd-attribution.js" defer></script>
 </body>
@@ -1962,6 +1962,7 @@ def build(cc):
         # «img/01.webp» → «kaminy/img/01.webp», кадры соседних разделов
         # («barbekyu-kompleksy/img/03.webp») уже с папкой.
         data = relocate(data, slug)
+        add_ids(data['catalog'])
         os.makedirs(os.path.join(out_dir, slug), exist_ok=True)
         io.open(os.path.join(out_dir, slug, 'data.js'), 'w', encoding='utf-8').write(
             "/* Контент раздела «%s» для %s. Правится в build.py — вёрстка и логика общие. */\n"
@@ -2073,6 +2074,25 @@ def nest_content(out_dir):
         t2 = rx_abs.sub(r'\1' + CONTENT + r'/\2/img/', t2)
         if t2 != t:
             io.open(f, 'w', encoding='utf-8').write(t2)
+
+
+def slugify(t):
+    tr = dict(zip('абвгдеёжзийклмнопрстуфхцчшщъыьэюя',
+                  ['a','b','v','g','d','e','e','zh','z','i','j','k','l','m','n','o','p','r','s','t','u','f','h','c','ch','sh','sch','','y','','e','yu','ya']))
+    t = ''.join(tr.get(ch, ch) for ch in (t or '').lower())
+    return re.sub(r'[^a-z0-9]+', '-', t).strip('-')
+
+
+def add_ids(cards):
+    """Адрес карточки: #kamin-albion. Менеджер шлёт клиенту ссылку на
+    конкретный объект, а не на весь каталог (Альфида, 23.09.2026). Ключ —
+    из названия; если названия совпадают, добавляем порядковый номер."""
+    seen = {}
+    for i, c in enumerate(cards):
+        base = slugify(c.get('title')) or 'item-%d' % (i + 1)
+        n = seen.get(base, 0) + 1
+        seen[base] = n
+        c['id'] = base if n == 1 else '%s-%d' % (base, n)
 
 
 def relocate(data, slug):
