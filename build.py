@@ -721,10 +721,10 @@ INDEX_TPL = """<!DOCTYPE html>
       <label class="field"><span class="field__label">Ваш номер телефона</span>
         <input class="input" type="tel" name="phone" placeholder="@PHONE_PLACEHOLDER@" required inputmode="tel"></label>
       <div class="field"><span class="field__label">Куда прислать расчёт</span>
-        <input type="hidden" name="channel" data-chan-input value="whatsapp">
+        <input type="hidden" name="channel" data-chan-input value="">
         <div class="chans" data-chans>
           <button type="button" class="chan" data-chan="call">Звонок</button>
-          <button type="button" class="chan is-on" data-chan="whatsapp">WhatsApp</button>
+          <button type="button" class="chan" data-chan="whatsapp">WhatsApp</button>
         </div>
       </div>
       <button type="submit" class="btn btn--primary" style="width:100%">Получить 3D-проект и смету</button>
@@ -822,7 +822,7 @@ INDEX_TPL = """<!DOCTYPE html>
 </div>
 
 <script src="@SLUG@/data.js?v=1"></script>
-<script src="assets/js/engine.js?v=5"></script>
+<script src="assets/js/engine.js?v=6"></script>
 <script>window.CD_ATTRIBUTION_CONFIG = { dryRun: false };</script>
 <script src="js/cd-attribution.js" defer></script>
 </body>
