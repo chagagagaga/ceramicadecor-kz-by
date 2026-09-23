@@ -18,6 +18,7 @@ window.LP = {
   "metrikaId": 0,
   "siteKey": "ceramicadecor_by",
   "email": "info@ceramicadecor.ru",
+  "turnstileKey": "0x4AAAAAAFBDbpGRIVVN3OED",
   "dial": "375"
  },
  "currency": "BYN",

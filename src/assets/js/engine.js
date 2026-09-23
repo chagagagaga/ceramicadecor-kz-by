@@ -235,6 +235,86 @@
     burger: 'Меню', mobilebar: 'Нижняя панель',
   };
 
+  /* ══ Капча Cloudflare Turnstile — только на формах ═══════════════════
+     Виджет невидимый: в 95 % случаев человек ничего не видит, боту нужно
+     решить задачу. Отправка ждёт токен, но не дольше 4 с — если скрипт
+     Cloudflare не загрузился или завис, заявка уходит без токена: живой
+     лид дороже одного пропущенного бота (fail-open). Сервер send-lead.php
+     проверяет токен и отсеивает мусор. Мессенджеры капчей не трогаем. */
+  var Captcha = (function () {
+    var KEY = P.brand.turnstileKey || '';
+    var loaded = false, loading = null, widgets = [];
+    if (!KEY || demoHost()) return { ready: function () { return Promise.resolve({ token: '', state: 'off' }); }, attach: function () {}, reset: function () {} };
+    function demoHost() { return /^(localhost|127\.0\.0\.1)$/.test(location.hostname) || /\.github\.io$/.test(location.hostname); }
+    function load() {
+      if (loading) return loading;
+      loading = new Promise(function (resolve) {
+        if (window.turnstile) { loaded = true; return resolve(true); }
+        var s = document.createElement('script');
+        s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+        s.async = true; s.defer = true;
+        s.onload = function () { loaded = true; resolve(true); };
+        s.onerror = function () { resolve(false); };
+        document.head.appendChild(s);
+        setTimeout(function () { resolve(loaded); }, 4000);
+      });
+      return loading;
+    }
+    // Контейнер в форме; виджет рисуется при первом фокусе на поле —
+    // не грузим Cloudflare тем, кто форму не трогал.
+    function attach(form) {
+      if (form.dataset.captcha) return;
+      form.dataset.captcha = '1';
+      form.dataset.cfState = 'pending';
+      var box = document.createElement('div');
+      box.className = 'form-captcha';
+      var btn = form.querySelector('[type="submit"]');
+      if (btn && btn.parentNode) btn.parentNode.insertBefore(box, btn); else form.appendChild(box);
+      var arm = function () {
+        form.removeEventListener('focusin', arm);
+        load().then(function (ok) {
+          if (!ok || !window.turnstile) { form.dataset.cfState = 'unavailable'; return; }
+          try {
+            var id = window.turnstile.render(box, {
+              sitekey: KEY, size: 'flexible', theme: 'light', appearance: 'interaction-only',
+              callback: function (t) { form.dataset.cfToken = t; form.dataset.cfState = 'ok'; },
+              'expired-callback': function () { form.dataset.cfToken = ''; form.dataset.cfState = 'pending'; },
+              'error-callback': function () { form.dataset.cfToken = ''; form.dataset.cfState = 'failed'; },
+            });
+            widgets.push({ form: form, id: id });
+          } catch (e) { form.dataset.cfState = 'unavailable'; }
+        });
+      };
+      form.addEventListener('focusin', arm);
+    }
+    // Результат к отправке: {token, state}. state: ok — проверка пройдена;
+    // unavailable — Cloudflare не загрузился (не вина человека);
+    // pending/failed — загрузился, но токена нет: ждём до 12 с (если
+    // показана галочка, человек успеет нажать), потом шлём с пометкой.
+    function ready(form) {
+      var done = function () { return { token: form.dataset.cfToken || '', state: form.dataset.cfState || 'unavailable' }; };
+      if (form.dataset.cfToken) return Promise.resolve(done());
+      if (!form.dataset.captcha) return Promise.resolve({ token: '', state: 'unavailable' });
+      return load().then(function (ok) {
+        if (!ok) { form.dataset.cfState = 'unavailable'; return done(); }
+        return new Promise(function (resolve) {
+          var t0 = Date.now();
+          (function tick() {
+            var st = form.dataset.cfState;
+            if (form.dataset.cfToken || st === 'unavailable' || st === 'failed') return resolve(done());
+            if (Date.now() - t0 > 12000) return resolve(done());
+            setTimeout(tick, 100);
+          })();
+        });
+      });
+    }
+    function reset(form) {
+      form.dataset.cfToken = '';
+      widgets.forEach(function (w) { if (w.form === form && window.turnstile) { try { window.turnstile.reset(w.id); } catch (e) {} } });
+    }
+    return { attach: attach, ready: ready, reset: reset };
+  })();
+
   var Lead = (function () {
     /* Два получателя, как на старых сайтах, ни один не тронут:
          1) send-lead.php на хостинге → Telegram-группа страны. Он ждёт
@@ -271,6 +351,7 @@
       var t = flag + ' Новая заявка с сайта ' + (P.brand.host || location.hostname) +
         '\n\uD83D\uDC64 Имя: ' + (payload.name || '') +
         '\n\uD83D\uDCDE Телефон: ' + (payload.phone || '');
+      if (payload.captchaWarn) t += '\n\u26A0\uFE0F ' + payload.captchaWarn + ' \u2014 возможно, бот';
       if (payload.channel) t += '\n' + (payload.channel === 'call' ? '\uD83D\uDCAC ' : '\u2757 ') + chanLine(payload);
       if (payload.timing) t += '\n\uD83D\uDDD3 Сроки: ' + (TIMING[payload.timing] || payload.timing);
       t += '\n\uD83D\uDCC4 Страница: ' + document.title;
@@ -294,6 +375,7 @@
       var q = payload.quiz || null, ch = payload.channel || '';
       var noCall = !!ch && ch !== 'call';
       var lines = [];
+      if (payload.captchaWarn) lines.push('\u26A0\uFE0F ' + payload.captchaWarn + ' \u2014 возможно, бот');
       if (ch) lines.push('Связь: ' + (noCall ? chanLine(payload) : 'позвонить'));
       if (payload.timing) lines.push('Сроки: ' + (TIMING[payload.timing] || payload.timing));
       if (q && q.summary) lines.push('Конфигурация: ' + q.summary);
@@ -306,7 +388,7 @@
       if (q && q.summary) qa.push(q.summary);
       try {
         A.submitLead({
-          subject: (noCall ? '\u2757НЕ ЗВОНИТЬ, ' + (CHAN[ch] || ch) + ' · ' : '') +
+          subject: (payload.captchaWarn ? '\u26A0\uFE0F ' : '') + (noCall ? '\u2757НЕ ЗВОНИТЬ, ' + (CHAN[ch] || ch) + ' · ' : '') +
                    'Заявка с сайта ' + location.hostname.replace(/^www\./, '') + ' — ' + label,
           name: payload.name || '',
           phone: payload.phone || '',
@@ -395,23 +477,30 @@
       // так её видно в тестах и в консоли.
       if (demo) window.LP_LAST_LEAD = payload;
       payload.sourceLabel = SOURCE_LABEL[payload.source] || (P.title || 'Форма сайта');
-      var req = demo
-        ? new Promise(function (r) { setTimeout(function () { r({ ok: true }); }, 450); })
-        : fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' },
-                 body: JSON.stringify({ text: tgText(payload), website: '' }) });
-      if (!demo) toCrm(form, payload);
+      // Сначала токен капчи (или '' по таймауту), потом оба получателя.
+      var req = Captcha.ready(form).then(function (cf) {
+        // Cloudflare загрузился, а проверку не прошёл — заявку не теряем,
+        // но помечаем: менеджер видит, что это может быть бот.
+        if (cf.state === 'pending' || cf.state === 'failed') payload.captchaWarn = 'Капча не пройдена';
+        if (demo) { window.LP_LAST_LEAD.cf = cf; return new Promise(function (r) { setTimeout(function () { r({ ok: true }); }, 450); }); }
+        toCrm(form, payload);
+        return fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+                     body: JSON.stringify({ text: tgText(payload), website: '', cf_token: cf.token, cf_state: cf.state }) });
+      });
 
       req.then(function (res) {
         if (!res.ok) throw new Error('HTTP ' + res.status);
         goal('lead_submitted', { source: payload.source });
         pixel('track', 'Lead', { content_name: 'Contact Form', content_category: payload.sourceLabel });
         form.dataset.sending = '';
+        Captcha.reset(form);
         if (typeof onOk === 'function') { onOk(payload); return; }
         form.reset();
         status(form, 'Заявка принята. Свяжемся в течение 30 минут.', 'ok');
         if (btn) { btn.disabled = false; btn.textContent = label; }
       }).catch(function () {
         form.dataset.sending = '';
+        Captcha.reset(form);
         if (btn) { btn.disabled = false; btn.textContent = label; }
         status(form, 'Не удалось отправить. Позвоните: ' + P.brand.phone, 'error');
       });
@@ -420,6 +509,7 @@
     function bind(form) {
       if (form.dataset.bound) return;
       form.dataset.bound = '1';
+      Captcha.attach(form);
       bindPhone(form.querySelector('input[type="tel"]'));
       form.addEventListener('submit', function (e) { e.preventDefault(); submit(form); });
     }

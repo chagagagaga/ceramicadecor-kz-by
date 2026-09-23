@@ -68,6 +68,7 @@ COUNTRIES = {
 # Meta Pixel — один на оба сайта, как стоял. Clarity — тоже со старых сайтов.
 # Пиксель Meta — свой на страну (18.09.2026, Алексей: «разделить, чтобы данные
 # были чистые»). До этого оба сайта слали в один 5387903231434965.
+TURNSTILE_KEY = '0x4AAAAAAFBDbpGRIVVN3OED'
 META_PIXEL = {'kz': '5387903231434965', 'by': '887024874416559'}
 
 # Заполняется на каждую страну в build(): всё остальное читает отсюда.
@@ -85,6 +86,8 @@ def set_country(cc):
         "waText": "Здравствуйте, меня интересует камин/барбекю в облицовке. Помогите подобрать",
         "endpoint": "send-lead.php", "beacon": "", "metrikaId": 0,
         "siteKey": CC["siteKey"], "email": CC["email"],
+        # Cloudflare Turnstile — капча на формах (виджет «CeramicaDecor KZ BY forms»).
+        "turnstileKey": TURNSTILE_KEY,
         # Код страны для маски телефона в формах: +7 — 11 цифр, +375 — 12.
         "dial": "375" if cc == "by" else "7",
     }
@@ -822,7 +825,7 @@ INDEX_TPL = """<!DOCTYPE html>
 </div>
 
 <script src="@SLUG@/data.js?v=1"></script>
-<script src="assets/js/engine.js?v=6"></script>
+<script src="assets/js/engine.js?v=7"></script>
 <script>window.CD_ATTRIBUTION_CONFIG = { dryRun: false };</script>
 <script src="js/cd-attribution.js" defer></script>
 </body>

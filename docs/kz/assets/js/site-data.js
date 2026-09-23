@@ -18,6 +18,7 @@ window.LP = {
   "metrikaId": 0,
   "siteKey": "ceramicadecor_kz",
   "email": "info@ceramicadecor.ru",
+  "turnstileKey": "0x4AAAAAAFBDbpGRIVVN3OED",
   "dial": "7"
  },
  "currency": "₸",
