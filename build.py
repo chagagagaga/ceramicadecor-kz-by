@@ -595,7 +595,7 @@ INDEX_TPL = """<!DOCTYPE html>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/golos-text-cyrillic.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-cyrillic.woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/system.css?v=1">
-<link rel="stylesheet" href="assets/css/landing.css?v=5">
+<link rel="stylesheet" href="assets/css/landing.css?v=6">
 @PIXEL@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"CeramicaDecor","url":"https://@HOST@","description":"@SEO@","telephone":"@PHONE_E164@","address":{"@type":"PostalAddress","addressCountry":"@CC@"},"sameAs":["https://www.instagram.com/ceramicadecor.@CC_LOWER@/","https://wa.me/@WHATSAPP@"]}
@@ -2166,7 +2166,7 @@ TEAM = [
 
 # Витрина направлений на главной: раздел → страница, подпись, кадр
 HUB_CARDS = [
-    ('kaminy', 'Камины', 'Изразцовый камин под ваш проём и топку. Греет часами после протопки.', 'kaminy/img/s/01.webp'),
+    ('kaminy', 'Камины', 'Изразцовый камин под ваш проём и топку. Греет часами после протопки.', 'assets/img/hub/kaminy-600.webp'),  # 29.09: яркий Версаль вместо тусклого белого
     ('barbekyu-kompleksy', 'Барбекю комплексы', 'Мангал, казан, коптильня, тандыр — в изразцах ручной формовки.', 'barbekyu-kompleksy/img/s/03.webp'),
     ('izraztsy', 'Изразцы', 'Более 100 позиций: рельеф, роспись, однотонная глазурь. Образец почтой.', 'izraztsy/img/s/002.webp'),
     ('pechi-kaminy', 'Печи-камины из наличия', 'Заводские модели Дорф, Ритм и Флора — цена известна сразу.', 'pechi-kaminy/img/s/01.webp'),
@@ -2235,9 +2235,11 @@ def hub_body(summary):
     for slug, name, text, img in HUB_CARDS:
         p = mins.get(slug)
         price = ('<span class="dir__price">от %s %s</span>' % (fmt_ru(p), CC['currency'])) if p else ''
-        cards += ('<a class="dir" href="%s"><span class="dir__media"><img src="%s" alt="%s" loading="lazy" decoding="async" width="600" height="600"></span>'
+        big = img.replace('-600.webp', '-1200.webp') if '/hub/' in img else img.replace('/img/s/', '/img/m/')
+        srcset = ' srcset="%s 600w, %s 1200w" sizes="(max-width: 700px) 92vw, 25vw"' % (img, big)
+        cards += ('<a class="dir" href="%s"><span class="dir__media"><img src="%s"%s alt="%s" loading="lazy" decoding="async" width="600" height="600"></span>'
                   '<span class="dir__body"><span class="dir__name">%s</span><span class="dir__text">%s</span>%s<span class="dir__more">Смотреть каталог →</span></span></a>\n'
-                  % (PAGE_OF[slug], img, name, name, text, price))
+                  % (PAGE_OF[slug], img, srcset, name, name, text, price))
     stats = ''.join('<div><b>%s</b><span>%s</span></div>' % (s["v"], s["l"]) for s in STATS)
     return country_text('''
 <section class="hero" id="top-hero">
