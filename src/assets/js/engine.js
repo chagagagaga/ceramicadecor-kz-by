@@ -1039,13 +1039,38 @@
       }).join('') + '</dl>';
     }
 
+    /* 29.09.2026 (Алексей): зелёная «Написать в WhatsApp» сверху карточки и под
+       «Рассчитать такой же». Обычная ссылка wa.me: её ловит общий обработчик —
+       попап «Открыть в WhatsApp?», WhatsAppIntent и Lead в пикселе, как везде. */
+    var SHARE_TXT = 'Нажмите, чтобы скопировать ссылку на этот объект';
+    var WA_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>';
+    function waBtn(cls) {
+      var num = P.brand && P.brand.whatsapp;
+      if (!num) return '';
+      var text = (P.brand.waText || 'Здравствуйте') + '. Интересует: ' + item.title + ' (' + (P.brand.host || location.hostname) + ')';
+      return '<a class="btn pcard__wa ' + cls + '" href="https://wa.me/' + num + '?text=' + encodeURIComponent(text) +
+        '" target="_blank" rel="noopener">' + WA_ICON + '<span>Написать в WhatsApp</span></a>';
+    }
+
+    /* Кадр в карточке — средний размер (1100 px, ~50 КБ) вместо оригинала
+       1600 px (до 180 КБ): из Instagram карточка открывается кратно быстрее.
+       Во весь экран (лайтбокс) по-прежнему идёт оригинал. */
+    function pic(src) { return tier(src, 'm'); }
+    function warm(set, from) {
+      for (var k = 1; k <= 2 && k < set.length; k++) { var im = new Image(); im.decoding = 'async'; im.src = pic(set[(from + k) % set.length]); }
+    }
+
     function shots() { return (item.photos && item.photos.length) ? item.photos : (item.img ? [item.img] : []); }
 
     function paint() {
       var set = shots();
       if (!set.length) return;
       cur = (cur % set.length + set.length) % set.length;
-      $('.pcard__pic', box).src = set[cur];
+      var el = $('.pcard__pic', box);
+      // Пока грузится кадр, показываем уже загруженное превью — не чёрный прямоугольник.
+      el.style.backgroundImage = 'url("' + tier(set[cur], 'g') + '")';
+      el.src = pic(set[cur]);
+      warm(set, cur);
       $('.pcard__pic', box).alt = item.title;
       $$('.pcard__thumb', box).forEach(function (b, i) {
         b.classList.toggle('is-on', i === cur);
@@ -1062,8 +1087,9 @@
         : '<div class="pcard__p1"><span>' + esc(P.priceLabel1 || 'Облицовка') + '</span><b>' + FROM + fmt(item.p1) + ' ' + CUR + '</b></div>';
       $('.pcard__box', box).innerHTML =
         '<button type="button" class="pcard__close" data-close aria-label="Закрыть">✕</button>' +
+        waBtn('pcard__wa--top') +
         '<div class="pcard__gal">' +
-          '<img class="pcard__pic" src="" alt="" width="1200" height="900">' +
+          '<img class="pcard__pic" src="" alt="" width="1200" height="900" decoding="async" fetchpriority="high">' +
           (many
             ? '<button type="button" class="pcard__nav pcard__nav--prev" data-step="-1" aria-label="Предыдущий кадр">‹</button>' +
               '<button type="button" class="pcard__nav pcard__nav--next" data-step="1" aria-label="Следующий кадр">›</button>' +
@@ -1084,7 +1110,8 @@
           '<div class="pcard__prices">' + price + '</div>' +
           '<div class="pcard__acts">' +
             '<button type="button" class="btn btn--primary" data-lead data-src="card-detail">Рассчитать такой же</button>' +
-            (item.id ? '<button type="button" class="btn btn--ghost pcard__share" data-share title="Скопировать ссылку на этот объект">Ссылка</button>' : '') +
+            waBtn('pcard__wa--bottom') +
+            (item.id ? '<button type="button" class="btn btn--ghost pcard__share" data-share>' + SHARE_TXT + '</button>' : '') +
           '</div>' +
           (P.priceNote ? '<p class="pcard__note">' + esc(P.priceNote) + '</p>' : '') +
         '</div>';
@@ -1125,7 +1152,7 @@
         var b = e.target.closest('[data-share]');
         if (!b || !item) return;
         var url = location.origin + location.pathname + '#' + item.id;
-        var done = function () { b.textContent = 'Скопировано'; setTimeout(function () { b.textContent = 'Ссылка'; }, 1800); };
+        var done = function () { b.textContent = 'Ссылка скопирована'; setTimeout(function () { b.textContent = SHARE_TXT; }, 1800); };
         if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, function () { prompt('Ссылка на объект', url); });
         else prompt('Ссылка на объект', url);
       });
@@ -1168,7 +1195,18 @@
         }
       }
     }
-    if (location.hash) setTimeout(openFromHash, 60);
+    if (location.hash) {
+      // Кадр карточки просим сразу, параллельно с остальной страницей.
+      (function () {
+        var id = decodeURIComponent(location.hash.slice(1));
+        for (var i = 0; i < (P.catalog || []).length; i++) if (P.catalog[i].id === id) {
+          var c = P.catalog[i], first = (c.photos && c.photos[0]) || c.img;
+          if (first) { var l = document.createElement('link'); l.rel = 'preload'; l.as = 'image'; l.href = tier(first, 'm'); l.setAttribute('fetchpriority', 'high'); document.head.appendChild(l); }
+          break;
+        }
+      })();
+      openFromHash();
+    }
     window.addEventListener('hashchange', openFromHash);
   })();
 
