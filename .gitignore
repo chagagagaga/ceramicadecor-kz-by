@@ -1,2 +1,4 @@
 node_modules
 .DS_Store
+docs/ru/
+dist_ru_pro/

@@ -64,12 +64,28 @@ COUNTRIES = {
         "title_suffix": "в Беларуси",
         "siteKey": "ceramicadecor_by",
     },
+    # 01.10.2026: главная ceramicadecor.pro — та же сборка, что kz/by, под Россию.
+    # Направления живут на российских посадочных (kaminy/, barbekyu-kompleksy/…),
+    # отсюда берутся только общие страницы. Мессенджер — MAX, не WhatsApp.
+    'ru': {
+        "host": "ceramicadecor.pro", "flag": "🇷🇺",
+        "country": "Россия", "country_loc": "России", "country_gen": "России",
+        "currency": "₽", "rate": 1.0, "round": 1000, "round_tile": 1,
+        "phone": "8 (800) 555-80-32", "whatsapp": "", "manager": "",
+        "maxUrl": "https://max.ru/u/f9LHodD0cOLM8wvhXzGwW_HnvHQkEKIvFj1FpYaxHzHfcYjt3XliwFLklt8",
+        "worktime": "Ежедневно 10:00–19:00",
+        "showroom": {"city": "Москва", "address": "ул. Свободы, 99к1"},
+        "cities": "Москве и Санкт-Петербурге",
+        "email": "info@ceramicadecor.ru",
+        "title_suffix": "в России",
+        "siteKey": "ceramicadecor_pro",
+    },
 }
 # Meta Pixel — один на оба сайта, как стоял. Clarity — тоже со старых сайтов.
 # Пиксель Meta — свой на страну (18.09.2026, Алексей: «разделить, чтобы данные
 # были чистые»). До этого оба сайта слали в один 5387903231434965.
 TURNSTILE_KEY = '0x4AAAAAAFBDbpGRIVVN3OED'
-META_PIXEL = {'kz': '5387903231434965', 'by': '887024874416559'}
+META_PIXEL = {'kz': '5387903231434965', 'by': '887024874416559', 'ru': ''}
 
 # Заполняется на каждую страну в build(): всё остальное читает отсюда.
 BRAND = {}
@@ -82,12 +98,13 @@ def set_country(cc):
         "phone": CC["phone"], "worktime": CC["worktime"],
         "address": (CC["showroom"]["city"] + " · " + CC["showroom"]["address"]) if CC["showroom"] else CC["cities"].capitalize(),
         "site": "https://" + CC["host"], "host": CC["host"], "flag": CC["flag"],
-        "whatsapp": CC["whatsapp"], "telegram": "", "maxUrl": "",
+        "whatsapp": CC["whatsapp"], "telegram": "", "maxUrl": CC.get("maxUrl", ""),
         "waText": "Здравствуйте, меня интересует камин/барбекю в облицовке. Помогите подобрать",
-        "endpoint": "send-lead.php", "beacon": "", "metrikaId": 0,
+        "endpoint": "/lead.php" if cc == "ru" else "send-lead.php", "beacon": "", "metrikaId": 112495350 if cc == "ru" else 0,
+        "relay": cc == "ru",
         "siteKey": CC["siteKey"], "email": CC["email"],
         # Cloudflare Turnstile — капча на формах (виджет «CeramicaDecor KZ BY forms»).
-        "turnstileKey": TURNSTILE_KEY,
+        "turnstileKey": "" if cc == "ru" else TURNSTILE_KEY,
         # Код страны для маски телефона в формах: +7 — 11 цифр, +375 — 12.
         "dial": "375" if cc == "by" else "7",
     }
@@ -106,6 +123,7 @@ STOCK = {
     # пропорция, что у Дорфа (439 000 ₽ → 2 850 000 ₸), до 100 000 ₸.
     'kz': {'dorf': 2_850_000, 'ritm': 2_950_000, 'flora': 3_900_000, 'palette': 325_000},
     'by': {'dorf': 16_900, 'ritm': 17_500, 'flora': 21_300, 'palette': 1_900},
+    'ru': {'dorf': 439_000, 'ritm': 449_000, 'flora': 595_900, 'palette': 50_000},
 }
 
 # Адреса страниц — старые, на них ведёт реклама в Meta. Камины — не kaminy.html:
@@ -142,6 +160,8 @@ if(l.readyState==='complete')go();else c.addEventListener('load',go,{once:true})
 
 
 def pixel_tpl():
+    if not META_PIXEL[CC['code']]:
+        return ''
     return PIXEL_TPL % (META_PIXEL[CC['code']], META_PIXEL[CC['code']])
 
 
@@ -155,8 +175,8 @@ def country_text(v):
     return (v.replace('@COUNTRY@', cc['country'])
              .replace('@COUNTRY_LOC@', cc['country_loc'])
              .replace('@COUNTRY_GEN@', cc['country_gen'])
-             .replace('@COUNTRY_DAT_ALL@', {'kz': 'всему Казахстану', 'by': 'всей Беларуси'}[cc['code']])
-             .replace('@COUNTRY_DAT@', {'kz': 'Казахстану', 'by': 'Беларуси'}[cc['code']])
+             .replace('@COUNTRY_DAT_ALL@', {'kz': 'всему Казахстану', 'by': 'всей Беларуси', 'ru': 'всей России'}[cc['code']])
+             .replace('@COUNTRY_DAT@', {'kz': 'Казахстану', 'by': 'Беларуси', 'ru': 'России'}[cc['code']])
              .replace('@CITIES@', cc['cities'])
              .replace('@CUR@', cur)
              .replace('@DORF@', fmt_ru(st['dorf']) + ' ' + cur)
@@ -1679,7 +1699,7 @@ def build(cc):
     out_dir = os.path.join(DIST, cc)
     os.makedirs(out_dir, exist_ok=True)
     catalog = json.load(io.open(os.path.join(ROOT, 'catalog.json'), encoding='utf-8'))
-    country_cat = json.load(io.open(os.path.join(ROOT, cc + '_catalog.json'), encoding='utf-8'))
+    country_cat = json.load(io.open(os.path.join(ROOT, ('kz' if cc == 'ru' else cc) + '_catalog.json'), encoding='utf-8'))
     specs_path = os.path.join(ROOT, 'specs.json')
     all_specs = json.load(io.open(specs_path, encoding='utf-8')) if os.path.exists(specs_path) else {}
     summary = {}
@@ -2416,6 +2436,8 @@ def contacts_body():
 
 def privacy_body(cc):
     bodies = json.load(io.open(os.path.join(ROOT, 'privacy_bodies.json'), encoding='utf-8'))
+    if cc not in bodies:  # ru: своя политика уже лежит на ceramicadecor.pro/policy.html
+        return ''
     b = bodies[cc]
     b = re.sub(r'<a[^>]*privacy__back[^>]*>.*?</a>', '', b, flags=re.S)
     b = b.replace('<h1 class="privacy__title">', '<h1 class="section__title">').replace('<p class="privacy__updated">', '<p class="section__lead">')
@@ -2467,7 +2489,7 @@ def build_pages(out_dir, summary):
     }
     for page, (title, seo, body) in pages.items():
         html = page_html(page, title, seo, body)
-        html = (html.replace('@PHONE_PLACEHOLDER@', '+7 (___) ___-__-__' if cc == 'kz' else '+375 (__) ___-__-__'))
+        html = (html.replace('@PHONE_PLACEHOLDER@', '+375 (__) ___-__-__' if cc == 'by' else '+7 (___) ___-__-__'))
         io.open(os.path.join(out_dir, page), 'w', encoding='utf-8').write(html)
     io.open(os.path.join(out_dir, 'catalog.html'), 'w', encoding='utf-8').write(CATALOG_REDIRECT)
     # Старое имя страницы каминов — заглушка с переброской (на хостинге файл
@@ -2481,5 +2503,6 @@ def build_pages(out_dir, summary):
 
 
 if __name__ == '__main__':
-    for cc in ('kz', 'by'):
+    import sys as _s
+    for cc in (_s.argv[1:] or ('kz', 'by')):
         build(cc)
