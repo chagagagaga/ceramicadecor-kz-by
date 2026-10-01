@@ -16,6 +16,7 @@ window.LP = {
   "endpoint": "send-lead.php",
   "beacon": "",
   "metrikaId": 0,
+  "relay": false,
   "siteKey": "ceramicadecor_kz",
   "email": "info@ceramicadecor.ru",
   "turnstileKey": "0x4AAAAAAFBDbpGRIVVN3OED",
